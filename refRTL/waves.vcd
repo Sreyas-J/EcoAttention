@@ -1,0 +1,94 @@
+$date
+	Tue Aug  5 19:24:15 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module fp16tb $end
+$scope module dut1 $end
+$var wire 16 ! a [15:0] $end
+$var wire 16 " b [15:0] $end
+$var wire 1 # fl_inf $end
+$var wire 1 $ flag $end
+$var wire 1 % sum_zero $end
+$var wire 1 & sum_sign $end
+$var wire 7 ' sum_mantissa_final [6:0] $end
+$var wire 8 ( sum_exp_final [7:0] $end
+$var wire 16 ) sum [15:0] $end
+$var wire 9 * expsub [8:0] $end
+$var wire 1 + b_sign $end
+$var wire 8 , b_mant_temp [7:0] $end
+$var wire 8 - b_mant [7:0] $end
+$var wire 8 . b_exp [7:0] $end
+$var wire 1 / add_carry $end
+$var wire 9 0 abs_diff [8:0] $end
+$var wire 1 1 a_sign $end
+$var wire 8 2 a_mant_temp [7:0] $end
+$var wire 8 3 a_mant [7:0] $end
+$var wire 8 4 a_exp [7:0] $end
+$var parameter 32 5 EXP_SIZE $end
+$var parameter 32 6 MANTISSA_SIZE $end
+$var parameter 32 7 SIGN_SIZE $end
+$scope begin norm_loop[1] $end
+$var parameter 2 8 i $end
+$upscope $end
+$scope begin norm_loop[2] $end
+$var parameter 3 9 i $end
+$upscope $end
+$scope begin norm_loop[3] $end
+$var parameter 3 : i $end
+$upscope $end
+$scope begin norm_loop[4] $end
+$var parameter 4 ; i $end
+$upscope $end
+$scope begin norm_loop[5] $end
+$var parameter 4 < i $end
+$upscope $end
+$scope begin norm_loop[6] $end
+$var parameter 4 = i $end
+$upscope $end
+$scope begin norm_loop[7] $end
+$var parameter 4 > i $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b111 >
+b110 =
+b101 <
+b100 ;
+b11 :
+b10 9
+b1 8
+b1 7
+b111 6
+b1000 5
+$end
+#0
+$dumpvars
+b10000010 4
+b11000000 3
+b11000000 2
+01
+b11 0
+0/
+b1111111 .
+b10000 -
+b10000000 ,
+0+
+b11 *
+b1xxxxx1xx0x0000 )
+b10000010 (
+b1010000 '
+0&
+0%
+0$
+x#
+b11111110000000 "
+b100000101000000 !
+$end
