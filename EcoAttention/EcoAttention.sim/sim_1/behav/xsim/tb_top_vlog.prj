@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../EcoAttention.gen/sources_1/ip/ADDER/sim/ADDER.v" \
+
+sv xil_defaultlib  \
+"../../../../EcoAttention.srcs/sources_1/new/top.sv" \
+"../../../../EcoAttention.srcs/sim_1/new/top_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
