@@ -127,7 +127,7 @@ output wire [15 : 0] m_axis_result_tdata;
     .C_RESULT_WIDTH(16),
     .C_RESULT_FRACTION_WIDTH(8),
     .C_COMPARE_OPERATION(8),
-    .C_LATENCY(1),
+    .C_LATENCY(2),
     .C_OPTIMIZATION(1),
     .C_MULT_USAGE(0),
     .C_BRAM_USAGE(0),
