@@ -104,6 +104,8 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc /home/dell/Desktop/projects/RISCVextension/EcoAttention/EcoAttention.srcs/constrs_1/new/constraint.xdc
 set_property used_in_implementation false [get_files /home/dell/Desktop/projects/RISCVextension/EcoAttention/EcoAttention.srcs/constrs_1/new/constraint.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental /home/dell/Desktop/projects/RISCVextension/EcoAttention/EcoAttention.srcs/utils_1/imports/synth_1/top.dcp

@@ -3,12 +3,12 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Sat Aug  9 20:29:22 2025
-# Process ID: 30507
+# Start of session at: Mon Aug 11 19:14:44 2025
+# Process ID: 105554
 # Current directory: /home/dell/Desktop/projects/RISCVextension/EcoAttention/EcoAttention.runs/synth_1
 # Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: /home/dell/Desktop/projects/RISCVextension/EcoAttention/EcoAttention.runs/synth_1/top.vds
 # Journal file: /home/dell/Desktop/projects/RISCVextension/EcoAttention/EcoAttention.runs/synth_1/vivado.jou
-# Running On: dell-Inspiron-5415, OS: Linux, CPU Frequency: 3763.272 MHz, CPU Physical cores: 12, Host memory: 7635 MB
+# Running On: dell-Inspiron-5415, OS: Linux, CPU Frequency: 1400.000 MHz, CPU Physical cores: 12, Host memory: 7635 MB
 #-----------------------------------------------------------
 source top.tcl -notrace

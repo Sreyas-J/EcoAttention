@@ -26,7 +26,7 @@ module fp16tb;
 
     initial
     begin
-        
+        #10;
         a=16'h4140; b=16'h3f80;
 
     end

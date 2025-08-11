@@ -16,7 +16,7 @@ module fp16adder (
     wire [MANTISSA_SIZE+1:0] sum_mantissa_in[0:MANTISSA_SIZE+1];
     wire [EXP_SIZE:0] sum_exp[0:MANTISSA_SIZE+1];
     wire [EXP_SIZE:0] expsub,abs_diff;
-    wire [EXP_SIZE-1:0]sum_exp_final;
+    wire [EXP_SIZE:0]sum_exp_final;
     wire sum_zero;
     wire [SIGN_SIZE+EXP_SIZE+MANTISSA_SIZE-1:0] sum_1;
 
