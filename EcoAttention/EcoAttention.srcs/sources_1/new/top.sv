@@ -1,18 +1,22 @@
 `timescale 1ns / 1ps
 module top#(
     parameter DATA_WIDTH = 32,
-    parameter Bc= 6,
-    parameter Br= 6
+    parameter Bc= 5, //Q: BrxD , K: BcxD, V: BcxD, 0:BrxBc
+    parameter Br= 5,
+    parameter D = 7
 )(
     input logic clk,reset,
     input logic [DATA_WIDTH-1:0] Qdin,Kdin,Vdin,
     output logic done
 );
-    localparam int MAX_VAL = (Bc > Br) ? Bc : Br;
+    localparam int MAX_VAL = (Bc*D > Br*D) ? Bc*D : Br*D;
+    localparam int Q_size = Br*D;
+    localparam int K_size = Bc*D;
+    localparam int V_size = Bc*D;
     
     logic addAval,addAready,addBval,addBready,sumVal,sumReadydivisorVal,divisorReady,dividendVal,dividendReady,qVal,qReady,eVal,eReady,xVal,xReady,greatVal,greatReady,lessVal,lessReady,compReady,compVal,mulAval,mulAready,mulBval,mulBready,prodVal,prodReady,Qen,Qwe,Ken,Kwe,Ven,Vwe,Oen,Owe;
     logic [DATA_WIDTH-1:0] addA,addB,sum,dividend,divisor,q,x,less,great,comp,mulA,mulB,prod,Qdout,Kdout,Vdout,Odin,Odout;
-    logic [$clog2(Br)-1:0] Qaddr,Kaddr,Vaddr;
+    logic [$clog2(MAX_VAL)-1:0] Qaddr,Kaddr,Vaddr;
     logic [$clog2(MAX_VAL):0] cnt;
     
     logic we;
@@ -135,18 +139,34 @@ module top#(
             fsm<=LOAD;
             done<=1'b0;
             cnt<=0;
+            Kaddr<=0;
+            Qaddr<=0;
+            Vaddr<=0;
+
+//            Qen<=1;
+//            Ken<=1;
+//            Ven<=1;
+            
+//            Qwe<=1;
+//            Kwe<=1;
+//            Vwe<=1;
+            
+//            Oen<=1;
         end
         else if(~done)begin
             case(fsm)
                 LOAD: begin
-                    if (cnt < Br) Qaddr <= cnt;
-                    
-                    if(cnt< Bc)begin
-                        Kaddr <= cnt;
-                        Vaddr <= cnt;
+                    if(cnt<Q_size) begin
+                        Qaddr<=Qaddr+1;
                     end
-                    
-                    if(cnt<MAX_VAL) cnt<=cnt+1;
+                    if(cnt<K_size) begin
+                        Kaddr<=Kaddr+1;
+                    end
+                    if(cnt<V_size) begin
+                        Vaddr<=Vaddr+1;
+                    end
+
+                    if(cnt<MAX_VAL-1) cnt<=cnt+1;
                     else begin
                         fsm   <= DIFF;
                         cnt   <= 0;
@@ -159,6 +179,12 @@ module top#(
     
     
     always_comb begin
+        if(reset) begin
+            Qen=1;
+            Ken=1;
+            Ven=1;
+            Oen=1;
+        end
         assign we=(fsm==LOAD)?1'b1:1'b0;
         assign Qwe=we;
         assign Kwe=we;

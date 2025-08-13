@@ -2,11 +2,11 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
--- Date        : Mon Aug 11 22:29:32 2025
--- Host        : dell-Inspiron-5415 running 64-bit Ubuntu 24.04.2 LTS
--- Command     : write_vhdl -force -mode synth_stub -rename_top K -prefix
---               K_ Q_stub.vhdl
--- Design      : Q
+-- Date        : Wed Aug 13 09:06:47 2025
+-- Host        : a2468374ecf5 running 64-bit Ubuntu 22.04.5 LTS
+-- Command     : write_vhdl -force -mode synth_stub
+--               /home/user/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/K/K_stub.vhdl
+-- Design      : K
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35tcpg236-1
 -- --------------------------------------------------------------------------------

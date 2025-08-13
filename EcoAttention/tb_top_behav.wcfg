@@ -11,57 +11,702 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="168.089 ns"></ZoomEndTime>
-      <Cursor1Time time="69.605 ns"></Cursor1Time>
+      <ZoomStartTime time="342.884 ns"></ZoomStartTime>
+      <ZoomEndTime time="415.585 ns"></ZoomEndTime>
+      <Cursor1Time time="355.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="137"></NameColumnWidth>
-      <ValueColumnWidth column_width="139"></ValueColumnWidth>
+      <ValueColumnWidth column_width="135"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="8" />
+   <WVObjectSize size="25" />
    <wvobject type="logic" fp_name="/tb_top/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_top/aVal">
-      <obj_property name="ElementShortName">aVal</obj_property>
-      <obj_property name="ObjectShortName">aVal</obj_property>
+   <wvobject type="logic" fp_name="/tb_top/dut/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_top/bVal">
-      <obj_property name="ElementShortName">bVal</obj_property>
-      <obj_property name="ObjectShortName">bVal</obj_property>
+   <wvobject type="array" fp_name="/tb_top/dut/cnt">
+      <obj_property name="ElementShortName">cnt[6:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_top/sReady">
-      <obj_property name="ElementShortName">sReady</obj_property>
-      <obj_property name="ObjectShortName">sReady</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_top/A">
-      <obj_property name="ElementShortName">A[15:0]</obj_property>
-      <obj_property name="ObjectShortName">A[15:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">7</obj_property>
-      <obj_property name="radix_otherWidth">8</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_top/B">
-      <obj_property name="ElementShortName">B[15:0]</obj_property>
-      <obj_property name="ObjectShortName">B[15:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">7</obj_property>
-      <obj_property name="radix_otherWidth">8</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_top/S">
-      <obj_property name="ElementShortName">S[15:0]</obj_property>
-      <obj_property name="ObjectShortName">S[15:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">7</obj_property>
-      <obj_property name="radix_otherWidth">8</obj_property>
+   <wvobject type="array" fp_name="/tb_top/dut/MAX_VAL">
+      <obj_property name="ElementShortName">MAX_VAL[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MAX_VAL[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_top/DATA_WIDTH">
       <obj_property name="ElementShortName">DATA_WIDTH[31:0]</obj_property>
       <obj_property name="ObjectShortName">DATA_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/Qdin">
+      <obj_property name="ElementShortName">Qdin[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Qdin[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">24</obj_property>
+      <obj_property name="radix_otherWidth">8</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/Kdin">
+      <obj_property name="ElementShortName">Kdin[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Kdin[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">24</obj_property>
+      <obj_property name="radix_otherWidth">8</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/Vdin">
+      <obj_property name="ElementShortName">Vdin[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Vdin[31:0]</obj_property>
+      <obj_property name="Radix">REALRADIX</obj_property>
+      <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+      <obj_property name="radix_fractionWidth">24</obj_property>
+      <obj_property name="radix_otherWidth">8</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/dut/Qen">
+      <obj_property name="ElementShortName">Qen</obj_property>
+      <obj_property name="ObjectShortName">Qen</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/dut/Ken">
+      <obj_property name="ElementShortName">Ken</obj_property>
+      <obj_property name="ObjectShortName">Ken</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/dut/Ven">
+      <obj_property name="ElementShortName">Ven</obj_property>
+      <obj_property name="ObjectShortName">Ven</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/dut/Oen">
+      <obj_property name="ElementShortName">Oen</obj_property>
+      <obj_property name="ObjectShortName">Oen</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/dut/Qwe">
+      <obj_property name="ElementShortName">Qwe</obj_property>
+      <obj_property name="ObjectShortName">Qwe</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/dut/Kwe">
+      <obj_property name="ElementShortName">Kwe</obj_property>
+      <obj_property name="ObjectShortName">Kwe</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_top/dut/Vwe">
+      <obj_property name="ElementShortName">Vwe</obj_property>
+      <obj_property name="ObjectShortName">Vwe</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/fsm">
+      <obj_property name="ElementShortName">fsm[2:0]</obj_property>
+      <obj_property name="ObjectShortName">fsm[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/Qaddr">
+      <obj_property name="ElementShortName">Qaddr[5:0]</obj_property>
+      <obj_property name="ObjectShortName">Qaddr[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/Kaddr">
+      <obj_property name="ElementShortName">Kaddr[5:0]</obj_property>
+      <obj_property name="ObjectShortName">Kaddr[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/Vaddr">
+      <obj_property name="ElementShortName">Vaddr[5:0]</obj_property>
+      <obj_property name="ObjectShortName">Vaddr[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/Q_size">
+      <obj_property name="ElementShortName">Q_size[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Q_size[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/K_size">
+      <obj_property name="ElementShortName">K_size[31:0]</obj_property>
+      <obj_property name="ObjectShortName">K_size[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/V_size">
+      <obj_property name="ElementShortName">V_size[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_size[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory">
+      <obj_property name="ElementShortName">memory[0:41][31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory[0:41][31:0]</obj_property>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[0]">
+         <obj_property name="ElementShortName">[0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][31:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">24</obj_property>
+         <obj_property name="radix_otherWidth">8</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[1]">
+         <obj_property name="ElementShortName">[1][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">24</obj_property>
+         <obj_property name="radix_otherWidth">8</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[2]">
+         <obj_property name="ElementShortName">[2][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][31:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">24</obj_property>
+         <obj_property name="radix_otherWidth">8</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[3]">
+         <obj_property name="ElementShortName">[3][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][31:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">24</obj_property>
+         <obj_property name="radix_otherWidth">8</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[4]">
+         <obj_property name="ElementShortName">[4][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[5]">
+         <obj_property name="ElementShortName">[5][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[6]">
+         <obj_property name="ElementShortName">[6][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[7]">
+         <obj_property name="ElementShortName">[7][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[8]">
+         <obj_property name="ElementShortName">[8][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[9]">
+         <obj_property name="ElementShortName">[9][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[10]">
+         <obj_property name="ElementShortName">[10][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[10][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[11]">
+         <obj_property name="ElementShortName">[11][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[11][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[12]">
+         <obj_property name="ElementShortName">[12][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[12][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[13]">
+         <obj_property name="ElementShortName">[13][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[13][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[14]">
+         <obj_property name="ElementShortName">[14][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[14][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[15]">
+         <obj_property name="ElementShortName">[15][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[15][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[16]">
+         <obj_property name="ElementShortName">[16][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[16][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[17]">
+         <obj_property name="ElementShortName">[17][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[17][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[18]">
+         <obj_property name="ElementShortName">[18][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[18][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[19]">
+         <obj_property name="ElementShortName">[19][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[19][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[20]">
+         <obj_property name="ElementShortName">[20][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[20][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[21]">
+         <obj_property name="ElementShortName">[21][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[21][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[22]">
+         <obj_property name="ElementShortName">[22][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[22][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[23]">
+         <obj_property name="ElementShortName">[23][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[23][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[24]">
+         <obj_property name="ElementShortName">[24][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[24][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[25]">
+         <obj_property name="ElementShortName">[25][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[25][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[26]">
+         <obj_property name="ElementShortName">[26][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[26][31:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">24</obj_property>
+         <obj_property name="radix_otherWidth">8</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[27]">
+         <obj_property name="ElementShortName">[27][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[27][31:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">24</obj_property>
+         <obj_property name="radix_otherWidth">8</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[28]">
+         <obj_property name="ElementShortName">[28][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[28][31:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">24</obj_property>
+         <obj_property name="radix_otherWidth">8</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[29]">
+         <obj_property name="ElementShortName">[29][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[29][31:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">24</obj_property>
+         <obj_property name="radix_otherWidth">8</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[30]">
+         <obj_property name="ElementShortName">[30][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[30][31:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">24</obj_property>
+         <obj_property name="radix_otherWidth">8</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[31]">
+         <obj_property name="ElementShortName">[31][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[31][31:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">24</obj_property>
+         <obj_property name="radix_otherWidth">8</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[32]">
+         <obj_property name="ElementShortName">[32][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[32][31:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">24</obj_property>
+         <obj_property name="radix_otherWidth">8</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[33]">
+         <obj_property name="ElementShortName">[33][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[33][31:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">24</obj_property>
+         <obj_property name="radix_otherWidth">8</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[34]">
+         <obj_property name="ElementShortName">[34][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[34][31:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">24</obj_property>
+         <obj_property name="radix_otherWidth">8</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[35]">
+         <obj_property name="ElementShortName">[35][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[35][31:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">24</obj_property>
+         <obj_property name="radix_otherWidth">8</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[36]">
+         <obj_property name="ElementShortName">[36][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[36][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[37]">
+         <obj_property name="ElementShortName">[37][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[37][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[38]">
+         <obj_property name="ElementShortName">[38][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[38][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[39]">
+         <obj_property name="ElementShortName">[39][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[39][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[40]">
+         <obj_property name="ElementShortName">[40][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[40][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[41]">
+         <obj_property name="ElementShortName">[41][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[41][31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory">
+      <obj_property name="ElementShortName">memory[0:41][31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory[0:41][31:0]</obj_property>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[0]">
+         <obj_property name="ElementShortName">[0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[1]">
+         <obj_property name="ElementShortName">[1][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[2]">
+         <obj_property name="ElementShortName">[2][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[3]">
+         <obj_property name="ElementShortName">[3][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[4]">
+         <obj_property name="ElementShortName">[4][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[5]">
+         <obj_property name="ElementShortName">[5][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[6]">
+         <obj_property name="ElementShortName">[6][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[7]">
+         <obj_property name="ElementShortName">[7][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[8]">
+         <obj_property name="ElementShortName">[8][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[9]">
+         <obj_property name="ElementShortName">[9][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[10]">
+         <obj_property name="ElementShortName">[10][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[10][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[11]">
+         <obj_property name="ElementShortName">[11][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[11][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[12]">
+         <obj_property name="ElementShortName">[12][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[12][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[13]">
+         <obj_property name="ElementShortName">[13][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[13][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[14]">
+         <obj_property name="ElementShortName">[14][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[14][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[15]">
+         <obj_property name="ElementShortName">[15][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[15][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[16]">
+         <obj_property name="ElementShortName">[16][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[16][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[17]">
+         <obj_property name="ElementShortName">[17][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[17][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[18]">
+         <obj_property name="ElementShortName">[18][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[18][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[19]">
+         <obj_property name="ElementShortName">[19][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[19][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[20]">
+         <obj_property name="ElementShortName">[20][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[20][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[21]">
+         <obj_property name="ElementShortName">[21][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[21][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[22]">
+         <obj_property name="ElementShortName">[22][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[22][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[23]">
+         <obj_property name="ElementShortName">[23][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[23][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[24]">
+         <obj_property name="ElementShortName">[24][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[24][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[25]">
+         <obj_property name="ElementShortName">[25][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[25][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[26]">
+         <obj_property name="ElementShortName">[26][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[26][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[27]">
+         <obj_property name="ElementShortName">[27][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[27][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[28]">
+         <obj_property name="ElementShortName">[28][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[28][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[29]">
+         <obj_property name="ElementShortName">[29][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[29][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[30]">
+         <obj_property name="ElementShortName">[30][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[30][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[31]">
+         <obj_property name="ElementShortName">[31][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[31][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[32]">
+         <obj_property name="ElementShortName">[32][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[32][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[33]">
+         <obj_property name="ElementShortName">[33][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[33][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[34]">
+         <obj_property name="ElementShortName">[34][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[34][31:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">24</obj_property>
+         <obj_property name="radix_otherWidth">8</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[35]">
+         <obj_property name="ElementShortName">[35][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[35][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[36]">
+         <obj_property name="ElementShortName">[36][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[36][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[37]">
+         <obj_property name="ElementShortName">[37][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[37][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[38]">
+         <obj_property name="ElementShortName">[38][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[38][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[39]">
+         <obj_property name="ElementShortName">[39][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[39][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[40]">
+         <obj_property name="ElementShortName">[40][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[40][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[41]">
+         <obj_property name="ElementShortName">[41][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[41][31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory">
+      <obj_property name="ElementShortName">memory[0:41][31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory[0:41][31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[0]">
+         <obj_property name="ElementShortName">[0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[1]">
+         <obj_property name="ElementShortName">[1][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[2]">
+         <obj_property name="ElementShortName">[2][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[3]">
+         <obj_property name="ElementShortName">[3][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[4]">
+         <obj_property name="ElementShortName">[4][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[5]">
+         <obj_property name="ElementShortName">[5][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[6]">
+         <obj_property name="ElementShortName">[6][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[7]">
+         <obj_property name="ElementShortName">[7][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[8]">
+         <obj_property name="ElementShortName">[8][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[9]">
+         <obj_property name="ElementShortName">[9][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[10]">
+         <obj_property name="ElementShortName">[10][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[10][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[11]">
+         <obj_property name="ElementShortName">[11][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[11][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[12]">
+         <obj_property name="ElementShortName">[12][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[12][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[13]">
+         <obj_property name="ElementShortName">[13][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[13][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[14]">
+         <obj_property name="ElementShortName">[14][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[14][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[15]">
+         <obj_property name="ElementShortName">[15][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[15][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[16]">
+         <obj_property name="ElementShortName">[16][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[16][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[17]">
+         <obj_property name="ElementShortName">[17][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[17][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[18]">
+         <obj_property name="ElementShortName">[18][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[18][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[19]">
+         <obj_property name="ElementShortName">[19][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[19][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[20]">
+         <obj_property name="ElementShortName">[20][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[20][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[21]">
+         <obj_property name="ElementShortName">[21][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[21][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[22]">
+         <obj_property name="ElementShortName">[22][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[22][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[23]">
+         <obj_property name="ElementShortName">[23][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[23][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[24]">
+         <obj_property name="ElementShortName">[24][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[24][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[25]">
+         <obj_property name="ElementShortName">[25][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[25][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[26]">
+         <obj_property name="ElementShortName">[26][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[26][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[27]">
+         <obj_property name="ElementShortName">[27][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[27][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[28]">
+         <obj_property name="ElementShortName">[28][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[28][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[29]">
+         <obj_property name="ElementShortName">[29][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[29][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[30]">
+         <obj_property name="ElementShortName">[30][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[30][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[31]">
+         <obj_property name="ElementShortName">[31][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[31][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[32]">
+         <obj_property name="ElementShortName">[32][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[32][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[33]">
+         <obj_property name="ElementShortName">[33][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[33][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[34]">
+         <obj_property name="ElementShortName">[34][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[34][31:0]</obj_property>
+         <obj_property name="Radix">REALRADIX</obj_property>
+         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
+         <obj_property name="radix_fractionWidth">24</obj_property>
+         <obj_property name="radix_otherWidth">8</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[35]">
+         <obj_property name="ElementShortName">[35][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[35][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[36]">
+         <obj_property name="ElementShortName">[36][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[36][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[37]">
+         <obj_property name="ElementShortName">[37][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[37][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[38]">
+         <obj_property name="ElementShortName">[38][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[38][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[39]">
+         <obj_property name="ElementShortName">[39][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[39][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[40]">
+         <obj_property name="ElementShortName">[40][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[40][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_6_inst /memory[41]">
+         <obj_property name="ElementShortName">[41][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[41][31:0]</obj_property>
+      </wvobject>
    </wvobject>
 </wave_config>
