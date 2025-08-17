@@ -25,9 +25,9 @@ module tb_top;
     ) dut (
         .clk(clk),
         .reset(reset),
-        .Qdin(Qdin),
-        .Kdin(Kdin),
-        .Vdin(Vdin),
+        .Qdina(Qdin),
+        .Kdina(Kdin),
+        .Vdina(Vdin),
         .done(done)
     );
 
