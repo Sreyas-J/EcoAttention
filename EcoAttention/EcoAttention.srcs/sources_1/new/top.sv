@@ -1,12 +1,12 @@
 `timescale 1ns / 1ps
 module top#(
-    parameter DATA_WIDTH = 32,
-    parameter Bc= 5, //Q: BrxD , K: BcxD, V: BcxD, 0:BrxBc
-    parameter Br= 5,
-    parameter D = 7
+    parameter DATA_WIDTH = 16,
+    parameter Bc= 4, //Q: BrxD , K: BcxD, V: BcxD, 0:BrxBc
+    parameter Br= 4,
+    parameter D = 32
 )(
     input logic clk,reset,
-    input logic [DATA_WIDTH-1:0] Qdina,Qdinb,Kdina,Kdinb,Vdina,Vdinb,
+    input logic [DATA_WIDTH*D-1:0] Qdina,Qdinb,Kdina,Kdinb,Vdina,Vdinb,
     output logic done
 );
     localparam int MAX_VAL = (Bc > Br) ? Bc*D : Br*D;
@@ -14,9 +14,18 @@ module top#(
     localparam int K_size = Bc*D;
     localparam int V_size = Bc*D;
     
-    logic addAval1,addAval2,addAready1,addAready2,addBval1,addBval2,addBready1,addBready2,sumVal1,sumVal2,sumReady1,sumReady2,divisorVal,divisorReady,dividendVal,dividendReady,qVal,qReady,eVal,eReady,xVal,xReady,greatVal,greatReady,lessVal,lessReady,compReady,compVal,mulAval,mulAready,mulBval,mulBready,prodVal,prodReady,Qena,Qwea,Qenb,Qweb,Kena,Kwea,Kenb,Kweb,Vena,Vwea,Venb,Vweb,Oen,Owe;
-    logic [DATA_WIDTH-1:0] addA1,addA2,addB1,addB2,sum1,sum2,dividend,divisor,q,x,less,great,comp,mulA,mulB,prod,Qdouta,Qdoutb,Kdouta,Kdoutb,Vdouta,Vdoutb,Odin,Odout;
-    logic [$clog2(MAX_VAL)-1:0] Qaddra,Qaddrb,Kaddra,Kaddrb,Vaddra,Vaddrb;
+    localparam int ADDS=16;
+    localparam int DIVS=2;
+    localparam int EXPS=4;
+    localparam int COMPS=16;
+    localparam int MULS=8;    
+    
+    logic addVal[0:ADDS-1],addReady[0:ADDS-1],mulVal[0:MULS-1],mulReady[0:MULS-1],Qena,Qwea,Qenb,Qweb,Kena,Kwea,Kenb,Kweb,Vena,Vwea,Venb,Vweb,Oen,Owe;
+    logic [DATA_WIDTH-1:0] addA[0:ADDS-1],addB[0:ADDS-1],sum[0:ADDS-1],mulA[0:MULS-1],mulB[0:MULS-1],prod[0:MULS-1];
+    logic [DATA_WIDTH*D-1:0] Qdouta,Qdoutb,Kdouta,Kdoutb,Vdouta,Vdoutb,Odin,Odout;
+    logic [$clog2(Br)-1:0] Qaddra,Qaddrb;
+    logic [$clog2(Bc)-1:0] Kaddra,Kaddrb,Vaddra,Vaddrb;
+
     logic [$clog2(MAX_VAL):0] cnt;
 //    logic [$clog2(Br)-1:0] I;
 //    logic [$clog2(Bc)-1:0] J;
@@ -25,80 +34,77 @@ module top#(
     logic [1:0] diffFlg,SsumFlg;
     
     // instantiate the HLS/AXI-Stream Adder IP
-    ADDER add1 (
-      .aclk(clk),
-      .s_axis_a_tvalid(addAval1),
-      .s_axis_a_tready(addAready1),
-      .s_axis_a_tdata(addA1),
-      .s_axis_b_tvalid(addBval1),
-      .s_axis_b_tready(addBready1),
-      .s_axis_b_tdata(addB1),
-      .m_axis_result_tvalid(sumVal1),
-      .m_axis_result_tready(sumReady1),
-      .m_axis_result_tdata(sum1)
-    );
+    genvar i;
+    generate
+        for (i = 0; i < ADDS; i = i + 1) begin : gen_adders
+            // Instance name will be gen_adders[i].add_inst
+            ADDER add_inst (
+              .aclk(clk),
+              .s_axis_a_tvalid(addVal[i]),
+              .s_axis_a_tready(s_axis_a_tready),
+              .s_axis_a_tdata(addA[i]),
+              .s_axis_b_tvalid(addVal[i]),
+              .s_axis_b_tready(s_axis_b_tready),
+              .s_axis_b_tdata(addB[i]),
+              .m_axis_result_tvalid(m_axis_result_tvalid),
+              .m_axis_result_tready(addReady[i]),
+              .m_axis_result_tdata(sum[i])
+            );        
+        end
+    endgenerate
     
-    ADDER add2 (
-      .aclk(clk),
-      .s_axis_a_tvalid(addAval2),
-      .s_axis_a_tready(addAready2),
-      .s_axis_a_tdata(addA2),
-      .s_axis_b_tvalid(addBval2),
-      .s_axis_b_tready(addBready2),
-      .s_axis_b_tdata(addB2),
-      .m_axis_result_tvalid(sumVal2),
-      .m_axis_result_tready(sumReady2),
-      .m_axis_result_tdata(sum2)
-    );
+//    DIV div (
+//      .aclk(clk),                                  // input wire aclk
+//      .s_axis_a_tvalid(dividendVal),            // input wire s_axis_a_tvalid
+//      .s_axis_a_tready(dividendReady),            // output wire s_axis_a_tready
+//      .s_axis_a_tdata(dividend),              // input wire [31 : 0] s_axis_a_tdata
+//      .s_axis_b_tvalid(divisorVal),            // input wire s_axis_b_tvalid
+//      .s_axis_b_tready(divisorReady),            // output wire s_axis_b_tready
+//      .s_axis_b_tdata(divisor),              // input wire [31 : 0] s_axis_b_tdata
+//      .m_axis_result_tvalid(qVal),  // output wire m_axis_result_tvalid
+//      .m_axis_result_tready(qReady),  // input wire m_axis_result_tready
+//      .m_axis_result_tdata(q)    // output wire [31 : 0] m_axis_result_tdata
+//    );
     
-    DIV div (
-      .aclk(clk),                                  // input wire aclk
-      .s_axis_a_tvalid(dividendVal),            // input wire s_axis_a_tvalid
-      .s_axis_a_tready(dividendReady),            // output wire s_axis_a_tready
-      .s_axis_a_tdata(dividend),              // input wire [31 : 0] s_axis_a_tdata
-      .s_axis_b_tvalid(divisorVal),            // input wire s_axis_b_tvalid
-      .s_axis_b_tready(divisorReady),            // output wire s_axis_b_tready
-      .s_axis_b_tdata(divisor),              // input wire [31 : 0] s_axis_b_tdata
-      .m_axis_result_tvalid(qVal),  // output wire m_axis_result_tvalid
-      .m_axis_result_tready(qReady),  // input wire m_axis_result_tready
-      .m_axis_result_tdata(q)    // output wire [31 : 0] m_axis_result_tdata
-    );
+//    EXP exp (
+//      .aclk(clk),                                  // input wire aclk
+//      .s_axis_a_tvalid(eVal),            // input wire s_axis_a_tvalid
+//      .s_axis_a_tready(eReady),            // output wire s_axis_a_tready
+//      .s_axis_a_tdata($shortrealtobits(2.71828)),              // input wire [31 : 0] s_axis_a_tdata
+//      .m_axis_result_tvalid(xVal),  // output wire m_axis_result_tvalid
+//      .m_axis_result_tready(xReady),  // input wire m_axis_result_tready
+//      .m_axis_result_tdata(x)    // output wire [31 : 0] m_axis_result_tdata
+//    );
     
-    EXP exp (
-      .aclk(clk),                                  // input wire aclk
-      .s_axis_a_tvalid(eVal),            // input wire s_axis_a_tvalid
-      .s_axis_a_tready(eReady),            // output wire s_axis_a_tready
-      .s_axis_a_tdata($shortrealtobits(2.71828)),              // input wire [31 : 0] s_axis_a_tdata
-      .m_axis_result_tvalid(xVal),  // output wire m_axis_result_tvalid
-      .m_axis_result_tready(xReady),  // input wire m_axis_result_tready
-      .m_axis_result_tdata(x)    // output wire [31 : 0] m_axis_result_tdata
-    );
-    
-    GREATERthan greater (
-      .aclk(clk),                                  // input wire aclk
-      .s_axis_a_tvalid(greatVal),            // input wire s_axis_a_tvalid
-      .s_axis_a_tready(greatReady),            // output wire s_axis_a_tready
-      .s_axis_a_tdata(great),              // input wire [31 : 0] s_axis_a_tdata
-      .s_axis_b_tvalid(lessVal),            // input wire s_axis_b_tvalid
-      .s_axis_b_tready(lessReady),            // output wire s_axis_b_tready
-      .s_axis_b_tdata(less),              // input wire [31 : 0] s_axis_b_tdata
-      .m_axis_result_tvalid(compVal),  // output wire m_axis_result_tvalid
-      .m_axis_result_tready(compReady),  // input wire m_axis_result_tready
-      .m_axis_result_tdata(comp)    // output wire [7 : 0] m_axis_result_tdata
-    );
+//    GREATERthan greater (
+//      .aclk(clk),                                  // input wire aclk
+//      .s_axis_a_tvalid(greatVal),            // input wire s_axis_a_tvalid
+//      .s_axis_a_tready(greatReady),            // output wire s_axis_a_tready
+//      .s_axis_a_tdata(great),              // input wire [31 : 0] s_axis_a_tdata
+//      .s_axis_b_tvalid(lessVal),            // input wire s_axis_b_tvalid
+//      .s_axis_b_tready(lessReady),            // output wire s_axis_b_tready
+//      .s_axis_b_tdata(less),              // input wire [31 : 0] s_axis_b_tdata
+//      .m_axis_result_tvalid(compVal),  // output wire m_axis_result_tvalid
+//      .m_axis_result_tready(compReady),  // input wire m_axis_result_tready
+//      .m_axis_result_tdata(comp)    // output wire [7 : 0] m_axis_result_tdata
+//    );
 
-    MUL mul (
-      .aclk(clk),                                  // input wire aclk
-      .s_axis_a_tvalid(mulAval),            // input wire s_axis_a_tvalid
-      .s_axis_a_tready(mulAready),            // output wire s_axis_a_tready
-      .s_axis_a_tdata(mulA),              // input wire [31 : 0] s_axis_a_tdata
-      .s_axis_b_tvalid(mulBval),            // input wire s_axis_b_tvalid
-      .s_axis_b_tready(mulBready),            // output wire s_axis_b_tready
-      .s_axis_b_tdata(mulB),              // input wire [31 : 0] s_axis_b_tdata
-      .m_axis_result_tvalid(prodVal),  // output wire m_axis_result_tvalid
-      .m_axis_result_tready(prodReady),  // input wire m_axis_result_tready
-      .m_axis_result_tdata(prod)    // output wire [31 : 0] m_axis_result_tdata
-    );
+    generate
+        for (i = 0; i < ADDS; i = i + 1) begin : gen_muls
+            MUL mul (
+              .aclk(clk),                                  // input wire aclk
+              .s_axis_a_tvalid(mulAval),            // input wire s_axis_a_tvalid
+              .s_axis_a_tready(mulAready),            // output wire s_axis_a_tready
+              .s_axis_a_tdata(mulA),              // input wire [31 : 0] s_axis_a_tdata
+              .s_axis_b_tvalid(mulBval),            // input wire s_axis_b_tvalid
+              .s_axis_b_tready(mulBready),            // output wire s_axis_b_tready
+              .s_axis_b_tdata(mulB),              // input wire [31 : 0] s_axis_b_tdata
+              .m_axis_result_tvalid(prodVal),  // output wire m_axis_result_tvalid
+              .m_axis_result_tready(prodReady),  // input wire m_axis_result_tready
+              .m_axis_result_tdata(prod)    // output wire [31 : 0] m_axis_result_tdata
+            );
+        end
+    endgenerate
     
     Q BRAMq (
       .clka(clk),    // input wire clka
@@ -176,57 +182,18 @@ module top#(
         else if(~done)begin
 
             if(loadFlg)begin
-                if((Qaddra<Br || Kaddra<Bc) && diffFlg==0) diffFlg[0]<=1;
-                if(Qaddra<Q_size-1) Qaddra<=Qaddra+1;
-                if(Kaddra<K_size-1) begin
+//                if((Qaddra<Br || Kaddra<Bc) && diffFlg==0) diffFlg[0]<=1;
+                if(Qaddra<Br-1) Qaddra<=Qaddra+1;
+                if(Bc<K_size-1) begin
                     Kaddra<=Kaddra+1;
                     Vaddra<=Vaddra+1;
                 end
 
-                if(Qaddra>Q_size && Kaddra>K_size) begin
+                if(Qaddra>Br && Kaddra>Bc) begin
                     loadFlg<=1'b0;
                     cnt   <= 0;
                 end
             end
-            
-            if(diffFlg[1]==1)begin
-                if(SsumFlg==0)begin
-                    if(cnt==1)begin
-                        SsumFlg<=1'b1;
-                        cnt<=0;
-                    end
-                    else cnt<=cnt+1;
-                end
-                
-                addA1<=Qdoutb;
-                addB1<={~Kdoutb[DATA_WIDTH-1],Kdoutb[DATA_WIDTH-2:0]};
-            end
-            else begin
-                if(cnt==2)begin
-                    diffFlg[1]=1;
-                    cnt<=0;
-                end
-                else cnt<=cnt+1;
-            end
-            
-            if(diffFlg[0]==1)begin
-                Qaddrb<=Qaddrb+1;
-                Kaddrb<=Kaddrb+1;
-                if(Qaddrb>=Br && Kaddrb>=Bc) diffFlg[0]=0;
-            end
-            
-            if(SsumFlg==2)begin
-                addA2<=sum1;
-                addB2<=sum2;
-                
-                cnt<=1-cnt;
-            end
-            else if(SsumFlg==1)begin
-                addA2<=sum1;
-                addB2<=0;
-                SsumFlg<=2;
-            end
-//            endcase
         end
     end
     
@@ -246,31 +213,6 @@ module top#(
         Kweb=1'b0;
         Vwea=we;
         Vweb=1'b0;
-//        cmplt=Qaddra<Br || Kaddra<Bc;
-        
-        //Condn will be updated
-        if(diffFlg[1]==1)begin
-            addAval1=1'b1;
-            addBval1=1'b1;
-            sumReady1=1'b1;
-        end
-        else begin
-            addAval1=1'b0;
-            addBval1=1'b0;
-            sumReady1=1'b0;
-        end
-        
-        //Condn will be updated
-        if(SsumFlg)begin
-            addAval2=1'b1;
-            addBval2=1'b1;
-            sumReady2=1'b1;
-        end
-        else begin
-            addAval2=1'b0;
-            addBval2=1'b0;
-            sumReady2=1'b0;
-        end
         
     end
 

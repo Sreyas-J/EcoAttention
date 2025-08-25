@@ -58,12 +58,12 @@ Q your_instance_name (
   .clka(clka),    // input wire clka
   .ena(ena),      // input wire ena
   .wea(wea),      // input wire [0 : 0] wea
-  .addra(addra),  // input wire [5 : 0] addra
-  .dina(dina),    // input wire [31 : 0] dina
+  .addra(addra),  // input wire [1 : 0] addra
+  .dina(dina),    // input wire [2047 : 0] dina
   .clkb(clkb),    // input wire clkb
   .enb(enb),      // input wire enb
-  .addrb(addrb),  // input wire [5 : 0] addrb
-  .doutb(doutb)  // output wire [31 : 0] doutb
+  .addrb(addrb),  // input wire [1 : 0] addrb
+  .doutb(doutb)  // output wire [2047 : 0] doutb
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

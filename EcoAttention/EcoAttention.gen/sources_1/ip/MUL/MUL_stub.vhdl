@@ -2,10 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
--- Date        : Mon Aug 11 21:59:00 2025
+-- Date        : Mon Aug 11 21:58:59 2025
 -- Host        : dell-Inspiron-5415 running 64-bit Ubuntu 24.04.2 LTS
--- Command     : write_vhdl -force -mode synth_stub
---               /home/dell/Desktop/projects/RISCVextension/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top MUL -prefix
+--               MUL_ MUL_stub.vhdl
 -- Design      : MUL
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35tcpg236-1

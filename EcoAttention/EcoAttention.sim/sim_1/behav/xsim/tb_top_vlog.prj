@@ -1,13 +1,10 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
+"../../../../EcoAttention.gen/sources_1/ip/MUL/sim/MUL.v" \
+"../../../../EcoAttention.gen/sources_1/ip/ADDER/sim/ADDER.v" \
 "../../../../EcoAttention.gen/sources_1/ip/O/sim/O.v" \
 "../../../../EcoAttention.gen/sources_1/ip/K/sim/K.v" \
 "../../../../EcoAttention.gen/sources_1/ip/Q/sim/Q.v" \
-"../../../../EcoAttention.gen/sources_1/ip/MUL/sim/MUL.v" \
-"../../../../EcoAttention.gen/sources_1/ip/GREATERthan/sim/GREATERthan.v" \
-"../../../../EcoAttention.gen/sources_1/ip/EXP/sim/EXP.v" \
-"../../../../EcoAttention.gen/sources_1/ip/DIV/sim/DIV.v" \
-"../../../../EcoAttention.gen/sources_1/ip/ADDER/sim/ADDER.v" \
 
 sv xil_defaultlib  \
 "../../../../EcoAttention.srcs/sources_1/new/top.sv" \
