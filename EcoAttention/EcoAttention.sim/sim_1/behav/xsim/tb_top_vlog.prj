@@ -1,6 +1,5 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
-"../../../../EcoAttention.gen/sources_1/ip/MUL/sim/MUL.v" \
 "../../../../EcoAttention.gen/sources_1/ip/ADDER/sim/ADDER.v" \
 "../../../../EcoAttention.gen/sources_1/ip/O/sim/O.v" \
 "../../../../EcoAttention.gen/sources_1/ip/K/sim/K.v" \

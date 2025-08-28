@@ -328,12 +328,12 @@ architecture tb of tb_EXP is
   -- A operand slave channel signals
   signal s_axis_a_tvalid         : std_logic := '0';  -- payload is valid
   signal s_axis_a_tready         : std_logic := '1';  -- slave is ready
-  signal s_axis_a_tdata          : std_logic_vector(15 downto 0) := (others => '0');  -- data payload
+  signal s_axis_a_tdata          : std_logic_vector(31 downto 0) := (others => '0');  -- data payload
 
   -- Result master channel signals
   signal m_axis_result_tvalid    : std_logic := '0';
   signal m_axis_result_tready    : std_logic := '1';
-  signal m_axis_result_tdata     : std_logic_vector(15 downto 0) := (others => '0');  -- data payload
+  signal m_axis_result_tdata     : std_logic_vector(31 downto 0) := (others => '0');  -- data payload
 
   -----------------------------------------------------------------------
   -- Aliases for AXI channel TDATA and TUSER fields
@@ -346,8 +346,8 @@ architecture tb of tb_EXP is
   signal s_axis_a_tdata_real    : real := 0.0;  -- floating-point value using VHDL 'real' data type
   signal s_axis_a_tdata_special : floating_point_special_t := normal;  -- indicate special values
   signal s_axis_a_tdata_sign    : std_logic := '0';  -- sign bit
-  signal s_axis_a_tdata_exp     : std_logic_vector(4 downto 0) := (others => '0');  -- exponent (biased)
-  signal s_axis_a_tdata_mant    : std_logic_vector(9 downto 0) := (others => '0');  -- mantissa (without hidden bit)
+  signal s_axis_a_tdata_exp     : std_logic_vector(7 downto 0) := (others => '0');  -- exponent (biased)
+  signal s_axis_a_tdata_mant    : std_logic_vector(22 downto 0) := (others => '0');  -- mantissa (without hidden bit)
 
 
 
@@ -355,8 +355,8 @@ architecture tb of tb_EXP is
   signal m_axis_result_tdata_real     : real := 0.0;  -- floating-point value using VHDL 'real' data type
   signal m_axis_result_tdata_special  : floating_point_special_t := normal;  -- indicate special values
   signal m_axis_result_tdata_sign     : std_logic := '0';  -- sign bit
-  signal m_axis_result_tdata_exp     : std_logic_vector(4 downto 0) := (others => '0');  -- exponent (biased)
-  signal m_axis_result_tdata_mant    : std_logic_vector(9 downto 0) := (others => '0');  -- mantissa (without hidden bit)
+  signal m_axis_result_tdata_exp     : std_logic_vector(7 downto 0) := (others => '0');  -- exponent (biased)
+  signal m_axis_result_tdata_mant    : std_logic_vector(22 downto 0) := (others => '0');  -- mantissa (without hidden bit)
 
 begin
 
@@ -444,7 +444,7 @@ begin
   stimuli_a : process
 
     -- Procedure to drive a single transaction on the A channel
-    procedure drive_a_single(tdata : std_logic_vector(15 downto 0);
+    procedure drive_a_single(tdata : std_logic_vector(31 downto 0);
                              variable abort : out boolean) is
     begin
       -- Drive AXI signals
@@ -469,14 +469,14 @@ begin
                       count   : positive := 1;
                       step    : real     := 0.0) is
       variable value     : real := data;
-      variable value_slv : std_logic_vector(15 downto 0);
-      variable tdata     : std_logic_vector(15 downto 0);
+      variable value_slv : std_logic_vector(31 downto 0);
+      variable tdata     : std_logic_vector(31 downto 0);
       variable ip_count  : natural := 0;
       variable abort     : boolean;
     begin
       count_loop : loop
         -- Convert data from real to std_logic_vector
-        value_slv := real_to_flt(value, special, 16, 11);
+        value_slv := real_to_flt(value, special, 32, 24);
         -- Set up AXI signals
         tdata := value_slv;
         -- Drive AXI transaction
@@ -494,7 +494,7 @@ begin
 
 
 
-    variable tdata : std_logic_vector(15 downto 0) := (others => '0');
+    variable tdata : std_logic_vector(31 downto 0) := (others => '0');
     variable abort : boolean;
 
   begin
@@ -575,7 +575,7 @@ begin
     -- Previous values of RESULT master channel signals
     variable result_tvalid_prev : std_logic := '0';
     variable result_tready_prev : std_logic := '1';
-    variable result_tdata_prev  : std_logic_vector(15 downto 0) := (others => '0');
+    variable result_tdata_prev  : std_logic_vector(31 downto 0) := (others => '0');
   begin
 
     -- Check outputs T_STROBE time after rising edge of clock
@@ -621,18 +621,18 @@ begin
   -----------------------------------------------------------------------
 
   -- A operand slave channel alias signals
-  s_axis_a_tdata_real    <= flt_to_real(s_axis_a_tdata(15 downto 0), 16, 11);
-  s_axis_a_tdata_special <= flt_to_special(s_axis_a_tdata(15 downto 0), 16, 11);
-  s_axis_a_tdata_sign    <= s_axis_a_tdata(15);
-  s_axis_a_tdata_exp     <= s_axis_a_tdata(14 downto 10);
-  s_axis_a_tdata_mant    <= s_axis_a_tdata(9 downto 0);
+  s_axis_a_tdata_real    <= flt_to_real(s_axis_a_tdata(31 downto 0), 32, 24);
+  s_axis_a_tdata_special <= flt_to_special(s_axis_a_tdata(31 downto 0), 32, 24);
+  s_axis_a_tdata_sign    <= s_axis_a_tdata(31);
+  s_axis_a_tdata_exp     <= s_axis_a_tdata(30 downto 23);
+  s_axis_a_tdata_mant    <= s_axis_a_tdata(22 downto 0);
 
   -- Result master channel alias signals
-  m_axis_result_tdata_real     <= flt_to_real(m_axis_result_tdata(15 downto 0), 16, 11) when m_axis_result_tvalid = '1';
-  m_axis_result_tdata_special  <= flt_to_special(m_axis_result_tdata(15 downto 0), 16, 11) when m_axis_result_tvalid = '1';
-  m_axis_result_tdata_sign     <= m_axis_result_tdata(15) when m_axis_result_tvalid = '1';
-  m_axis_result_tdata_exp      <= m_axis_result_tdata(14 downto 10) when m_axis_result_tvalid = '1';
-  m_axis_result_tdata_mant     <= m_axis_result_tdata(9 downto 0) when m_axis_result_tvalid = '1';
+  m_axis_result_tdata_real     <= flt_to_real(m_axis_result_tdata(31 downto 0), 32, 24) when m_axis_result_tvalid = '1';
+  m_axis_result_tdata_special  <= flt_to_special(m_axis_result_tdata(31 downto 0), 32, 24) when m_axis_result_tvalid = '1';
+  m_axis_result_tdata_sign     <= m_axis_result_tdata(31) when m_axis_result_tvalid = '1';
+  m_axis_result_tdata_exp      <= m_axis_result_tdata(30 downto 23) when m_axis_result_tvalid = '1';
+  m_axis_result_tdata_mant     <= m_axis_result_tdata(22 downto 0) when m_axis_result_tvalid = '1';
 
 end tb;
 

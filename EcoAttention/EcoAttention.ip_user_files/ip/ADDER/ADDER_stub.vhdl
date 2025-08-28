@@ -1,11 +1,11 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
--- Date        : Mon Aug 18 22:35:59 2025
--- Host        : dell-Inspiron-5415 running 64-bit Ubuntu 24.04.2 LTS
+-- Tool Version: Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+-- Date        : Tue Aug 26 19:16:01 2025
+-- Host        : sk-Standard-PC-Q35-ICH9-2009 running 64-bit Ubuntu 22.04.5 LTS
 -- Command     : write_vhdl -force -mode synth_stub
---               /home/dell/Desktop/projects/RISCVextension/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER_stub.vhdl
+--               /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER_stub.vhdl
 -- Design      : ADDER
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35tcpg236-1
@@ -18,13 +18,13 @@ entity ADDER is
     aclk : in STD_LOGIC;
     s_axis_a_tvalid : in STD_LOGIC;
     s_axis_a_tready : out STD_LOGIC;
-    s_axis_a_tdata : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    s_axis_a_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s_axis_b_tvalid : in STD_LOGIC;
     s_axis_b_tready : out STD_LOGIC;
-    s_axis_b_tdata : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    s_axis_b_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
     m_axis_result_tvalid : out STD_LOGIC;
     m_axis_result_tready : in STD_LOGIC;
-    m_axis_result_tdata : out STD_LOGIC_VECTOR ( 15 downto 0 )
+    m_axis_result_tdata : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
 
 end ADDER;
@@ -33,8 +33,8 @@ architecture stub of ADDER is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "aclk,s_axis_a_tvalid,s_axis_a_tready,s_axis_a_tdata[15:0],s_axis_b_tvalid,s_axis_b_tready,s_axis_b_tdata[15:0],m_axis_result_tvalid,m_axis_result_tready,m_axis_result_tdata[15:0]";
+attribute black_box_pad_pin of stub : architecture is "aclk,s_axis_a_tvalid,s_axis_a_tready,s_axis_a_tdata[31:0],s_axis_b_tvalid,s_axis_b_tready,s_axis_b_tdata[31:0],m_axis_result_tvalid,m_axis_result_tready,m_axis_result_tdata[31:0]";
 attribute X_CORE_INFO : string;
-attribute X_CORE_INFO of stub : architecture is "floating_point_v7_1_15,Vivado 2023.1";
+attribute X_CORE_INFO of stub : architecture is "floating_point_v7_1_16,Vivado 2023.2";
 begin
 end;

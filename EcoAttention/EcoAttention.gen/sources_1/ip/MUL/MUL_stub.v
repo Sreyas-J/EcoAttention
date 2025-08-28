@@ -1,11 +1,11 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
-// Date        : Mon Aug 11 21:58:59 2025
-// Host        : dell-Inspiron-5415 running 64-bit Ubuntu 24.04.2 LTS
-// Command     : write_verilog -force -mode synth_stub -rename_top MUL -prefix
-//               MUL_ MUL_stub.v
+// Tool Version: Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+// Date        : Mon Aug 25 19:01:20 2025
+// Host        : sk-Standard-PC-Q35-ICH9-2009 running 64-bit Ubuntu 22.04.5 LTS
+// Command     : write_verilog -force -mode synth_stub
+//               /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL_stub.v
 // Design      : MUL
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a35tcpg236-1
@@ -14,7 +14,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* X_CORE_INFO = "floating_point_v7_1_15,Vivado 2023.1" *)
+(* X_CORE_INFO = "floating_point_v7_1_16,Vivado 2023.2" *)
 module MUL(aclk, s_axis_a_tvalid, s_axis_a_tready, 
   s_axis_a_tdata, s_axis_b_tvalid, s_axis_b_tready, s_axis_b_tdata, m_axis_result_tvalid, 
   m_axis_result_tready, m_axis_result_tdata)

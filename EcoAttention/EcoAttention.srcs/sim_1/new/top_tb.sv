@@ -3,20 +3,21 @@
 module tb_top;
 
     // Parameters
-    localparam DATA_WIDTH = 32;
-    localparam Br = 4; // Q rows
-    localparam Bc = 4; // K/V rows
-    localparam D  = 64; // embedding dim (now 64)
+    localparam int DATA_WIDTH = 32;
+    localparam int Br = 4; // Q rows
+    localparam int Bc = 4; // K/V rows
+    localparam int D  = 16; // embedding dim
 
     // Clock/Reset
     logic clk;
     logic reset;
 
-    // DUT inputs/outputs: wide buses carrying D values (packed)
-    logic [DATA_WIDTH*D-1:0] Qdina, Kdina, Vdina;
+    // DUT inputs/outputs
+    // pack D lanes each DATA_WIDTH wide: [ DATA_WIDTH*D-1 : 0 ]
+    logic [DATA_WIDTH*D-1:0] Qdin, Kdin, Vdin;
     logic done;
 
-    // Instantiate DUT (assumes top's port widths match these wide buses)
+    // Instantiate DUT
     top #(
         .DATA_WIDTH(DATA_WIDTH),
         .Br(Br),
@@ -25,86 +26,80 @@ module tb_top;
     ) dut (
         .clk(clk),
         .reset(reset),
-        .Qdina(Qdina),
-        .Kdina(Kdina),
-        .Vdina(Vdina),
+        .Qdina(Qdin),
+        .Kdina(Kdin),
+        .Vdina(Vdin),
         .done(done)
     );
 
     // Clock generation
     always #5 clk = ~clk;
-
-    // Matrices (Br x D and Bc x D)
+   
+    // Hardcoded floating-point matrices (shortreal)
     shortreal Qmat [0:Br-1][0:D-1];
     shortreal Kmat [0:Bc-1][0:D-1];
     shortreal Vmat [0:Bc-1][0:D-1];
-
-    // temporary packed vectors (one row worth of D elements, each DATA_WIDTH bits)
-    logic [DATA_WIDTH*D-1:0] q_row_packed, k_row_packed, v_row_packed;
+    int col;
 
     initial begin
         clk = 0;
         reset = 1;
-        Qdina = '0;
-        Kdina = '0;
-        Vdina = '0;
+        Qdin = '0;
+        Kdin = '0;
+        Vdin = '0;
 
-        // --- Fill matrices with an arbitrary deterministic pattern ---
-        // Q: base 1.0 + row index + column_index * 0.001
-        // K: base 10.0 + row index + column_index * 0.001
-        // V: base 20.0 + row index + column_index * 0.001
-        for (int i = 0; i < Br; i++) begin
-            for (int j = 0; j < D; j++) begin
-                Qmat[i][j] = 1.0 + real'(i) + real'(j) * 0.001;
+        // Fill Q/K/V matrices programmatically as before
+        for (int i = 0; i < Br; i = i + 1) begin
+            for (int j = 0; j < D; j = j + 1) begin
+                Qmat[i][j] = shortreal'( i + j * 0.1 );
             end
         end
 
-        for (int i = 0; i < Bc; i++) begin
-            for (int j = 0; j < D; j++) begin
-                Kmat[i][j] = 10.0 + real'(i) + real'(j) * 0.001;
-                Vmat[i][j] = 20.0 + real'(i) + real'(j) * 0.001;
+        for (int i = 0; i < Bc; i = i + 1) begin
+            for (int j = 0; j < D; j = j + 1) begin
+                Kmat[i][j] = shortreal'( i * 2 + j * 0.2 );
+                Vmat[i][j] = shortreal'( i * 3 + j * 0.3 );
             end
         end
-        // -------------------------------------------------------------
 
         // Release reset
         repeat (2) @(posedge clk);
         reset = 0;
 
-        // Row-major parallel load: pack D elements into one wide bus and write once per row
-        for (int i = 0; i < Br; i++) begin
-            // clear packed rows
-            q_row_packed = '0;
-            k_row_packed = '0;
-            v_row_packed = '0;
+        // Row-major **parallel** load: send up to D lanes per cycle
+        for (int i = 0; i < Br; i = i + 1) begin
+            for (int j = 0; j < D; j = j + D) begin
+                // default to zero each cycle
+                Qdin = '0;
+                Kdin = '0;
+                Vdin = '0;
 
-            // pack Q row
-            for (int j = 0; j < D; j++) begin
-                q_row_packed[j*DATA_WIDTH +: DATA_WIDTH] = $shortrealtobits(Qmat[i][j]);
-            end
-
-            // pack K and V row if within Bc, else leave zero
-            if (i < Bc) begin
-                for (int j = 0; j < D; j++) begin
-                    k_row_packed[j*DATA_WIDTH +: DATA_WIDTH] = $shortrealtobits(Kmat[i][j]);
-                    v_row_packed[j*DATA_WIDTH +: DATA_WIDTH] = $shortrealtobits(Vmat[i][j]);
+                // pack up to D lanes
+                for (int k = 0; k < D; k = k + 1) begin
+                    col = j + k;
+                    if (col < D) begin
+                        // pack lane k: the top index for lane k is (k+1)*DATA_WIDTH-1
+                        Qdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = $shortrealtobits(Qmat[i][col]);
+                        if (i < Bc) begin
+                            Kdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = $shortrealtobits(Kmat[i][col]);
+                            Vdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = $shortrealtobits(Vmat[i][col]);
+                        end
+                    end else begin
+                        // col >= D -> leave lane zero (padding)
+                        Qdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = '0;
+                        Kdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = '0;
+                        Vdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = '0;
+                    end
                 end
+
+                // Drive DUT for one clock with packed lanes
+                @(posedge clk);
             end
-
-            // Drive the DUT wide inputs in one cycle (D values concatenated)
-            Qdina = q_row_packed;
-            Kdina = k_row_packed;
-            Vdina = v_row_packed;
-
-            @(posedge clk);
         end
 
-        // Optionally clear inputs or hold them low after sending
-        Qdina = '0;
-        Kdina = '0;
-        Vdina = '0;
-
+//        $display("\nData load complete. Waiting for done...");
         wait (done);
+//        $display("Done at time %0t", $time);
         $stop;
     end
 

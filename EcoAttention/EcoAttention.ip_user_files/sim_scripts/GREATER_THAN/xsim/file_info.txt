@@ -1,0 +1,2 @@
+GREATER_THAN.v,verilog,xil_defaultlib,../../../../EcoAttention.gen/sources_1/ip/GREATER_THAN/sim/GREATER_THAN.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

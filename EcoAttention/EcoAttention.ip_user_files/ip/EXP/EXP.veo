@@ -11,7 +11,7 @@
 // otherwise provided in a valid license issued to you by
 // AMD, and to the maximum extent permitted by applicable
 // law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
-// WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
+// WITH ALL FAULTS, AND AMD HEREBY DISCLAIMS ALL WARRANTIES
 // AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
 // BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
 // INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
@@ -47,7 +47,7 @@
 // DO NOT MODIFY THIS FILE.
 
 // IP VLNV: xilinx.com:ip:floating_point:7.1
-// IP Revision: 15
+// IP Revision: 16
 
 // The following must be inserted into your Verilog file for this
 // core to be instantiated. Change the instance name and port connections
@@ -58,10 +58,10 @@ EXP your_instance_name (
   .aclk(aclk),                                  // input wire aclk
   .s_axis_a_tvalid(s_axis_a_tvalid),            // input wire s_axis_a_tvalid
   .s_axis_a_tready(s_axis_a_tready),            // output wire s_axis_a_tready
-  .s_axis_a_tdata(s_axis_a_tdata),              // input wire [15 : 0] s_axis_a_tdata
+  .s_axis_a_tdata(s_axis_a_tdata),              // input wire [31 : 0] s_axis_a_tdata
   .m_axis_result_tvalid(m_axis_result_tvalid),  // output wire m_axis_result_tvalid
   .m_axis_result_tready(m_axis_result_tready),  // input wire m_axis_result_tready
-  .m_axis_result_tdata(m_axis_result_tdata)    // output wire [15 : 0] m_axis_result_tdata
+  .m_axis_result_tdata(m_axis_result_tdata)    // output wire [31 : 0] m_axis_result_tdata
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

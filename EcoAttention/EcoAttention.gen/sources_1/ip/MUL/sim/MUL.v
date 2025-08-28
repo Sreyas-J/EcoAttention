@@ -11,7 +11,7 @@
 // otherwise provided in a valid license issued to you by
 // AMD, and to the maximum extent permitted by applicable
 // law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
-// WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
+// WITH ALL FAULTS, AND AMD HEREBY DISCLAIMS ALL WARRANTIES
 // AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
 // BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
 // INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:ip:floating_point:7.1
-// IP Revision: 15
+// IP Revision: 16
 
 `timescale 1ns/1ps
 
@@ -91,7 +91,7 @@ input wire m_axis_result_tready;
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 M_AXIS_RESULT TDATA" *)
 output wire [31 : 0] m_axis_result_tdata;
 
-  floating_point_v7_1_15 #(
+  floating_point_v7_1_16 #(
     .C_XDEVICEFAMILY("artix7"),
     .C_PART("xc7a35tcpg236-1"),
     .C_HAS_ADD(0),
@@ -132,9 +132,9 @@ output wire [31 : 0] m_axis_result_tdata;
     .C_MULT_USAGE(2),
     .C_BRAM_USAGE(0),
     .C_RATE(1),
-    .C_ACCUM_INPUT_MSB(32),
+    .C_ACCUM_INPUT_MSB(15),
     .C_ACCUM_MSB(32),
-    .C_ACCUM_LSB(-31),
+    .C_ACCUM_LSB(-24),
     .C_HAS_UNDERFLOW(0),
     .C_HAS_OVERFLOW(0),
     .C_HAS_INVALID_OP(0),
