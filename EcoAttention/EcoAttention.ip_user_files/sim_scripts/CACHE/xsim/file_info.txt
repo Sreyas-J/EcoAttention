@@ -1,0 +1,2 @@
+CACHE.v,verilog,xil_defaultlib,../../../../EcoAttention.gen/sources_1/ip/CACHE/sim/CACHE.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

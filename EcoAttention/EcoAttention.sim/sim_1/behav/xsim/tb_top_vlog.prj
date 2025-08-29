@@ -2,6 +2,7 @@
 verilog xil_defaultlib  \
 "../../../../EcoAttention.gen/sources_1/ip/ADDER/sim/ADDER.v" \
 "../../../../EcoAttention.gen/sources_1/ip/O/sim/O.v" \
+"../../../../EcoAttention.gen/sources_1/ip/CACHE/sim/CACHE.v" \
 "../../../../EcoAttention.gen/sources_1/ip/K/sim/K.v" \
 "../../../../EcoAttention.gen/sources_1/ip/Q/sim/Q.v" \
 

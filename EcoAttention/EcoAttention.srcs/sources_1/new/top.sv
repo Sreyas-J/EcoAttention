@@ -19,14 +19,18 @@ module top#(
     localparam int EXPS=2;
     localparam int COMPS=8;
     localparam int MULS=4; 
+    localparam int TOTAL_ADDS = ADDS*1.5;
+    localparam int MAX_CACHE = Bc*(D/ADDS)-1;
     
     localparam logic [DATA_WIDTH-1:0] MSB_MASK = {1'b1, {(DATA_WIDTH-1){1'b0}}};   
     
-    logic addVal[0:ADDS-1],addReady[0:ADDS-1],mulVal[0:MULS-1],mulReady[0:MULS-1],Qena,Qwea,Qenb,Qweb,Kena,Kwea,Kenb,Kweb,Vena,Vwea,Venb,Vweb,Oen,Owe;
-    logic [DATA_WIDTH-1:0] addA[0:ADDS-1],addB[0:ADDS-1],sum[0:ADDS-1],mulA[0:MULS-1],mulB[0:MULS-1],prod[0:MULS-1];
+    logic addVal[0:TOTAL_ADDS-1],addReady[0:TOTAL_ADDS-1],mulVal[0:MULS-1],mulReady[0:MULS-1],Qena,Qwea,Qenb,Qweb,Kena,Kwea,Kenb,Vena,Vwea,Venb,Cena,Cwea,Cenb,Oen,Owe;
+    logic [DATA_WIDTH-1:0] addA[0:TOTAL_ADDS-1],addB[0:TOTAL_ADDS-1],sum[0:TOTAL_ADDS-1],mulA[0:MULS-1],mulB[0:MULS-1],prod[0:MULS-1];
     logic [DATA_WIDTH*D-1:0] Qdouta,Qdoutb,Kdouta,Kdoutb,Vdouta,Vdoutb,Odin,Odout;
+    logic [DATA_WIDTH*ADDS-1:0] Cdina,Cdouta,Cdoutb;
     logic [$clog2(Br)-1:0] Qaddra,Qaddrb;
     logic [$clog2(Bc)-1:0] Kaddra,Kaddrb,Vaddra,Vaddrb;
+    logic [$clog2(MAX_CACHE+1):0] Caddra,Caddrb;
     logic [$clog2(Br*D):0] addaAddr,diffQaddrb;
     logic [$clog2(Bc*D):0] addbAddr;
     logic [$clog2(D)-1:0] interAddaAddr,interAddbAddr;
@@ -41,7 +45,7 @@ module top#(
     // instantiate the HLS/AXI-Stream Adder IP
     genvar i;
     generate
-        for (i = 0; i < ADDS; i = i + 1) begin : gen_adders
+        for (i = 0; i < TOTAL_ADDS ;i = i + 1) begin : gen_adders
             // Instance name will be gen_adders[i].add_inst
             ADDER add_inst (
               .aclk(clk),
@@ -51,8 +55,8 @@ module top#(
               .s_axis_b_tvalid(addVal[i]),
               .s_axis_b_tready(s_axis_b_tready),
               .s_axis_b_tdata(addB[i]),
-              .m_axis_result_tvalid(m_axis_result_tvalid),
-              .m_axis_result_tready(addReady[i]),
+              .m_axis_result_tvalid(addReady[i]),
+              .m_axis_result_tready(addVal[i]),
               .m_axis_result_tdata(sum[i])
             );        
         end
@@ -147,6 +151,18 @@ module top#(
       .doutb(Vdoutb)  // output wire [31 : 0] douta
     );
     
+    CACHE C (
+      .clka(clk),    // input wire clka
+      .ena(Cena),      // input wire ena
+      .wea(Cwea),      // input wire [0 : 0] wea
+      .addra(Caddra),  // input wire [1 : 0] addra
+      .dina(Cdina),    // input wire [255 : 0] dina
+      .clkb(clk),    // input wire clkb
+      .enb(Cenb),      // input wire enb
+      .addrb(Caddrb),  // input wire [1 : 0] addrb
+      .doutb(Cdoutb)  // output wire [255 : 0] doutb
+    );
+    
     O BRAMo (
       .clka(clk),    // input wire clka
       .ena(Oen),      // input wire ena
@@ -156,32 +172,17 @@ module top#(
       .douta(Odout)  // output wire [31 : 0] douta
     );
     
-//    typedef enum logic [2:0]{
-//        OFF = 3'd0,
-//        LOAD = 3'd1,
-//        DIFF = 3'd2
-//        Q1 = 3'd3,
-//        Rcalc = 3'd4,
-//        Qn = 3'd5,
-//        Rd = 3'd6,
-//        Qcalc = 3'd7
-//    } FSMstates;
-    
-//    FSMstates fsm;
-    
     
     always_ff@(posedge clk)begin
         if(reset)begin
-//            fsm<=LOAD;
             loadFlg<=1'b1;
             diffFlg<=0;
-//            SsumFlg<=0;
+            SsumFlg<=0;
             done<=1'b0;
             Kaddra<=0;
-            Kaddrb<=0;
             Qaddra<=0;
-//            Qaddrb<=0;
             Vaddra<=0;
+            Caddra<=MAX_CACHE+1;
             
             addaAddr<=0;
             addbAddr<=0;
@@ -190,7 +191,6 @@ module top#(
         else if(~done)begin
 
             if(loadFlg)begin
-//                if((Qaddra<Br || Kaddra<Bc) && diffFlg==0) diffFlg[0]<=1;
                 if(Qaddra==2) diffFlg<=1;
                 if(Qaddra<Br-1) Qaddra<=Qaddra+1;
                 if(Kaddra<Bc-1) begin
@@ -202,34 +202,39 @@ module top#(
             end
             
             if(diffFlg>0)begin
-//                if(interAddaAddr==0) addaAddr<=diffQaddrb;
                 diffFlg<=2;
-//                if(addbAddr>=Bc*D-1)begin
-//                    diffQaddrb<=diffQaddrb+D;
-//                    addbAddr<=0;
-//                end
-//                else begin
-                    
-//                    if(interAddbAddr==0 && diffFlg==2) addaAddr<=diffQaddrb;
-//                    else addaAddr<=addaAddr+ADDS;
-                    
-//                    if(diffFlg==2) addbAddr<=addbAddr+ADDS;
-//                end
                 
                 for(int i=0;i<ADDS;i=i+1)begin
                     addA[i] <= Qdoutb[ (i+interAddaAddr)*DATA_WIDTH +: DATA_WIDTH ];
                     addB[i]<=Kdoutb[ (i+interAddbAddr)*DATA_WIDTH +: DATA_WIDTH ] ^ MSB_MASK;
                     
+                    if(addReady[i])begin
+                        Cdina[i*DATA_WIDTH +: DATA_WIDTH]<=sum[i];
+                    end
                 end
                 
-                if(addaAddr>=Br*D) diffFlg<=0;
-//                if(diffFlg==1) addbAddr<=addbAddr+2*ADDS;
+                if(addReady[0])begin
+                    if(Caddra==MAX_CACHE+1) Caddra<=0;
+                    else Caddra<=Caddra+1;
+                end
+                
+//                if(addaAddr>=Br*D) diffFlg<=0;
+                if(Caddra==MAX_CACHE)begin
+                    diffFlg<=0;
+                    diffQaddrb<=diffQaddrb+D;
+                end
+
                 addbAddr<=addbAddr+ADDS;
                 addaAddr<=addaAddr+ADDS;
                 
-                if(interAddaAddr==(D-ADDS))begin
-                    addaAddr<=0;
+                if(interAddaAddr==(D-ADDS)) addaAddr<=diffQaddrb;
                     
+            end
+            
+            if(SsumFlg)begin
+                for(int i=0;i<ADDS;i=i+1)begin
+                    addA[i] <= Qdoutb[ (i+interAddaAddr)*DATA_WIDTH +: DATA_WIDTH ];
+                    addB[i]<=Kdoutb[ (i+interAddbAddr)*DATA_WIDTH +: DATA_WIDTH ] ^ MSB_MASK;                    
                 end
             end
         end
@@ -244,13 +249,13 @@ module top#(
         Vena=1;
         Venb=1;
         Oen=1;
+        Cena=1;
+        Cenb=1;
         we=(loadFlg)?1'b1:1'b0;
         Qwea=we; 
         Qweb=1'b0;
         Kwea=we;
-        Kweb=1'b0;
         Vwea=we;
-        Vweb=1'b0;
         
         if(diffFlg)begin
             Qaddrb=addaAddr/D;
@@ -259,7 +264,22 @@ module top#(
             Kaddrb= addbAddr/D+1 ;
             interAddbAddr=addbAddr%D;
         end
-        else Qaddrb=0;
+        else begin
+            Qaddrb=0;
+            interAddaAddr=0;
+            Kaddrb=0;
+            interAddbAddr=0;
+        end
+        
+        if(diffFlg==2)begin
+            for(int i=0;i<ADDS;i=i+1) addVal[i]=1'b1;
+            if(addReady[0]) Cwea=1;
+            else Cwea=0;
+        end
+        else begin
+            for(int i=0;i<ADDS;i=i+1) addVal[i]=1'b0;
+            Cwea=0;
+        end
     end
 
 endmodule
