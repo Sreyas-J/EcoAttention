@@ -20,12 +20,13 @@ module top#(
     localparam int COMPS=8;
     localparam int MULS=4; 
     localparam int TOTAL_ADDS = ADDS*1.5;
+    localparam int FINAL_ADDS = ADDS*(1+ADDS/2*1/2);
     localparam int MAX_CACHE = Bc*(D/ADDS)-1;
     
     localparam logic [DATA_WIDTH-1:0] MSB_MASK = {1'b1, {(DATA_WIDTH-1){1'b0}}};   
     
-    logic addVal[0:TOTAL_ADDS-1],addReady[0:TOTAL_ADDS-1],mulVal[0:MULS-1],mulReady[0:MULS-1],Qena,Qwea,Qenb,Qweb,Kena,Kwea,Kenb,Vena,Vwea,Venb,Cena,Cwea,Cenb,Oen,Owe;
-    logic [DATA_WIDTH-1:0] addA[0:TOTAL_ADDS-1],addB[0:TOTAL_ADDS-1],sum[0:TOTAL_ADDS-1],mulA[0:MULS-1],mulB[0:MULS-1],prod[0:MULS-1];
+    logic addVal[0:FINAL_ADDS-1],addReady[0:FINAL_ADDS-1],mulVal[0:MULS-1],mulReady[0:MULS-1],Qena,Qwea,Qenb,Qweb,Kena,Kwea,Kenb,Vena,Vwea,Venb,Cena,Cwea,Cenb,Oen,Owe;
+    logic [DATA_WIDTH-1:0] addA[0:FINAL_ADDS-1],addB[0:FINAL_ADDS-1],sum[0:FINAL_ADDS-1],mulA[0:MULS-1],mulB[0:MULS-1],prod[0:MULS-1];
     logic [DATA_WIDTH*D-1:0] Qdouta,Qdoutb,Kdouta,Kdoutb,Vdouta,Vdoutb,Odin,Odout;
     logic [DATA_WIDTH*ADDS-1:0] Cdina,Cdouta,Cdoutb;
     logic [$clog2(Br)-1:0] Qaddra,Qaddrb;
@@ -46,7 +47,7 @@ module top#(
     // instantiate the HLS/AXI-Stream Adder IP
     genvar i;
     generate
-        for (i = 0; i < TOTAL_ADDS ;i = i + 1) begin : gen_adders
+        for (i = 0; i < FINAL_ADDS ;i = i + 1) begin : gen_adders
             // Instance name will be gen_adders[i].add_inst
             ADDER add_inst (
               .aclk(clk),
@@ -210,22 +211,24 @@ module top#(
                     addA[i] <= Qdoutb[ (i+interAddaAddr)*DATA_WIDTH +: DATA_WIDTH ];
                     addB[i]<=Kdoutb[ (i+interAddbAddr)*DATA_WIDTH +: DATA_WIDTH ] ^ MSB_MASK;
                     
-                    if(addReady[i])begin
-                        Cdina[i*DATA_WIDTH +: DATA_WIDTH]<={1'b0,sum[i][DATA_WIDTH-2:0]};
-                    end
+//                    if(addReady[i])begin
+//                        Cdina[i*DATA_WIDTH +: DATA_WIDTH]<={1'b0,sum[i][DATA_WIDTH-2:0]};
+//                    end
                 end
                 
-                if(addReady[0])begin
-                    if(SsumFlg==0) SsumFlg<=1;
-                    if(Caddra==MAX_CACHE+1) Caddra<=0;
-                    else Caddra<=Caddra+1;
-                end
-                
+//                if(addReady[0])begin
+//                    if(SsumFlg==0) SsumFlg<=1;
+//                    if(Caddra==MAX_CACHE+1) Caddra<=0;
+//                    else Caddra<=Caddra+1;
+//                end
+                if(addVal[0] && SsumFlg==0)begin
+                    SsumFlg<=1;
+                end                
 //                if(addaAddr>=Br*D) diffFlg<=0;
-                if(Caddra==MAX_CACHE)begin
-                    diffFlg<=0;
-                    diffQaddrb<=diffQaddrb+D;
-                end
+//                if(Caddra==MAX_CACHE)begin
+//                    diffFlg<=0;
+//                    diffQaddrb<=diffQaddrb+D;
+//                end
 
                 addbAddr<=addbAddr+ADDS;
                 addaAddr<=addaAddr+ADDS;
@@ -239,33 +242,26 @@ module top#(
 //                    SsumAddr<=0;
 //                    SsumFlg<=2;
 //                end
-                if(SsumFlg==2) SsumAddr<=SsumAddr+(TOTAL_ADDS-ADDS)*2;
                 
-                
-                if(SsumFlg==10) addA[TOTAL_ADDS-1] <=sum[ADDS];
-                if(SsumFlg==11) addB[TOTAL_ADDS-1] <=sum[ADDS];
-                else if(SsumFlg>=6)begin
-                    for(int i=0;i<(TOTAL_ADDS-ADDS)/2;i=i+1)begin
-                        addA[ADDS+i] <= sum[ADDS+2*i];
-                        addB[ADDS+i] <= sum[ADDS+2*i+1];
+                for(int j=0;j<ADDS/2;j=j+1)begin
+                    if(SsumFlg==7+j) addA[ADDS+j*(ADDS/2)] <=sum[ADDS+j*(ADDS/2)];
+                    else if(SsumFlg==8+j) addB[ADDS+j*(ADDS/2)] <=sum[ADDS+j*(ADDS/2)];
+                    else if(SsumFlg<3+j)begin
+                        for(int i=0;i<TOTAL_ADDS-ADDS;i=i+1)begin
+    //                        addA[ADDS+i] <= Cdoutb[2*i*DATA_WIDTH +:DATA_WIDTH];
+    //                        addB[ADDS+i] <= Cdoutb[(2*i+1)*DATA_WIDTH +:DATA_WIDTH];
+                            addA[ADDS+i+j*(ADDS/2)] <= {1'b0,sum[2*i+j*(ADDS/2)][DATA_WIDTH-2:0]};
+                            addB[ADDS+i+j*(ADDS/2)] <= {1'b0,sum[2*i+1+j*(ADDS/2)][DATA_WIDTH-2:0]};
+                        end
+                    end
+                    else begin
+                        for(int i=0;i<(TOTAL_ADDS-ADDS)/2;i=i+1)begin
+                            addA[ADDS+i+j*(ADDS/2)] <= sum[ADDS+2*i+j*(ADDS/2)];
+                            addB[ADDS+i+j*(ADDS/2)] <= sum[ADDS+2*i+1+j*(ADDS/2)];
+                        end
                     end
                 end
-                else if(SsumFlg>=4)begin
-                    for(int i=0;i<TOTAL_ADDS-ADDS;i=i+1)begin
-                        addA[ADDS+i] <= Cdoutb[2*i*DATA_WIDTH +:DATA_WIDTH];
-                        addB[ADDS+i] <= Cdoutb[(2*i+1)*DATA_WIDTH +:DATA_WIDTH];
-                    end
-                end
-//                else if(SsumFlg==5)begin
-//                    for(int i=0;i<TOTAL_ADDS-ADDS;i=i+2)begin
-//                        addA[ADDS+i]<= sum[ADDS+i];
-//                        addB[ADDS+i]<= sum[ADDS+i+1];
-//                    end
-//                    for(int i=(TOTAL_ADDS-ADDS)/2;i<TOTAL_ADDS;i=i+1)begin
-//                        addA[ADDS+i] <= Cdoutb[2*i*DATA_WIDTH +:DATA_WIDTH];
-//                        addB[ADDS+i] <= Cdoutb[(2*i+1)*DATA_WIDTH +:DATA_WIDTH];
-//                    end
-//                end
+
                 if(SsumFlg<15) SsumFlg<=SsumFlg+1;
                 
                 
@@ -306,17 +302,13 @@ module top#(
         
         if(diffFlg==2)begin
             for(int i=0;i<ADDS;i=i+1) addVal[i]=1'b1;
-            if(addReady[0]) Cwea=1;
-            else Cwea=0;
         end
         else begin
             for(int i=0;i<ADDS;i=i+1) addVal[i]=1'b0;
-            Cwea=0;
         end
         
         if(SsumFlg)begin
             for(int i=ADDS;i<TOTAL_ADDS;i=i+1) addVal[i]=1'b1;
-            Caddrb=SsumAddr/ADDS;
         end
         else begin
             for(int i=ADDS;i<TOTAL_ADDS;i=i+1) addVal[i]=1'b0;
