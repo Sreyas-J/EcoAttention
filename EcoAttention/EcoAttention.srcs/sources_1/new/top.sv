@@ -244,14 +244,14 @@ module top#(
 //                end
                 
                 for(int j=0;j<ADDS/2;j=j+1)begin
-                    if(SsumFlg==7+j) addA[ADDS+j*(ADDS/2)] <=sum[ADDS+j*(ADDS/2)];
-                    else if(SsumFlg==8+j) addB[ADDS+j*(ADDS/2)] <=sum[ADDS+j*(ADDS/2)];
-                    else if(SsumFlg<3+j)begin
+                    if(SsumFlg==7+j*2) addA[ADDS+j*(ADDS/2)] <=sum[ADDS+j*(ADDS/2)];
+                    else if(SsumFlg==8+j*2) addB[ADDS+j*(ADDS/2)] <=sum[ADDS+j*(ADDS/2)];
+                    else if(SsumFlg<3+j*2)begin
                         for(int i=0;i<TOTAL_ADDS-ADDS;i=i+1)begin
     //                        addA[ADDS+i] <= Cdoutb[2*i*DATA_WIDTH +:DATA_WIDTH];
     //                        addB[ADDS+i] <= Cdoutb[(2*i+1)*DATA_WIDTH +:DATA_WIDTH];
-                            addA[ADDS+i+j*(ADDS/2)] <= {1'b0,sum[2*i+j*(ADDS/2)][DATA_WIDTH-2:0]};
-                            addB[ADDS+i+j*(ADDS/2)] <= {1'b0,sum[2*i+1+j*(ADDS/2)][DATA_WIDTH-2:0]};
+                            addA[ADDS+i+j*(ADDS/2)] <= {1'b0,sum[2*i][DATA_WIDTH-2:0]};
+                            addB[ADDS+i+j*(ADDS/2)] <= {1'b0,sum[2*i+1][DATA_WIDTH-2:0]};
                         end
                     end
                     else begin
