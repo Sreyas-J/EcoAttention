@@ -235,6 +235,12 @@ module top#(
                 addaAddr<=addaAddr+ADDS;
                 
                 if(interAddaAddr==(D-ADDS)) addaAddr<=diffQaddrb;
+                
+                if(Kaddrb==Bc-1 && interAddbAddr==(D-ADDS))begin
+                    addaAddr<=diffQaddrb+D;
+                    diffQaddrb<=diffQaddrb+D;
+//                    addbAddr<=0;
+                end
                     
             end
             
