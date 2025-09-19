@@ -2,7 +2,7 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
--- Date        : Fri Aug 29 18:42:37 2025
+-- Date        : Thu Sep 18 21:44:54 2025
 -- Host        : sk-Standard-PC-Q35-ICH9-2009 running 64-bit Ubuntu 22.04.5 LTS
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/CACHE/CACHE_stub.vhdl
@@ -18,12 +18,12 @@ entity CACHE is
     clka : in STD_LOGIC;
     ena : in STD_LOGIC;
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
-    addra : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    dina : in STD_LOGIC_VECTOR ( 255 downto 0 );
+    addra : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    dina : in STD_LOGIC_VECTOR ( 31 downto 0 );
     clkb : in STD_LOGIC;
     enb : in STD_LOGIC;
-    addrb : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    doutb : out STD_LOGIC_VECTOR ( 255 downto 0 )
+    addrb : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    doutb : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
 
 end CACHE;
@@ -32,7 +32,7 @@ architecture stub of CACHE is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clka,ena,wea[0:0],addra[2:0],dina[255:0],clkb,enb,addrb[2:0],doutb[255:0]";
+attribute black_box_pad_pin of stub : architecture is "clka,ena,wea[0:0],addra[1:0],dina[31:0],clkb,enb,addrb[1:0],doutb[31:0]";
 attribute x_core_info : string;
 attribute x_core_info of stub : architecture is "blk_mem_gen_v8_4_7,Vivado 2023.2";
 begin

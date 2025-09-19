@@ -7,6 +7,7 @@ module top#(
 )(
     input logic clk,reset,
     input logic [DATA_WIDTH*D-1:0] Qdina,Qdinb,Kdina,Kdinb,Vdina,Vdinb,
+    input logic [DATA_WIDTH-1:0] scale, 
     output logic done
 );
     localparam int MAX_VAL = (Bc > Br) ? Bc*D : Br*D;
@@ -21,26 +22,28 @@ module top#(
     localparam int MULS=4; 
     localparam int TOTAL_ADDS = ADDS*1.5;
     localparam int FINAL_ADDS = ADDS*(1+ADDS/2*1/2);
-    localparam int MAX_CACHE = Bc*(D/ADDS)-1;
+//    localparam int MAX_CACHE = Bc*(D/ADDS)-1;
     
     localparam logic [DATA_WIDTH-1:0] MSB_MASK = {1'b1, {(DATA_WIDTH-1){1'b0}}};   
     
-    logic addVal[0:FINAL_ADDS-1],addReady[0:FINAL_ADDS-1],mulVal[0:MULS-1],mulReady[0:MULS-1],Qena,Qwea,Qenb,Qweb,Kena,Kwea,Kenb,Vena,Vwea,Venb,Cena,Cwea,Cenb,Oen,Owe;
-    logic [DATA_WIDTH-1:0] addA[0:FINAL_ADDS-1],addB[0:FINAL_ADDS-1],sum[0:FINAL_ADDS-1],mulA[0:MULS-1],mulB[0:MULS-1],prod[0:MULS-1];
+    logic addVal[0:FINAL_ADDS-1],addReady[0:FINAL_ADDS-1],mulVal[0:MULS-1],mulReady[0:MULS-1],greatVal[0:COMPS-1],greatReady[0:COMPS-1],Qena,Qwea,Qenb,Qweb,Kena,Kwea,Kenb,Vena,Vwea,Venb,Cena,Cwea,Cenb,Oen,Owe;
+    logic [DATA_WIDTH-1:0] addA[0:FINAL_ADDS-1],addB[0:FINAL_ADDS-1],sum[0:FINAL_ADDS-1],mulA[0:MULS-1],mulB[0:MULS-1],prod[0:MULS-1],great[0:COMPS-1],less[0:COMPS-1];
     logic [DATA_WIDTH*D-1:0] Qdouta,Qdoutb,Kdouta,Kdoutb,Vdouta,Vdoutb,Odin,Odout;
-    logic [DATA_WIDTH*ADDS-1:0] Cdina,Cdouta,Cdoutb;
+//    logic [DATA_WIDTH*ADDS-1:0] 
+    logic [DATA_WIDTH-1:0] Cdina,Cdouta,Cdoutb;
     logic [$clog2(Br)-1:0] Qaddra,Qaddrb;
     logic [$clog2(Bc)-1:0] Kaddra,Kaddrb,Vaddra,Vaddrb;
-    logic [$clog2(MAX_CACHE+1):0] Caddra,Caddrb;
+    logic [$clog2(Bc)-1:0] Caddra,Caddrb;
     logic [$clog2(Br*D):0] addaAddr,diffQaddrb;
     logic [$clog2(Bc*D):0] addbAddr,SsumAddr;
     logic [$clog2(D)-1:0] interAddaAddr,interAddbAddr;
+    logic comp[0:COMPS-1];
 
 //    logic [$clog2(MAX_VAL):0] cnt;
 //    logic [$clog2((D/ADDS))-1:0] I;
 //    logic [$clog2(Bc)-1:0] J;
     
-    logic we,loadFlg;
+    logic we,loadFlg,SscaleFlg,maxFlg;
     logic [1:0] diffFlg;
     logic [3:0] SsumFlg;
     
@@ -86,36 +89,39 @@ module top#(
 //      .m_axis_result_tready(xReady),  // input wire m_axis_result_tready
 //      .m_axis_result_tdata(x)    // output wire [31 : 0] m_axis_result_tdata
 //    );
-    
-//    GREATERthan greater (
-//      .aclk(clk),                                  // input wire aclk
-//      .s_axis_a_tvalid(greatVal),            // input wire s_axis_a_tvalid
-//      .s_axis_a_tready(greatReady),            // output wire s_axis_a_tready
-//      .s_axis_a_tdata(great),              // input wire [31 : 0] s_axis_a_tdata
-//      .s_axis_b_tvalid(lessVal),            // input wire s_axis_b_tvalid
-//      .s_axis_b_tready(lessReady),            // output wire s_axis_b_tready
-//      .s_axis_b_tdata(less),              // input wire [31 : 0] s_axis_b_tdata
-//      .m_axis_result_tvalid(compVal),  // output wire m_axis_result_tvalid
-//      .m_axis_result_tready(compReady),  // input wire m_axis_result_tready
-//      .m_axis_result_tdata(comp)    // output wire [7 : 0] m_axis_result_tdata
-//    );
+    generate
+        for(i=0;i<COMPS;i=i+1) begin : gen_comps
+            GREATERthan greater (
+              .aclk(clk),                                  // input wire aclk
+              .s_axis_a_tvalid(greatVal[i]),            // input wire s_axis_a_tvalid
+              .s_axis_a_tready(s_axis_a_tready),            // output wire s_axis_a_tready
+              .s_axis_a_tdata(great[i]),              // input wire [31 : 0] s_axis_a_tdata
+              .s_axis_b_tvalid(greatVal[i]),            // input wire s_axis_b_tvalid
+              .s_axis_b_tready(s_axis_b_tready),            // output wire s_axis_b_tready
+              .s_axis_b_tdata(less[i]),              // input wire [31 : 0] s_axis_b_tdata
+              .m_axis_result_tvalid(greatReady[i]),  // output wire m_axis_result_tvalid
+              .m_axis_result_tready(greatVal[i]),  // input wire m_axis_result_tready
+              .m_axis_result_tdata(comp[i])    // output wire [7 : 0] m_axis_result_tdata
+            );
+        end
+    endgenerate      
 
-//    generate
-//        for (i = 0; i < ADDS; i = i + 1) begin : gen_muls
-//            MUL mul (
-//              .aclk(clk),                                  // input wire aclk
-//              .s_axis_a_tvalid(mulAval),            // input wire s_axis_a_tvalid
-//              .s_axis_a_tready(mulAready),            // output wire s_axis_a_tready
-//              .s_axis_a_tdata(mulA),              // input wire [31 : 0] s_axis_a_tdata
-//              .s_axis_b_tvalid(mulBval),            // input wire s_axis_b_tvalid
-//              .s_axis_b_tready(mulBready),            // output wire s_axis_b_tready
-//              .s_axis_b_tdata(mulB),              // input wire [31 : 0] s_axis_b_tdata
-//              .m_axis_result_tvalid(prodVal),  // output wire m_axis_result_tvalid
-//              .m_axis_result_tready(prodReady),  // input wire m_axis_result_tready
-//              .m_axis_result_tdata(prod)    // output wire [31 : 0] m_axis_result_tdata
-//            );
-//        end
-//    endgenerate
+    generate
+        for (i = 0; i < ADDS; i = i + 1) begin : gen_muls
+            MUL mul (
+              .aclk(clk),                                  // input wire aclk
+              .s_axis_a_tvalid(mulVal[i]),            // input wire s_axis_a_tvalid
+              .s_axis_a_tready(s_axis_a_tready),            // output wire s_axis_a_tready
+              .s_axis_a_tdata(mulA[i]),              // input wire [31 : 0] s_axis_a_tdata
+              .s_axis_b_tvalid(mulVal[i]),            // input wire s_axis_b_tvalid
+              .s_axis_b_tready(s_axis_a_tready),            // output wire s_axis_b_tready
+              .s_axis_b_tdata(mulB[i]),              // input wire [31 : 0] s_axis_b_tdata
+              .m_axis_result_tvalid(mulReady[i]),  // output wire m_axis_result_tvalid
+              .m_axis_result_tready(mulVal[i]),  // input wire m_axis_result_tready
+              .m_axis_result_tdata(prod[i])    // output wire [31 : 0] m_axis_result_tdata
+            );
+        end
+    endgenerate
     
     Q BRAMq (
       .clka(clk),    // input wire clka
@@ -180,16 +186,20 @@ module top#(
             loadFlg<=1'b1;
             diffFlg<=0;
             SsumFlg<=0;
+            SscaleFlg<=1'b0;
+            maxFlg<=1'b0;
+            
             done<=1'b0;
             Kaddra<=0;
             Qaddra<=0;
             Vaddra<=0;
-            Caddra<=MAX_CACHE+1;
-            
+//            Caddra<=MAX_CACHE+1;
+            Caddra<=0;            
             addaAddr<=0;
             addbAddr<=0;
             diffQaddrb<=0;
             SsumAddr<=0;
+            Cdina<=$shortrealtobits(-1.0/0.0);
         end
         else if(~done)begin
 
@@ -200,9 +210,13 @@ module top#(
                     Kaddra<=Kaddra+1;
                     Vaddra<=Vaddra+1;
                 end
-
+                
                 if(Qaddra>=Br-1 && Kaddra>=Bc-1) loadFlg<=1'b0;
+                if(Caddra<Bc) Caddra<=Caddra+1;
+                Cdina<=$shortrealtobits(-1.0/0.0);
+                less[0]<=$shortrealtobits(-1.0/0.0);
             end
+            else Caddra<=0;
             
             if(diffFlg>0)begin
                 diffFlg<=2;
@@ -211,24 +225,11 @@ module top#(
                     addA[i] <= Qdoutb[ (i+interAddaAddr)*DATA_WIDTH +: DATA_WIDTH ];
                     addB[i]<=Kdoutb[ (i+interAddbAddr)*DATA_WIDTH +: DATA_WIDTH ] ^ MSB_MASK;
                     
-//                    if(addReady[i])begin
-//                        Cdina[i*DATA_WIDTH +: DATA_WIDTH]<={1'b0,sum[i][DATA_WIDTH-2:0]};
-//                    end
                 end
-                
-//                if(addReady[0])begin
-//                    if(SsumFlg==0) SsumFlg<=1;
-//                    if(Caddra==MAX_CACHE+1) Caddra<=0;
-//                    else Caddra<=Caddra+1;
-//                end
+
                 if(addVal[0] && SsumFlg==0)begin
                     SsumFlg<=1;
                 end                
-//                if(addaAddr>=Br*D) diffFlg<=0;
-//                if(Caddra==MAX_CACHE)begin
-//                    diffFlg<=0;
-//                    diffQaddrb<=diffQaddrb+D;
-//                end
 
                 addbAddr<=addbAddr+ADDS;
                 addaAddr<=addaAddr+ADDS;
@@ -238,18 +239,14 @@ module top#(
             end
             
             if(SsumFlg)begin
-//                if(SsumFlg==1)begin
-//                    SsumAddr<=0;
-//                    SsumFlg<=2;
-//                end
                 
                 for(int j=0;j<ADDS/2;j=j+1)begin
-                    if(SsumFlg==7+j*2) addA[ADDS+j*(ADDS/2)] <=sum[ADDS+j*(ADDS/2)];
+                    if(SsumFlg==7+j*2)begin
+                        addA[ADDS+j*(ADDS/2)] <=sum[ADDS+j*(ADDS/2)];
+                    end
                     else if(SsumFlg==8+j*2) addB[ADDS+j*(ADDS/2)] <=sum[ADDS+j*(ADDS/2)];
                     else if(SsumFlg<3+j*2)begin
                         for(int i=0;i<TOTAL_ADDS-ADDS;i=i+1)begin
-    //                        addA[ADDS+i] <= Cdoutb[2*i*DATA_WIDTH +:DATA_WIDTH];
-    //                        addB[ADDS+i] <= Cdoutb[(2*i+1)*DATA_WIDTH +:DATA_WIDTH];
                             addA[ADDS+i+j*(ADDS/2)] <= {1'b0,sum[2*i][DATA_WIDTH-2:0]};
                             addB[ADDS+i+j*(ADDS/2)] <= {1'b0,sum[2*i+1][DATA_WIDTH-2:0]};
                         end
@@ -262,9 +259,30 @@ module top#(
                     end
                 end
 
-                if(SsumFlg<15) SsumFlg<=SsumFlg+1;
+                if(SsumFlg==9) SscaleFlg<=1'b1;
                 
+                if(SsumFlg<8+ADDS) SsumFlg<=SsumFlg+1;
+                else SsumFlg<=0;            
+            end
+            
+            
+            if(SscaleFlg)begin
+                mulB[0]<=scale^MSB_MASK;
+                if(SsumFlg==0) mulA[0]<=sum[FINAL_ADDS-ADDS/2];
+                else mulA[0]<=sum[(SsumFlg-(8+2))*ADDS/4+ADDS];
                 
+                if(mulReady[0]) maxFlg<=~maxFlg;
+                
+//                if(!maxFlg && comp[0] && greatReady[0])begin
+                    
+//                end
+            end
+            
+            if(maxFlg)begin
+                for(int i=0;i<COMPS;i=i+1) greatVal[i]<=1'b1;
+                great[0]<=prod[0];
+                
+                if(comp[0] && greatReady[0]) less[0]<=great[0];
             end
         end
     end
@@ -285,6 +303,7 @@ module top#(
         Qweb=1'b0;
         Kwea=we;
         Vwea=we;
+        Cwea=we;
         
         if(diffFlg)begin
             Qaddrb=addaAddr/D;
@@ -314,6 +333,20 @@ module top#(
             for(int i=ADDS;i<TOTAL_ADDS;i=i+1) addVal[i]=1'b0;
             Caddrb=0;
         end
+        
+        if(SscaleFlg)begin
+            for(int i=0;i<MULS;i=i+1) mulVal[i]=1'b1;
+        end
+        else begin
+            for(int i=0;i<MULS;i=i+1) mulVal[i]=1'b0;
+        end
+        
+//        if(maxFlg)begin
+//            for(int i=0;i<COMPS;i=i+1) greatVal[i]=1'b1;
+//        end
+//        else begin
+//            for(int i=0;i<COMPS;i=i+1) greatVal[i]=1'b0;
+//        end
     end
 
 endmodule

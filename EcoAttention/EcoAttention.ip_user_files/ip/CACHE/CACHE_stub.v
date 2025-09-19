@@ -2,7 +2,7 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
-// Date        : Fri Aug 29 18:42:36 2025
+// Date        : Thu Sep 18 21:44:54 2025
 // Host        : sk-Standard-PC-Q35-ICH9-2009 running 64-bit Ubuntu 22.04.5 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/CACHE/CACHE_stub.v
@@ -16,15 +16,15 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "blk_mem_gen_v8_4_7,Vivado 2023.2" *)
 module CACHE(clka, ena, wea, addra, dina, clkb, enb, addrb, doutb)
-/* synthesis syn_black_box black_box_pad_pin="ena,wea[0:0],addra[2:0],dina[255:0],clkb,enb,addrb[2:0],doutb[255:0]" */
+/* synthesis syn_black_box black_box_pad_pin="ena,wea[0:0],addra[1:0],dina[31:0],clkb,enb,addrb[1:0],doutb[31:0]" */
 /* synthesis syn_force_seq_prim="clka" */;
   input clka /* synthesis syn_isclock = 1 */;
   input ena;
   input [0:0]wea;
-  input [2:0]addra;
-  input [255:0]dina;
+  input [1:0]addra;
+  input [31:0]dina;
   input clkb;
   input enb;
-  input [2:0]addrb;
-  output [255:0]doutb;
+  input [1:0]addrb;
+  output [31:0]doutb;
 endmodule

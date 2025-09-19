@@ -15,6 +15,7 @@ module tb_top;
     // DUT inputs/outputs
     // pack D lanes each DATA_WIDTH wide: [ DATA_WIDTH*D-1 : 0 ]
     logic [DATA_WIDTH*D-1:0] Qdin, Kdin, Vdin;
+    logic [DATA_WIDTH-1:0] scale;
     logic done;
 
     // Instantiate DUT
@@ -29,6 +30,7 @@ module tb_top;
         .Qdina(Qdin),
         .Kdina(Kdin),
         .Vdina(Vdin),
+        .scale(scale),
         .done(done)
     );
 
@@ -47,6 +49,7 @@ module tb_top;
         Qdin = '0;
         Kdin = '0;
         Vdin = '0;
+        scale = $shortrealtobits(0.25);
 
         // Fill Q/K/V matrices programmatically as before
         for (int i = 0; i < Br; i = i + 1) begin
