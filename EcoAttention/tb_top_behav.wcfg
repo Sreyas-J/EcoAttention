@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="70.161 ns"></ZoomStartTime>
-      <ZoomEndTime time="159.198 ns"></ZoomEndTime>
-      <Cursor1Time time="135.200 ns"></Cursor1Time>
+      <ZoomStartTime time="352.985 ns"></ZoomStartTime>
+      <ZoomEndTime time="475.403 ns"></ZoomEndTime>
+      <Cursor1Time time="445.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="158"></NameColumnWidth>
-      <ValueColumnWidth column_width="71"></ValueColumnWidth>
+      <NameColumnWidth column_width="147"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="11" />
    <wvobject type="logic" fp_name="/tb_top/dut/clk">
@@ -25,8 +25,8 @@
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_top/dut/SsumFlg">
-      <obj_property name="ElementShortName">SsumFlg[4:0]</obj_property>
-      <obj_property name="ObjectShortName">SsumFlg[4:0]</obj_property>
+      <obj_property name="ElementShortName">SsumFlg[5:0]</obj_property>
+      <obj_property name="ObjectShortName">SsumFlg[5:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_top/dut/Kaddrb">
@@ -117,10 +117,6 @@
       <wvobject type="array" fp_name="/tb_top/dut/sum[8]">
          <obj_property name="ElementShortName">[8][31:0]</obj_property>
          <obj_property name="ObjectShortName">[8][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tb_top/dut/sum[9]">
          <obj_property name="ElementShortName">[9][31:0]</obj_property>
@@ -137,42 +133,22 @@
       <wvobject type="array" fp_name="/tb_top/dut/sum[12]">
          <obj_property name="ElementShortName">[12][31:0]</obj_property>
          <obj_property name="ObjectShortName">[12][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tb_top/dut/sum[13]">
          <obj_property name="ElementShortName">[13][31:0]</obj_property>
          <obj_property name="ObjectShortName">[13][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tb_top/dut/sum[14]">
          <obj_property name="ElementShortName">[14][31:0]</obj_property>
          <obj_property name="ObjectShortName">[14][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tb_top/dut/sum[15]">
          <obj_property name="ElementShortName">[15][31:0]</obj_property>
          <obj_property name="ObjectShortName">[15][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tb_top/dut/sum[16]">
          <obj_property name="ElementShortName">[16][31:0]</obj_property>
          <obj_property name="ObjectShortName">[16][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tb_top/dut/sum[17]">
          <obj_property name="ElementShortName">[17][31:0]</obj_property>

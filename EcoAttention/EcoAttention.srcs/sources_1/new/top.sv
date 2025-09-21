@@ -45,7 +45,7 @@ module top#(
     
     logic we,loadFlg,SscaleFlg,maxFlg;
     logic [1:0] diffFlg;
-    logic [4:0] SsumFlg;
+    logic [5:0] SsumFlg;
     
     // instantiate the HLS/AXI-Stream Adder IP
     genvar i;
@@ -227,7 +227,7 @@ module top#(
                     
                 end
 
-                if(addVal[0] && SsumFlg==0)begin
+                if(addVal[0] && SsumFlg==0 && SscaleFlg==0)begin
                     SsumFlg<=1;
                 end                
 
@@ -248,28 +248,28 @@ module top#(
                 
                 for(int j=0;j<ADDS/2;j=j+1)begin
                     //FINAL LAYER OF ADDER TREE (1st ele)
-                    if(SsumFlg==7+j*2)begin
+                    if(SsumFlg-j*2>0 && (SsumFlg-j*2)%8==7)begin
                         addA[ADDS+j*(ADDS/2)] <=sum[ADDS+j*(ADDS/2)];
                     end
                     //FINAL LAYER OF ADDER TREE (2nd ele)
-                    else if(SsumFlg==8+j*2) addB[ADDS+j*(ADDS/2)] <=sum[ADDS+j*(ADDS/2)];
+                    else if((SsumFlg-j*2)%8==0) addB[ADDS+j*(ADDS/2)] <=sum[ADDS+j*(ADDS/2)];
                     //1st LAYER
-                    else if(SsumFlg<3+j*2)begin
+                    else if(SsumFlg-j*2>0 && (SsumFlg-j*2)%8<3)begin
                         for(int i=0;i<TOTAL_ADDS-ADDS;i=i+1)begin
                             addA[ADDS+i+j*(ADDS/2)] <= {1'b0,sum[2*i][DATA_WIDTH-2:0]};
                             addB[ADDS+i+j*(ADDS/2)] <= {1'b0,sum[2*i+1][DATA_WIDTH-2:0]};
                         end
                     end
-                    else if(SsumFlg==15+j*2)begin
-                        addA[ADDS+j*(ADDS/2)] <=sum[ADDS+j*(ADDS/2)];
-                    end
-                    else if(SsumFlg==16+j*2) addB[ADDS+j*(ADDS/2)] <=sum[ADDS+j*(ADDS/2)];
-                    else if(SsumFlg==9+j*2 || SsumFlg==10+j*2)begin
-                        for(int i=0;i<TOTAL_ADDS-ADDS;i=i+1)begin
-                            addA[ADDS+i+j*(ADDS/2)] <= {1'b0,sum[2*i][DATA_WIDTH-2:0]};
-                            addB[ADDS+i+j*(ADDS/2)] <= {1'b0,sum[2*i+1][DATA_WIDTH-2:0]};
-                        end
-                    end
+//                    else if(SsumFlg==15+j*2)begin
+//                        addA[ADDS+j*(ADDS/2)] <=sum[ADDS+j*(ADDS/2)];
+//                    end
+//                    else if(SsumFlg==16+j*2) addB[ADDS+j*(ADDS/2)] <=sum[ADDS+j*(ADDS/2)];
+//                    else if(SsumFlg==9+j*2 || SsumFlg==10+j*2)begin
+//                        for(int i=0;i<TOTAL_ADDS-ADDS;i=i+1)begin
+//                            addA[ADDS+i+j*(ADDS/2)] <= {1'b0,sum[2*i][DATA_WIDTH-2:0]};
+//                            addB[ADDS+i+j*(ADDS/2)] <= {1'b0,sum[2*i+1][DATA_WIDTH-2:0]};
+//                        end
+//                    end
                     //INTERMEDIATE LAYERS
                     else begin
                         for(int i=0;i<(TOTAL_ADDS-ADDS)/2;i=i+1)begin
@@ -289,7 +289,8 @@ module top#(
 
                 if(SsumFlg==9) SscaleFlg<=1'b1;
                 
-                SsumFlg<=SsumFlg+1;
+                if(SsumFlg==39) SsumFlg<=0;
+                else SsumFlg<=SsumFlg+1;
 //                else SsumFlg<=0;            
             end
             
