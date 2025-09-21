@@ -298,7 +298,7 @@ module top#(
             if(SscaleFlg)begin
                 mulB[0]<=scale^MSB_MASK;
                 if(SsumFlg==0) mulA[0]<=sum[FINAL_ADDS-ADDS/2];
-                else mulA[0]<=sum[(SsumFlg-(8+2))*ADDS/4+ADDS];
+                else mulA[0]<=sum[((SsumFlg-(8+2))%8)*ADDS/4+ADDS];
                 
                 if(mulReady[0]) maxFlg<=~maxFlg;
                 
@@ -311,7 +311,8 @@ module top#(
                 for(int i=0;i<COMPS;i=i+1) greatVal[i]<=1'b1;
                 great[0]<=prod[0];
                 
-                if(comp[0] && greatReady[0]) less[0]<=great[0];
+                if((SsumFlg-21)%8==0) less[0]<=$shortrealtobits(-1.0/0.0);
+                else if(comp[0] && greatReady[0]) less[0]<=great[0];
             end
         end
     end
