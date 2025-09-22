@@ -30,7 +30,7 @@ module top#(
     logic [DATA_WIDTH-1:0] addA[0:FINAL_ADDS-1],addB[0:FINAL_ADDS-1],sum[0:FINAL_ADDS-1],mulA[0:MULS-1],mulB[0:MULS-1],prod[0:MULS-1],great[0:COMPS-1],less[0:COMPS-1];
     logic [DATA_WIDTH*D-1:0] Qdouta,Qdoutb,Kdouta,Kdoutb,Vdouta,Vdoutb,Odin,Odout;
 //    logic [DATA_WIDTH*ADDS-1:0] 
-    logic [DATA_WIDTH-1:0] Cdina,Cdouta,Cdoutb;
+    logic [DATA_WIDTH*Bc-1:0] Cdina,Cdouta,Cdoutb;
     logic [$clog2(Br)-1:0] Qaddra,Qaddrb;
     logic [$clog2(Bc)-1:0] Kaddra,Kaddrb,Vaddra,Vaddrb;
     logic [$clog2(Bc)-1:0] Caddra,Caddrb;
@@ -199,7 +199,6 @@ module top#(
             addbAddr<=0;
             diffQaddrb<=0;
             SsumAddr<=0;
-            Cdina<=$shortrealtobits(-1.0/0.0);
         end
         else if(~done)begin
 
@@ -212,11 +211,8 @@ module top#(
                 end
                 
                 if(Qaddra>=Br-1 && Kaddra>=Bc-1) loadFlg<=1'b0;
-                if(Caddra<Bc) Caddra<=Caddra+1;
-                Cdina<=$shortrealtobits(-1.0/0.0);
                 less[0]<=$shortrealtobits(-1.0/0.0);
             end
-            else Caddra<=0;
             
             if(diffFlg>0)begin
                 diffFlg<=2;
@@ -310,8 +306,13 @@ module top#(
             if(maxFlg)begin
                 for(int i=0;i<COMPS;i=i+1) greatVal[i]<=1'b1;
                 great[0]<=prod[0];
+                Cdina[DATA_WIDTH*((SsumFlg-13)%8)/2 +: 32]<=prod[0];
+
                 
-                if((SsumFlg-21)%8==0) less[0]<=$shortrealtobits(-1.0/0.0);
+                if((SsumFlg-21)%8==0 && SsumFlg>20)begin
+                    less[0]<=$shortrealtobits(-1.0/0.0);
+                    Caddra<=Caddra+1;
+                end
                 else if(comp[0] && greatReady[0]) less[0]<=great[0];
             end
         end
@@ -333,7 +334,6 @@ module top#(
         Qweb=1'b0;
         Kwea=we;
         Vwea=we;
-        Cwea=we;
         
         if(diffFlg)begin
             Qaddrb=addaAddr/D;
@@ -361,7 +361,6 @@ module top#(
         end
         else begin
             for(int i=ADDS;i<TOTAL_ADDS;i=i+1) addVal[i]=1'b0;
-            Caddrb=0;
         end
         
         if(SscaleFlg)begin
@@ -371,12 +370,14 @@ module top#(
             for(int i=0;i<MULS;i=i+1) mulVal[i]=1'b0;
         end
         
-//        if(maxFlg)begin
-//            for(int i=0;i<COMPS;i=i+1) greatVal[i]=1'b1;
-//        end
-//        else begin
-//            for(int i=0;i<COMPS;i=i+1) greatVal[i]=1'b0;
-//        end
+        if(maxFlg)begin
+            for(int i=0;i<COMPS;i=i+1) greatVal[i]=1'b1;
+            Cwea=1'b1;
+        end
+        else begin
+            for(int i=0;i<COMPS;i=i+1) greatVal[i]=1'b0;
+            Cwea=1'b0;
+        end
     end
 
 endmodule
