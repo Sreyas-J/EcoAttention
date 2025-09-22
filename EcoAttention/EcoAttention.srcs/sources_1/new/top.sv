@@ -37,13 +37,15 @@ module top#(
     logic [$clog2(Br*D):0] addaAddr,diffQaddrb;
     logic [$clog2(Bc*D):0] addbAddr,SsumAddr;
     logic [$clog2(D)-1:0] interAddaAddr,interAddbAddr;
+    logic [$clog2(Bc*Br)-1:0] interCaddra;
+    logic [$clog2(Bc)-1:0] intraCaddra;
     logic comp[0:COMPS-1];
 
 //    logic [$clog2(MAX_VAL):0] cnt;
 //    logic [$clog2((D/ADDS))-1:0] I;
 //    logic [$clog2(Bc)-1:0] J;
     
-    logic we,loadFlg,SscaleFlg,maxFlg;
+    logic we,loadFlg,SscaleFlg,maxFlg,SshiftFlg;
     logic [1:0] diffFlg;
     logic [5:0] SsumFlg;
     
@@ -193,12 +195,12 @@ module top#(
             Kaddra<=0;
             Qaddra<=0;
             Vaddra<=0;
-//            Caddra<=MAX_CACHE+1;
-            Caddra<=0;            
+        
             addaAddr<=0;
             addbAddr<=0;
             diffQaddrb<=0;
             SsumAddr<=0;
+            interCaddra<=0;
         end
         else if(~done)begin
 
@@ -235,7 +237,6 @@ module top#(
                 if(Kaddrb==Bc-1 && interAddbAddr==(D-ADDS))begin
                     addaAddr<=diffQaddrb+D;
                     diffQaddrb<=diffQaddrb+D;
-//                    addbAddr<=0;
                 end
                     
             end
@@ -256,16 +257,7 @@ module top#(
                             addB[ADDS+i+j*(ADDS/2)] <= {1'b0,sum[2*i+1][DATA_WIDTH-2:0]};
                         end
                     end
-//                    else if(SsumFlg==15+j*2)begin
-//                        addA[ADDS+j*(ADDS/2)] <=sum[ADDS+j*(ADDS/2)];
-//                    end
-//                    else if(SsumFlg==16+j*2) addB[ADDS+j*(ADDS/2)] <=sum[ADDS+j*(ADDS/2)];
-//                    else if(SsumFlg==9+j*2 || SsumFlg==10+j*2)begin
-//                        for(int i=0;i<TOTAL_ADDS-ADDS;i=i+1)begin
-//                            addA[ADDS+i+j*(ADDS/2)] <= {1'b0,sum[2*i][DATA_WIDTH-2:0]};
-//                            addB[ADDS+i+j*(ADDS/2)] <= {1'b0,sum[2*i+1][DATA_WIDTH-2:0]};
-//                        end
-//                    end
+
                     //INTERMEDIATE LAYERS
                     else begin
                         for(int i=0;i<(TOTAL_ADDS-ADDS)/2;i=i+1)begin
@@ -273,21 +265,13 @@ module top#(
                             addB[ADDS+i+j*(ADDS/2)] <= sum[ADDS+2*i+1+j*(ADDS/2)];
                         end
                     end
-                    
 
-//                    else begin
-//                        for(int i=0;i<(TOTAL_ADDS-ADDS)/2;i=i+1)begin
-//                            addA[ADDS+i+j*(ADDS/2)] <= sum[ADDS+2*i+j*(ADDS/2)];
-//                            addB[ADDS+i+j*(ADDS/2)] <= sum[ADDS+2*i+1+j*(ADDS/2)];
-//                        end
-//                    end
                 end
 
                 if(SsumFlg==9) SscaleFlg<=1'b1;
                 
                 if(SsumFlg==39) SsumFlg<=0;
                 else SsumFlg<=SsumFlg+1;
-//                else SsumFlg<=0;            
             end
             
             
@@ -297,23 +281,19 @@ module top#(
                 else mulA[0]<=sum[((SsumFlg-(8+2))%8)*ADDS/4+ADDS];
                 
                 if(mulReady[0]) maxFlg<=~maxFlg;
-                
-//                if(!maxFlg && comp[0] && greatReady[0])begin
-                    
-//                end
+//                if(Caddra==Br) SscaleFlg<=0;
             end
             
             if(maxFlg)begin
                 for(int i=0;i<COMPS;i=i+1) greatVal[i]<=1'b1;
                 great[0]<=prod[0];
-                Cdina[DATA_WIDTH*((SsumFlg-13)%8)/2 +: 32]<=prod[0];
-
+                Cdina[DATA_WIDTH*intraCaddra +: 32]<=prod[0];
+                interCaddra<=interCaddra+1;
                 
-                if((SsumFlg-21)%8==0 && SsumFlg>20)begin
-                    less[0]<=$shortrealtobits(-1.0/0.0);
-                    Caddra<=Caddra+1;
-                end
+                if(intraCaddra==0) less[0]<=$shortrealtobits(-1.0/0.0);
                 else if(comp[0] && greatReady[0]) less[0]<=great[0];
+                
+                
             end
         end
     end
@@ -372,11 +352,15 @@ module top#(
         
         if(maxFlg)begin
             for(int i=0;i<COMPS;i=i+1) greatVal[i]=1'b1;
+            Caddra=(interCaddra-1)/Bc;
+            intraCaddra=interCaddra%Bc;
             Cwea=1'b1;
         end
         else begin
             for(int i=0;i<COMPS;i=i+1) greatVal[i]=1'b0;
             Cwea=1'b0;
+            Caddra=0;
+            intraCaddra=0;
         end
     end
 
