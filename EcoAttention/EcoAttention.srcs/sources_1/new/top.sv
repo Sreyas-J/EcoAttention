@@ -19,17 +19,16 @@ module top#(
     localparam int DIVS=1;
     localparam int EXPS=2;
     localparam int COMPS=8;
-    localparam int MULS=4; 
+    localparam int MULS=5; 
     localparam int TOTAL_ADDS = ADDS*1.5;
     localparam int FINAL_ADDS = ADDS*(1+ADDS/2*1/2);
 //    localparam int MAX_CACHE = Bc*(D/ADDS)-1;
     
     localparam logic [DATA_WIDTH-1:0] MSB_MASK = {1'b1, {(DATA_WIDTH-1){1'b0}}};   
     
-    logic addVal[0:FINAL_ADDS-1],addReady[0:FINAL_ADDS-1],mulVal[0:MULS-1],mulReady[0:MULS-1],greatVal[0:COMPS-1],greatReady[0:COMPS-1],Qena,Qwea,Qenb,Qweb,Kena,Kwea,Kenb,Vena,Vwea,Venb,Cena,Cwea,Cenb,Oen,Owe;
-    logic [DATA_WIDTH-1:0] addA[0:FINAL_ADDS-1],addB[0:FINAL_ADDS-1],sum[0:FINAL_ADDS-1],mulA[0:MULS-1],mulB[0:MULS-1],prod[0:MULS-1],great[0:COMPS-1],less[0:COMPS-1];
+    logic addVal[0:FINAL_ADDS-1],addReady[0:FINAL_ADDS-1],mulVal[0:MULS-1],mulReady[0:MULS-1],greatVal[0:COMPS-1],greatReady[0:COMPS-1],eVal[0:EXPS-1],eReady[0:EXPS-1],Qena,Qwea,Qenb,Qweb,Kena,Kwea,Kenb,Vena,Vwea,Venb,Cena,Cwea,Cenb,Oen,Owe;
+    logic [DATA_WIDTH-1:0] addA[0:FINAL_ADDS-1],addB[0:FINAL_ADDS-1],sum[0:FINAL_ADDS-1],mulA[0:MULS-1],mulB[0:MULS-1],prod[0:MULS-1],great[0:COMPS-1],less[0:COMPS-1],e[0:EXPS-1],x[0:EXPS-1],eBuff[0:Bc-1];
     logic [DATA_WIDTH*D-1:0] Qdouta,Qdoutb,Kdouta,Kdoutb,Vdouta,Vdoutb,Odin,Odout;
-//    logic [DATA_WIDTH*ADDS-1:0] 
     logic [DATA_WIDTH*Bc-1:0] Cdina,Cdouta,Cdoutb;
     logic [$clog2(Br)-1:0] Qaddra,Qaddrb;
     logic [$clog2(Bc)-1:0] Kaddra,Kaddrb,Vaddra,Vaddrb;
@@ -47,6 +46,7 @@ module top#(
     
     logic we,loadFlg,SscaleFlg,maxFlg,SshiftFlg;
     logic [1:0] diffFlg;
+    logic [2:0] eMulFlg;
     logic [5:0] SsumFlg;
     
     // instantiate the HLS/AXI-Stream Adder IP
@@ -81,16 +81,21 @@ module top#(
 //      .m_axis_result_tready(qReady),  // input wire m_axis_result_tready
 //      .m_axis_result_tdata(q)    // output wire [31 : 0] m_axis_result_tdata
 //    );
+
+    generate 
+        for(i=0;i<EXPS;i=i+1)begin : gen_exps
+            EXP exp (
+              .aclk(clk),                                  // input wire aclk
+              .s_axis_a_tvalid(eVal[i]),            // input wire s_axis_a_tvalid
+              .s_axis_a_tready(s_axis_a_tready),            // output wire s_axis_a_tready
+              .s_axis_a_tdata(x[i]),              // input wire [31 : 0] s_axis_a_tdata
+              .m_axis_result_tvalid(eReady[i]),  // output wire m_axis_result_tvalid
+              .m_axis_result_tready(eVal[i]),  // input wire m_axis_result_tready
+              .m_axis_result_tdata(e[i])    // output wire [31 : 0] m_axis_result_tdata
+            );
+        end
+    endgenerate
     
-//    EXP exp (
-//      .aclk(clk),                                  // input wire aclk
-//      .s_axis_a_tvalid(eVal),            // input wire s_axis_a_tvalid
-//      .s_axis_a_tready(eReady),            // output wire s_axis_a_tready
-//      .s_axis_a_tdata($shortrealtobits(2.71828)),              // input wire [31 : 0] s_axis_a_tdata
-//      .m_axis_result_tvalid(xVal),  // output wire m_axis_result_tvalid
-//      .m_axis_result_tready(xReady),  // input wire m_axis_result_tready
-//      .m_axis_result_tdata(x)    // output wire [31 : 0] m_axis_result_tdata
-//    );
     generate
         for(i=0;i<COMPS;i=i+1) begin : gen_comps
             GREATERthan greater (
@@ -190,6 +195,8 @@ module top#(
             SsumFlg<=0;
             SscaleFlg<=1'b0;
             maxFlg<=1'b0;
+            SshiftFlg<=1'b0;
+            eMulFlg<=0;
             
             done<=1'b0;
             Kaddra<=0;
@@ -201,6 +208,7 @@ module top#(
             diffQaddrb<=0;
             SsumAddr<=0;
             interCaddra<=0;
+            Caddrb<=0;
         end
         else if(~done)begin
 
@@ -238,6 +246,8 @@ module top#(
                     addaAddr<=diffQaddrb+D;
                     diffQaddrb<=diffQaddrb+D;
                 end
+                
+//                if(addaAddr>D*Br) diffFlg<=0;
                     
             end
             
@@ -280,20 +290,43 @@ module top#(
                 if(SsumFlg==0) mulA[0]<=sum[FINAL_ADDS-ADDS/2];
                 else mulA[0]<=sum[((SsumFlg-(8+2))%8)*ADDS/4+ADDS];
                 
-                if(mulReady[0]) maxFlg<=~maxFlg;
-//                if(Caddra==Br) SscaleFlg<=0;
+                if(intraCaddra==0) x[0]<=less[0]^MSB_MASK;
+                
+                if(mulReady[0])begin
+                    maxFlg<=~maxFlg;
+                end
+                if(eReady[0])begin
+                    eMulFlg[0]<=~eMulFlg[0];
+//                    mulB[1]<=e[0];
+                    eBuff[eMulFlg[2:1]]<=e[0];
+                end
             end
             
             if(maxFlg)begin
                 for(int i=0;i<COMPS;i=i+1) greatVal[i]<=1'b1;
                 great[0]<=prod[0];
-                Cdina[DATA_WIDTH*intraCaddra +: 32]<=prod[0];
                 interCaddra<=interCaddra+1;
                 
-                if(intraCaddra==0) less[0]<=$shortrealtobits(-1.0/0.0);
-                else if(comp[0] && greatReady[0]) less[0]<=great[0];
+                if(intraCaddra==0)begin
+                    less[0]<=$shortrealtobits(-1.0/0.0);
+                    
+                    SshiftFlg<=1'b1;
+                end
+                else if(comp[0] && greatReady[0]) less[0]<=great[0];               
+               
+                x[0]<=prod[0];
+            end
+            
+            if(eMulFlg[0])begin
+//                mulA[1]<=e[0];
+                if(eReady[0]) eMulFlg[2:1]<=eMulFlg[2:1]+1;
                 
-                
+                if(eMulFlg==7)begin
+                    for(int i=0;i<Bc;i=i+1)begin
+                        mulA[i+1]<=eBuff[i];
+                        mulB[i+1]<=e[0];
+                    end
+                end
             end
         end
     end
@@ -345,22 +378,33 @@ module top#(
         
         if(SscaleFlg)begin
             for(int i=0;i<MULS;i=i+1) mulVal[i]=1'b1;
+            for(int i=0;i<COMPS;i=i+1) greatVal[i]=1'b1;
         end
         else begin
             for(int i=0;i<MULS;i=i+1) mulVal[i]=1'b0;
+            for(int i=0;i<COMPS;i=i+1) greatVal[i]=1'b0;
         end
         
+        Caddra=(interCaddra-1)/Bc;
+        intraCaddra=interCaddra%Bc;
+        
         if(maxFlg)begin
-            for(int i=0;i<COMPS;i=i+1) greatVal[i]=1'b1;
-            Caddra=(interCaddra-1)/Bc;
-            intraCaddra=interCaddra%Bc;
+            
             Cwea=1'b1;
         end
         else begin
-            for(int i=0;i<COMPS;i=i+1) greatVal[i]=1'b0;
             Cwea=1'b0;
-            Caddra=0;
-            intraCaddra=0;
+        end
+        
+        if(SshiftFlg)begin
+            for(int i=0;i<EXPS;i=i+1)begin
+                eVal[i]<=1'b1;
+            end
+        end
+        else begin
+            for(int i=0;i<EXPS;i=i+1)begin
+                eVal[i]<=1'b0;
+            end
         end
     end
 
