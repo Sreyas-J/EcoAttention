@@ -19,7 +19,7 @@ module top#(
     localparam int DIVS=1;
     localparam int EXPS=2;
     localparam int COMPS=8;
-    localparam int MULS=5; 
+    localparam int MULS=6; 
     localparam int TOTAL_ADDS = ADDS*1.5;
     localparam int FINAL_ADDS = ADDS*(1+ADDS/2*1/2);
 //    localparam int MAX_CACHE = Bc*(D/ADDS)-1;
@@ -34,6 +34,7 @@ module top#(
     logic [$clog2(Bc)-1:0] Kaddra,Kaddrb,Vaddra,Vaddrb;
     logic [$clog2(Bc)-1:0] Caddra,Caddrb;
     logic [$clog2(Br*D):0] addaAddr,diffQaddrb;
+    logic [DATA_WIDTH-1:0] m [0:Br-1];
     logic [$clog2(Br*Bc*D)-1:0] SsumAddr;
     logic [$clog2(Br*Bc*D):0] addbAddr;
     logic [$clog2(D)-1:0] interAddaAddr,interAddbAddr;
@@ -212,6 +213,10 @@ module top#(
             SsumAddr<=0;
             interCaddra<=0;
             Caddrb<=0;
+            
+            for(int i=0;i<Br;i=i+1)begin
+                m[i]<=$shortrealtobits(-1.0/0.0);
+            end
         end
         else if(~done)begin
 
@@ -320,6 +325,7 @@ module top#(
                 else if(comp[0] && greatReady[0]) less[0]<=great[0];               
                
                 x[0]<=prod[0];
+                x[1]<=m[Caddra];
             end
             
             if(eMulFlg[0])begin
@@ -331,6 +337,8 @@ module top#(
                         mulA[i+1]<=eBuff[i];
                         mulB[i+1]<=e[0];
                     end
+                    mulA[Bc+1]<=e[1];
+                    mulB[Bc+1]<=e[0];
                    
                 end               
                 else if(eMulFlg==1 && PsumFlg!=0) PsumFlg<=PsumFlg+1;
