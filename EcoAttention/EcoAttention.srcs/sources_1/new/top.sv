@@ -27,14 +27,15 @@ module top#(
     localparam logic [DATA_WIDTH-1:0] MSB_MASK = {1'b1, {(DATA_WIDTH-1){1'b0}}};   
     
     logic addVal[0:FINAL_ADDS-1],addReady[0:FINAL_ADDS-1],mulVal[0:MULS-1],mulReady[0:MULS-1],greatVal[0:COMPS-1],greatReady[0:COMPS-1],eVal[0:EXPS-1],eReady[0:EXPS-1],Qena,Qwea,Qenb,Qweb,Kena,Kwea,Kenb,Vena,Vwea,Venb,Cena,Cwea,Cenb,Oen,Owe;
-    logic [DATA_WIDTH-1:0] addA[0:FINAL_ADDS-1],addB[0:FINAL_ADDS-1],sum[0:FINAL_ADDS-1],mulA[0:MULS-1],mulB[0:MULS-1],prod[0:MULS-1],great[0:COMPS-1],less[0:COMPS-1],e[0:EXPS-1],x[0:EXPS-1],eBuff[0:Bc-1];
+    logic [DATA_WIDTH-1:0] addA[0:FINAL_ADDS-1],addB[0:FINAL_ADDS-1],sum[0:FINAL_ADDS-1],mulA[0:MULS-1],mulB[0:MULS-1],prod[0:MULS-1],great[0:COMPS-1],less[0:COMPS-1],e[0:EXPS-1],x[0:EXPS-1],eBuff[0:Bc-1],L[0:Br-1];
     logic [DATA_WIDTH*D-1:0] Qdouta,Qdoutb,Kdouta,Kdoutb,Vdouta,Vdoutb,Odin,Odout;
     logic [DATA_WIDTH*Bc-1:0] Cdina,Cdouta,Cdoutb;
     logic [$clog2(Br)-1:0] Qaddra,Qaddrb;
     logic [$clog2(Bc)-1:0] Kaddra,Kaddrb,Vaddra,Vaddrb;
     logic [$clog2(Bc)-1:0] Caddra,Caddrb;
     logic [$clog2(Br*D):0] addaAddr,diffQaddrb;
-    logic [$clog2(Bc*D):0] addbAddr,SsumAddr;
+    logic [$clog2(Br*Bc*D)-1:0] SsumAddr;
+    logic [$clog2(Br*Bc*D):0] addbAddr;
     logic [$clog2(D)-1:0] interAddaAddr,interAddbAddr;
     logic [$clog2(Bc*Br)-1:0] interCaddra;
     logic [$clog2(Bc)-1:0] intraCaddra;
@@ -45,6 +46,7 @@ module top#(
 //    logic [$clog2(Bc)-1:0] J;
     
     logic we,loadFlg,SscaleFlg,maxFlg,SshiftFlg;
+    logic [$clog2(Bc):0] PsumFlg;
     logic [1:0] diffFlg;
     logic [2:0] eMulFlg;
     logic [5:0] SsumFlg;
@@ -197,6 +199,7 @@ module top#(
             maxFlg<=1'b0;
             SshiftFlg<=1'b0;
             eMulFlg<=0;
+            PsumFlg<=0;
             
             done<=1'b0;
             Kaddra<=0;
@@ -219,7 +222,7 @@ module top#(
                     Kaddra<=Kaddra+1;
                     Vaddra<=Vaddra+1;
                 end
-                
+                L[Qaddra]<=0;
                 if(Qaddra>=Br-1 && Kaddra>=Bc-1) loadFlg<=1'b0;
                 less[0]<=$shortrealtobits(-1.0/0.0);
             end
@@ -247,7 +250,7 @@ module top#(
                     diffQaddrb<=diffQaddrb+D;
                 end
                 
-//                if(addaAddr>D*Br) diffFlg<=0;
+                if(addbAddr>=Br*Bc*D) diffFlg<=0;
                     
             end
             
@@ -300,6 +303,8 @@ module top#(
 //                    mulB[1]<=e[0];
                     eBuff[eMulFlg[2:1]]<=e[0];
                 end
+                
+                if(mulReady[1] && diffFlg==0 && PsumFlg==0) PsumFlg<=1;
             end
             
             if(maxFlg)begin
@@ -326,7 +331,24 @@ module top#(
                         mulA[i+1]<=eBuff[i];
                         mulB[i+1]<=e[0];
                     end
+                   
+                end               
+                else if(eMulFlg==1 && PsumFlg!=0) PsumFlg<=PsumFlg+1;
+               
+            end
+            
+            if(PsumFlg)begin
+                for(int i=0;i<Br/2;i=i+1)begin
+                    addA[i]<=prod[i*2+1];
+                    addB[i]<=prod[i*2+2];
                 end
+                
+                for(int i=0;i<Br/4;i=i+1)begin
+                    addA[Br/2+i*2]<=sum[i*2];
+                    addB[Br/2+i*2]<=sum[i*2+1];
+                end
+                
+                if(PsumFlg==Bc) PsumFlg<=0;
             end
         end
     end
@@ -362,7 +384,7 @@ module top#(
             interAddbAddr=0;
         end
         
-        if(diffFlg==2)begin
+        if(diffFlg==2 || PsumFlg)begin
             for(int i=0;i<ADDS;i=i+1) addVal[i]=1'b1;
         end
         else begin
@@ -377,19 +399,20 @@ module top#(
         end
         
         if(SscaleFlg)begin
-            for(int i=0;i<MULS;i=i+1) mulVal[i]=1'b1;
+//            for(int i=0;i<MULS;i=i+1) mulVal[i]=1'b1;
+            mulVal[0]=1'b1;
             for(int i=0;i<COMPS;i=i+1) greatVal[i]=1'b1;
         end
         else begin
-            for(int i=0;i<MULS;i=i+1) mulVal[i]=1'b0;
+//            for(int i=0;i<MULS;i=i+1) mulVal[i]=1'b0;
+            mulVal[0]=1'b0;
             for(int i=0;i<COMPS;i=i+1) greatVal[i]=1'b0;
         end
         
         Caddra=(interCaddra-1)/Bc;
         intraCaddra=interCaddra%Bc;
         
-        if(maxFlg)begin
-            
+        if(maxFlg)begin     
             Cwea=1'b1;
         end
         else begin
@@ -405,6 +428,13 @@ module top#(
             for(int i=0;i<EXPS;i=i+1)begin
                 eVal[i]<=1'b0;
             end
+        end
+        
+        if(eMulFlg==0 && eReady[0])begin
+            for(int i=1;i<MULS;i=i+1) mulVal[i]<=1'b1;
+        end
+        else begin
+            for(int i=1;i<MULS;i=i+1) mulVal[i]<=1'b0;
         end
     end
 
