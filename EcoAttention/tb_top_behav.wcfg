@@ -11,98 +11,60 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="220.086 ns"></ZoomStartTime>
-      <ZoomEndTime time="271.914 ns"></ZoomEndTime>
-      <Cursor1Time time="295.000 ns"></Cursor1Time>
+      <ZoomStartTime time="166.666 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,166.667 ns"></ZoomEndTime>
+      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="140"></NameColumnWidth>
-      <ValueColumnWidth column_width="83"></ValueColumnWidth>
+      <NameColumnWidth column_width="137"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="10" />
+   <WVObjectSize size="14" />
    <wvobject type="logic" fp_name="/tb_top/dut/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_top/dut/maxFlg">
-      <obj_property name="ElementShortName">maxFlg</obj_property>
-      <obj_property name="ObjectShortName">maxFlg</obj_property>
+   <wvobject type="array" fp_name="/tb_top/dut/PsumFlg">
+      <obj_property name="ElementShortName">PsumFlg[2:0]</obj_property>
+      <obj_property name="ObjectShortName">PsumFlg[2:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_top/dut/interCaddra">
-      <obj_property name="ElementShortName">interCaddra[3:0]</obj_property>
-      <obj_property name="ObjectShortName">interCaddra[3:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   <wvobject type="array" fp_name="/tb_top/dut/O_addra">
+      <obj_property name="ElementShortName">O_addra[1:0]</obj_property>
+      <obj_property name="ObjectShortName">O_addra[1:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_top/dut/less">
-      <obj_property name="ElementShortName">less[0:7][31:0]</obj_property>
-      <obj_property name="ObjectShortName">less[0:7][31:0]</obj_property>
+   <wvobject type="array" fp_name="/tb_top/dut/O_douta">
+      <obj_property name="ElementShortName">O_douta[127:0]</obj_property>
+      <obj_property name="ObjectShortName">O_douta[127:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/O_tilde/inst/\native_mem_module.blk_mem_gen_v8_4_7_inst /memory">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">memory[0:3][127:0]</obj_property>
+      <obj_property name="ObjectShortName">memory[0:3][127:0]</obj_property>
+      <obj_property name="label">O[0:3][127:0]</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject type="array" fp_name="/tb_top/dut/less[0]">
-         <obj_property name="ElementShortName">[0][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/less[1]">
-         <obj_property name="ElementShortName">[1][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][31:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/less[2]">
-         <obj_property name="ElementShortName">[2][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[2][31:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/less[3]">
-         <obj_property name="ElementShortName">[3][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[3][31:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/less[4]">
-         <obj_property name="ElementShortName">[4][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[4][31:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/less[5]">
-         <obj_property name="ElementShortName">[5][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[5][31:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/less[6]">
-         <obj_property name="ElementShortName">[6][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[6][31:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/less[7]">
-         <obj_property name="ElementShortName">[7][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[7][31:0]</obj_property>
-      </wvobject>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_top/dut/great">
-      <obj_property name="ElementShortName">great[0:7][31:0]</obj_property>
-      <obj_property name="ObjectShortName">great[0:7][31:0]</obj_property>
-      <obj_property name="Radix">REALRADIX</obj_property>
-      <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-      <obj_property name="radix_fractionWidth">24</obj_property>
-      <obj_property name="radix_otherWidth">8</obj_property>
+   <wvobject type="array" fp_name="/tb_top/dut/diffFlg">
+      <obj_property name="ElementShortName">diffFlg[1:0]</obj_property>
+      <obj_property name="ObjectShortName">diffFlg[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/poProdFlg">
+      <obj_property name="ElementShortName">poProdFlg[2:0]</obj_property>
+      <obj_property name="ObjectShortName">poProdFlg[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/mulVal">
+      <obj_property name="ElementShortName">mulVal[0:9]</obj_property>
+      <obj_property name="ObjectShortName">mulVal[0:9]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/mulReady">
+      <obj_property name="ElementShortName">mulReady[0:9]</obj_property>
+      <obj_property name="ObjectShortName">mulReady[0:9]</obj_property>
       <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_top/dut/e">
       <obj_property name="ElementShortName">e[0:1][31:0]</obj_property>
       <obj_property name="ObjectShortName">e[0:1][31:0]</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject type="array" fp_name="/tb_top/dut/e[0]">
-         <obj_property name="ElementShortName">[0][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/e[1]">
-         <obj_property name="ElementShortName">[1][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject type="array" fp_name="/tb_top/dut/x">
       <obj_property name="ElementShortName">x[0:1][31:0]</obj_property>
@@ -112,164 +74,28 @@
       <obj_property name="radix_fractionWidth">24</obj_property>
       <obj_property name="radix_otherWidth">8</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject type="array" fp_name="/tb_top/dut/x[0]">
-         <obj_property name="ElementShortName">[0][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/x[1]">
-         <obj_property name="ElementShortName">[1][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject type="array" fp_name="/tb_top/dut/mulA">
-      <obj_property name="ElementShortName">mulA[0:4][31:0]</obj_property>
-      <obj_property name="ObjectShortName">mulA[0:4][31:0]</obj_property>
+      <obj_property name="ElementShortName">mulA[0:9][31:0]</obj_property>
+      <obj_property name="ObjectShortName">mulA[0:9][31:0]</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject type="array" fp_name="/tb_top/dut/mulA[0]">
-         <obj_property name="ElementShortName">[0][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/mulA[1]">
-         <obj_property name="ElementShortName">[1][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/mulA[2]">
-         <obj_property name="ElementShortName">[2][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[2][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/mulA[3]">
-         <obj_property name="ElementShortName">[3][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[3][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/mulA[4]">
-         <obj_property name="ElementShortName">[4][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[4][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject type="array" fp_name="/tb_top/dut/mulB">
-      <obj_property name="ElementShortName">mulB[0:4][31:0]</obj_property>
-      <obj_property name="ObjectShortName">mulB[0:4][31:0]</obj_property>
+      <obj_property name="ElementShortName">mulB[0:9][31:0]</obj_property>
+      <obj_property name="ObjectShortName">mulB[0:9][31:0]</obj_property>
       <obj_property name="Radix">REALRADIX</obj_property>
       <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
       <obj_property name="radix_fractionWidth">24</obj_property>
       <obj_property name="radix_otherWidth">8</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject type="array" fp_name="/tb_top/dut/mulB[0]">
-         <obj_property name="ElementShortName">[0][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/mulB[1]">
-         <obj_property name="ElementShortName">[1][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/mulB[2]">
-         <obj_property name="ElementShortName">[2][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[2][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/mulB[3]">
-         <obj_property name="ElementShortName">[3][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[3][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/mulB[4]">
-         <obj_property name="ElementShortName">[4][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[4][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject type="array" fp_name="/tb_top/dut/prod">
-      <obj_property name="ElementShortName">prod[0:4][31:0]</obj_property>
-      <obj_property name="ObjectShortName">prod[0:4][31:0]</obj_property>
+      <obj_property name="ElementShortName">prod[0:9][31:0]</obj_property>
+      <obj_property name="ObjectShortName">prod[0:9][31:0]</obj_property>
       <obj_property name="Radix">REALRADIX</obj_property>
       <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
       <obj_property name="radix_fractionWidth">24</obj_property>
       <obj_property name="radix_otherWidth">8</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject type="array" fp_name="/tb_top/dut/prod[0]">
-         <obj_property name="ElementShortName">[0][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/prod[1]">
-         <obj_property name="ElementShortName">[1][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/prod[2]">
-         <obj_property name="ElementShortName">[2][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[2][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/prod[3]">
-         <obj_property name="ElementShortName">[3][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[3][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/prod[4]">
-         <obj_property name="ElementShortName">[4][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[4][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
    </wvobject>
 </wave_config>
