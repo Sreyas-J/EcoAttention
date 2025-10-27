@@ -26,7 +26,7 @@ module top#(
     
     localparam logic [DATA_WIDTH-1:0] MSB_MASK = {1'b1, {(DATA_WIDTH-1){1'b0}}};   
     
-    logic addVal[0:FINAL_ADDS-1],addReady[0:FINAL_ADDS-1],mulVal[0:MULS-1],mulReady[0:MULS-1],greatVal[0:COMPS-1],greatReady[0:COMPS-1],eVal[0:EXPS-1],eReady[0:EXPS-1],Qena,Qwea,Qenb,Qweb,Kena,Kwea,Kenb,Vena,Vwea,Venb,O_en,Owea,Oen,Owe;
+    logic addVal[0:FINAL_ADDS-1],addReady[0:FINAL_ADDS-1],mulVal[0:MULS-1],mulReady[0:MULS-1],greatVal[0:COMPS-1],greatReady[0:COMPS-1],eVal[0:EXPS-1],eReady[0:EXPS-1],Qena,Qwea,Qenb,Qweb,Kena,Kwea,Kenb,Vena,Vwea,Venb,O_en,O_wea,Oen,Owe;
     logic [DATA_WIDTH-1:0] addA[0:FINAL_ADDS-1],addB[0:FINAL_ADDS-1],sum[0:FINAL_ADDS-1],mulA[0:MULS-1],mulB[0:MULS-1],prod[0:MULS-1],great[0:COMPS-1],less[0:COMPS-1],e[0:EXPS-1],x[0:EXPS-1],eBuff[0:Bc-1],L[0:Br-1];
     logic [DATA_WIDTH*D-1:0] Qdouta,Qdoutb,Kdouta,Kdoutb,Vdouta,Vdoutb,Odin,Odout;
     logic [DATA_WIDTH*Bc-1:0] O_dina,O_douta,O_doutb;
@@ -207,6 +207,7 @@ module top#(
             Kaddra<=0;
             Qaddra<=0;
             Vaddra<=0;
+            O_addra<=0;
         
             addaAddr<=0;
             addbAddr<=0;
@@ -381,6 +382,16 @@ module top#(
                     end
                 end
                 
+                if(mulReady[Bc+2])begin
+                    for(int i=0;i<Bc;i=i+1)begin
+                        O_dina[i*DATA_WIDTH+:DATA_WIDTH]<=prod[i+Bc+2];
+                    end
+                    
+                    if(poProdFlg%2)begin
+                        O_addra<=O_addra+1;
+                        l[(poProdFlg-3)/2]<=prod[Bc+2];
+                    end
+                end
 //                for(int i=0;i<Bc;i=i+1)begin
 //                    mulA[i+Bc+2]<=prod[Bc+1];
 //                end
@@ -447,13 +458,6 @@ module top#(
         Caddra=(interCaddra-1)/Bc;
         intraCaddra=interCaddra%Bc;
         
-//        if(maxFlg)begin     
-//            Cwea=1'b1;
-//        end
-//        else begin
-//            Cwea=1'b0;
-//        end
-        
         if(SshiftFlg)begin
             for(int i=0;i<EXPS;i=i+1)begin
                 eVal[i]<=1'b1;
@@ -474,9 +478,12 @@ module top#(
         
         if(poProdFlg)begin
             for(int i=Bc+1;i<=Bc*2+1;i=i+1) mulVal[i]<=1'b1;
+            if(mulReady[Bc+2]) O_wea=1'b1;
+            else O_wea=1'b0;
         end
         else begin
             for(int i=Bc+1;i<=Bc*2+1;i=i+1) mulVal[i]<=1'b0;
+            O_wea=1'b0;
         end
     end
 
