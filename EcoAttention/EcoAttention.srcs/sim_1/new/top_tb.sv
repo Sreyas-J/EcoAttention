@@ -14,7 +14,8 @@ module tb_top;
 
     // DUT inputs/outputs
     // pack D lanes each DATA_WIDTH wide: [ DATA_WIDTH*D-1 : 0 ]
-    logic [DATA_WIDTH*D-1:0] Qdin, Kdin, Vdin;
+    logic [DATA_WIDTH*D-1:0] Qdin, Kdin;
+    logic [DATA_WIDTH*Bc-1:0] Vdin;
     logic [DATA_WIDTH-1:0] scale;
     logic done;
 
@@ -70,34 +71,40 @@ module tb_top;
         reset = 0;
 
         // Row-major **parallel** load: send up to D lanes per cycle
-        for (int i = 0; i < Br; i = i + 1) begin
-            for (int j = 0; j < D; j = j + D) begin
-                // default to zero each cycle
-                Qdin = '0;
-                Kdin = '0;
-                Vdin = '0;
-
-                // pack up to D lanes
-                for (int k = 0; k < D; k = k + 1) begin
-                    col = j + k;
-                    if (col < D) begin
-                        // pack lane k: the top index for lane k is (k+1)*DATA_WIDTH-1
-                        Qdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = $shortrealtobits(Qmat[i][col]);
-                        if (i < Bc) begin
-                            Kdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = $shortrealtobits(Kmat[i][col]);
-                            Vdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = $shortrealtobits(Vmat[i][col]);
+        for (int i = 0; i < D; i = i + 1) begin
+            Vdin = '0;
+            if(i<Bc)begin
+                for (int j = 0; j < D; j = j + D) begin
+                    // default to zero each cycle
+                    Qdin = '0;
+                    Kdin = '0;
+    
+                    // pack up to D lanes
+                    for (int k = 0; k < D; k = k + 1) begin
+                        col = j + k;
+                        if (col < D) begin
+                            // pack lane k: the top index for lane k is (k+1)*DATA_WIDTH-1
+                            Qdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = $shortrealtobits(Qmat[i][col]);
+                            if (i < Bc) begin
+                                Kdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = $shortrealtobits(Kmat[i][col]);
+//                                Vdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = $shortrealtobits(Vmat[i][col]);
+                            end
+                        end else begin
+                            // col >= D -> leave lane zero (padding)
+                            Qdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = '0;
+                            Kdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = '0;
+//                            Vdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = '0;
                         end
-                    end else begin
-                        // col >= D -> leave lane zero (padding)
-                        Qdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = '0;
-                        Kdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = '0;
-                        Vdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = '0;
                     end
                 end
-
-                // Drive DUT for one clock with packed lanes
-                @(posedge clk);
             end
+                
+            for(int k=0;k<Bc;k=k+1)begin
+                Vdin[(k+1)*DATA_WIDTH-:DATA_WIDTH]=$shortrealtobits(Vmat[k][i]);
+            end
+
+            // Drive DUT for one clock with packed lanes
+            @(posedge clk);            
         end
 
 //        $display("\nData load complete. Waiting for done...");

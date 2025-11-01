@@ -6,7 +6,8 @@ module top#(
     parameter D = 16
 )(
     input logic clk,reset,
-    input logic [DATA_WIDTH*D-1:0] Qdina,Qdinb,Kdina,Kdinb,Vdina,Vdinb,
+    input logic [DATA_WIDTH*D-1:0] Qdina,Qdinb,Kdina,Kdinb,
+    input logic [DATA_WIDTH*Bc-1:0] Vdina,Vdinb,
     input logic [DATA_WIDTH-1:0] scale, 
     output logic done
 );
@@ -19,7 +20,7 @@ module top#(
     localparam int DIVS=1;
     localparam int EXPS=2;
     localparam int COMPS=8;
-    localparam int MULS=10; 
+    localparam int MULS=10+Bc*2; 
     localparam int TOTAL_ADDS = ADDS*1.5;
     localparam int FINAL_ADDS = ADDS*(1+ADDS/2*1/2);
 //    localparam int MAX_CACHE = Bc*(D/ADDS)-1;
@@ -31,13 +32,13 @@ module top#(
     logic [DATA_WIDTH*D-1:0] Qdouta,Qdoutb,Kdouta,Kdoutb,Vdouta,Vdoutb,Odin,Odout;
     logic [DATA_WIDTH*Bc-1:0] O_dina,O_douta,O_doutb;
     logic [$clog2(Br)-1:0] Qaddra,Qaddrb;
-    logic [$clog2(Bc)-1:0] Kaddra,Kaddrb,Vaddra,Vaddrb;
+    logic [$clog2(Bc)-1:0] Kaddra,Kaddrb;
     logic [$clog2(Bc)-1:0] O_addra,O_addrb,Caddra,Caddrb;
     logic [$clog2(Br*D):0] addaAddr,diffQaddrb;
     logic [DATA_WIDTH-1:0] m [0:Br-1], l[0:Br-1];
     logic [$clog2(Br*Bc*D)-1:0] SsumAddr;
     logic [$clog2(Br*Bc*D):0] addbAddr;
-    logic [$clog2(D)-1:0] interAddaAddr,interAddbAddr;
+    logic [$clog2(D)-1:0] interAddaAddr,interAddbAddr,Vaddra,Vaddrb;
     logic [$clog2(Bc*Br)-1:0] interCaddra;
     logic [$clog2(Bc)-1:0] intraCaddra;
     logic comp[0:COMPS-1];
@@ -46,7 +47,7 @@ module top#(
 //    logic [$clog2((D/ADDS))-1:0] I;
 //    logic [$clog2(Bc)-1:0] J;
     
-    logic we,loadFlg,SscaleFlg,maxFlg,SshiftFlg;
+    logic we,loadFlg,SscaleFlg,maxFlg,SshiftFlg,pvFlg;
     logic [$clog2(Bc):0] PsumFlg,poProdFlg;
     logic [1:0] diffFlg;
     logic [2:0] eMulFlg;
@@ -157,16 +158,28 @@ module top#(
       .doutb(Kdoutb) // output wire [31 : 0] douta
     );
     
-    K BRAMv (
+//    K BRAMv (
+//      .clka(clk),    // input wire clka
+//      .ena(Vena),      // input wire ena
+//      .wea(Vwea),      // input wire [0 : 0] wea
+//      .addra(Vaddra),  // input wire [5 : 0] addra
+//      .dina(Vdina),    // input wire [31 : 0] dina
+//      .clkb(clk),    // input wire clkb
+//      .enb(Venb),      // input wire enb
+//      .addrb(Vaddrb),  // input wire [5 : 0] addrb
+//      .doutb(Vdoutb)  // output wire [31 : 0] douta
+//    );
+    
+    V BRAMv (
       .clka(clk),    // input wire clka
       .ena(Vena),      // input wire ena
       .wea(Vwea),      // input wire [0 : 0] wea
-      .addra(Vaddra),  // input wire [5 : 0] addra
-      .dina(Vdina),    // input wire [31 : 0] dina
+      .addra(Vaddra),  // input wire [3 : 0] addra
+      .dina(Vdina),    // input wire [127 : 0] dina
       .clkb(clk),    // input wire clkb
       .enb(Venb),      // input wire enb
-      .addrb(Vaddrb),  // input wire [5 : 0] addrb
-      .doutb(Vdoutb)  // output wire [31 : 0] douta
+      .addrb(Vaddrb),  // input wire [3 : 0] addrb
+      .doutb(Vdoutb)  // output wire [127 : 0] doutb
     );
     
     CACHE O_tilde (
@@ -200,6 +213,7 @@ module top#(
             maxFlg<=1'b0;
             SshiftFlg<=1'b0;
             eMulFlg<=0;
+            pvFlg<=1'b0;
             PsumFlg<=0;
             poProdFlg<=0;
             
@@ -227,12 +241,11 @@ module top#(
             if(loadFlg)begin
                 if(Qaddra==2) diffFlg<=1;
                 if(Qaddra<Br-1) Qaddra<=Qaddra+1;
-                if(Kaddra<Bc-1) begin
-                    Kaddra<=Kaddra+1;
-                    Vaddra<=Vaddra+1;
-                end
+                if(Kaddra<Bc-1) Kaddra<=Kaddra+1;
+                if(Vaddra<D-1) Vaddra<=Vaddra+1;
+                
                 L[Qaddra]<=0;
-                if(Qaddra>=Br-1 && Kaddra>=Bc-1) loadFlg<=1'b0;
+                if(Qaddra>=Br-1 && Kaddra>=Bc-1 && Vaddra>=D-1) loadFlg<=1'b0;
                 less[0]<=$shortrealtobits(-1.0/0.0);
             end
             
@@ -347,10 +360,15 @@ module top#(
                     end
                     mulA[Bc+1]<=e[1];
                     mulB[Bc+1]<=e[0];
+                    pvFlg<=1'b1;
                    
-                end               
-                else if(eMulFlg==1 && PsumFlg!=0) PsumFlg<=PsumFlg+1;
-               
+                end
+//                else pvFlg<=1'b0;               
+                if(eMulFlg==1 && PsumFlg!=0) PsumFlg<=PsumFlg+1;             
+            end
+            
+            if(pvFlg)begin
+                
             end
             
             if(PsumFlg)begin
