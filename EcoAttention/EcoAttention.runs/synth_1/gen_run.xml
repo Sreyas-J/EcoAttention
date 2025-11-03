@@ -67,11 +67,11 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="CACHE"/>
+  <BlockFileSet Type="BlockSrcs" Name="EXP"/>
+  <BlockFileSet Type="BlockSrcs" Name="GREATERthan"/>
+  <BlockFileSet Type="BlockSrcs" Name="MUL"/>
   <BlockFileSet Type="BlockSrcs" Name="O"/>
   <BlockFileSet Type="BlockSrcs" Name="ADDER"/>
   <BlockFileSet Type="BlockSrcs" Name="K"/>
-  <BlockFileSet Type="BlockSrcs" Name="MUL"/>
-  <BlockFileSet Type="BlockSrcs" Name="GREATERthan"/>
-  <BlockFileSet Type="BlockSrcs" Name="EXP"/>
-  <BlockFileSet Type="BlockSrcs" Name="CACHE"/>
 </GenRun>

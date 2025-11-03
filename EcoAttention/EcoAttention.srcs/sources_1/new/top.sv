@@ -23,14 +23,15 @@ module top#(
     localparam int MULS=10+Bc*2; 
     localparam int TOTAL_ADDS = ADDS*1.5;
     localparam int FINAL_ADDS = ADDS*(1+ADDS/2*1/2);
+    localparam int PV_ADDS=Bc+2;
 //    localparam int MAX_CACHE = Bc*(D/ADDS)-1;
     
     localparam logic [DATA_WIDTH-1:0] MSB_MASK = {1'b1, {(DATA_WIDTH-1){1'b0}}};   
     
-    logic addVal[0:FINAL_ADDS-1],addReady[0:FINAL_ADDS-1],mulVal[0:MULS-1],mulReady[0:MULS-1],greatVal[0:COMPS-1],greatReady[0:COMPS-1],eVal[0:EXPS-1],eReady[0:EXPS-1],Qena,Qwea,Qenb,Qweb,Kena,Kwea,Kenb,Vena,Vwea,Venb,O_en,O_wea,Oen,Owe;
-    logic [DATA_WIDTH-1:0] addA[0:FINAL_ADDS-1],addB[0:FINAL_ADDS-1],sum[0:FINAL_ADDS-1],mulA[0:MULS-1],mulB[0:MULS-1],prod[0:MULS-1],great[0:COMPS-1],less[0:COMPS-1],e[0:EXPS-1],x[0:EXPS-1],eBuff[0:Bc-1],L[0:Br-1];
-    logic [DATA_WIDTH*D-1:0] Qdouta,Qdoutb,Kdouta,Kdoutb,Vdouta,Vdoutb,Odin,Odout;
-    logic [DATA_WIDTH*Bc-1:0] O_dina,O_douta,O_doutb;
+    logic addVal[0:FINAL_ADDS+PV_ADDS-1],addReady[0:FINAL_ADDS+PV_ADDS-1],mulVal[0:MULS-1],mulReady[0:MULS-1],greatVal[0:COMPS-1],greatReady[0:COMPS-1],eVal[0:EXPS-1],eReady[0:EXPS-1],Qena,Qwea,Qenb,Qweb,Kena,Kwea,Kenb,Vena,Vwea,Venb,O_en,O_wea,Oen,Owe;
+    logic [DATA_WIDTH-1:0] addA[0:FINAL_ADDS+PV_ADDS-1],addB[0:FINAL_ADDS+PV_ADDS-1],sum[0:FINAL_ADDS+PV_ADDS-1],mulA[0:MULS-1],mulB[0:MULS-1],prod[0:MULS-1],great[0:COMPS-1],less[0:COMPS-1],e[0:EXPS-1],x[0:EXPS-1],eBuff[0:Bc-1],L[0:Br-1];
+    logic [DATA_WIDTH*D-1:0] Qdouta,Qdoutb,Kdouta,Kdoutb,Odin,Odout;
+    logic [DATA_WIDTH*Bc-1:0] O_dina,O_douta,O_doutb,Vdouta,Vdoutb;
     logic [$clog2(Br)-1:0] Qaddra,Qaddrb;
     logic [$clog2(Bc)-1:0] Kaddra,Kaddrb;
     logic [$clog2(Bc)-1:0] O_addra,O_addrb,Caddra,Caddrb;
@@ -42,21 +43,22 @@ module top#(
     logic [$clog2(Bc*Br)-1:0] interCaddra;
     logic [$clog2(Bc)-1:0] intraCaddra;
     logic comp[0:COMPS-1];
+    logic [DATA_WIDTH-1:0] buff [0:Bc*D-1];
 
 //    logic [$clog2(MAX_VAL):0] cnt;
 //    logic [$clog2((D/ADDS))-1:0] I;
 //    logic [$clog2(Bc)-1:0] J;
     
-    logic we,loadFlg,SscaleFlg,maxFlg,SshiftFlg,pvFlg;
+    logic we,loadFlg,SscaleFlg,maxFlg,SshiftFlg;
     logic [$clog2(Bc):0] PsumFlg,poProdFlg;
-    logic [1:0] diffFlg;
+    logic [1:0] diffFlg,pvFlg;
     logic [2:0] eMulFlg;
     logic [5:0] SsumFlg;
     
     // instantiate the HLS/AXI-Stream Adder IP
     genvar i;
     generate
-        for (i = 0; i < FINAL_ADDS ;i = i + 1) begin : gen_adders
+        for (i = 0; i < FINAL_ADDS+PV_ADDS ;i = i + 1) begin : gen_adders
             // Instance name will be gen_adders[i].add_inst
             ADDER add_inst (
               .aclk(clk),
@@ -158,29 +160,32 @@ module top#(
       .doutb(Kdoutb) // output wire [31 : 0] douta
     );
     
-//    K BRAMv (
-//      .clka(clk),    // input wire clka
-//      .ena(Vena),      // input wire ena
-//      .wea(Vwea),      // input wire [0 : 0] wea
-//      .addra(Vaddra),  // input wire [5 : 0] addra
-//      .dina(Vdina),    // input wire [31 : 0] dina
-//      .clkb(clk),    // input wire clkb
-//      .enb(Venb),      // input wire enb
-//      .addrb(Vaddrb),  // input wire [5 : 0] addrb
-//      .doutb(Vdoutb)  // output wire [31 : 0] douta
-//    );
-    
     V BRAMv (
       .clka(clk),    // input wire clka
       .ena(Vena),      // input wire ena
       .wea(Vwea),      // input wire [0 : 0] wea
       .addra(Vaddra),  // input wire [3 : 0] addra
       .dina(Vdina),    // input wire [127 : 0] dina
+      .douta(Vdouta),  // output wire [127 : 0] douta
       .clkb(clk),    // input wire clkb
       .enb(Venb),      // input wire enb
+      .web(Vweb),      // input wire [0 : 0] web
       .addrb(Vaddrb),  // input wire [3 : 0] addrb
+      .dinb(Vdinb),    // input wire [127 : 0] dinb
       .doutb(Vdoutb)  // output wire [127 : 0] doutb
     );
+    
+//    V BRAMv (
+//      .clka(clk),    // input wire clka
+//      .ena(Vena),      // input wire ena
+//      .wea(Vwea),      // input wire [0 : 0] wea
+//      .addra(Vaddra),  // input wire [3 : 0] addra
+//      .dina(Vdina),    // input wire [127 : 0] dina
+//      .clkb(clk),    // input wire clkb
+//      .enb(Venb),      // input wire enb
+//      .addrb(Vaddrb),  // input wire [3 : 0] addrb
+//      .doutb(Vdoutb)  // output wire [127 : 0] doutb
+//    );
     
     CACHE O_tilde (
       .clka(clk),    // input wire clka
@@ -221,6 +226,7 @@ module top#(
             Kaddra<=0;
             Qaddra<=0;
             Vaddra<=0;
+            Vaddrb<=1;
             O_addra<=0;
         
             addaAddr<=0;
@@ -245,7 +251,10 @@ module top#(
                 if(Vaddra<D-1) Vaddra<=Vaddra+1;
                 
                 L[Qaddra]<=0;
-                if(Qaddra>=Br-1 && Kaddra>=Bc-1 && Vaddra>=D-1) loadFlg<=1'b0;
+                if(Qaddra>=Br-1 && Kaddra>=Bc-1 && Vaddra>=D-1)begin
+                    loadFlg<=1'b0;
+                    Vaddra<=0;
+                end
                 less[0]<=$shortrealtobits(-1.0/0.0);
             end
             
@@ -360,15 +369,47 @@ module top#(
                     end
                     mulA[Bc+1]<=e[1];
                     mulB[Bc+1]<=e[0];
-                    pvFlg<=1'b1;
+                    
+                    if(pvFlg==0) pvFlg<=1;
                    
                 end
-//                else pvFlg<=1'b0;               
+//                else pvFlg<=1'b0;   
+               if(eMulFlg==1 && pvFlg==1) pvFlg<=2;
+                            
                 if(eMulFlg==1 && PsumFlg!=0) PsumFlg<=PsumFlg+1;             
             end
             
-            if(pvFlg)begin
+            if(pvFlg!=0)begin
+                Vaddra<=Vaddra+2;
+                Vaddrb<=Vaddrb+2;
+            end
+            if(pvFlg==2)begin
+//                Vaddra<=Vaddra+2;
+//                Vaddrb<=Vaddrb+2;
                 
+                if(eMulFlg==2)begin
+                    for(int i=0;i<Bc;i=i+1)begin
+                        mulA[10+i]<=prod[1+i];
+                        mulA[10+Bc+i]<=prod[1+i];
+                    end
+                end
+                for(int i=0;i<Bc;i=i+1)begin                    
+                    mulB[10+i]<=Vdouta[i*DATA_WIDTH+:DATA_WIDTH];
+                    mulB[10+Bc+i]<=Vdoutb[i*DATA_WIDTH+:DATA_WIDTH];
+                end
+                
+                if(mulReady[10])begin
+                    for(int i=0;i<Bc;i=i+1)begin
+                        addA[FINAL_ADDS+i]<=prod[10+i*2];
+                        addB[FINAL_ADDS+i]<=prod[10+i*2+1];
+                    end
+                    
+                    for(int i=0;i<2;i=i+1)begin
+                        addA[FINAL_ADDS+Bc+i]<=sum[FINAL_ADDS+2*i];
+                        addB[FINAL_ADDS+Bc+i]<=sum[FINAL_ADDS+2*i+1];
+                    end
+                end
+  
             end
             
             if(PsumFlg)begin
@@ -488,10 +529,25 @@ module top#(
         end
         
         if(eMulFlg==0 && eReady[0])begin
-            for(int i=1;i<=Bc+1;i=i+1) mulVal[i]<=1'b1;
+            for(int i=1;i<=Bc+1;i=i+1) mulVal[i]=1'b1;
         end
         else begin
-            for(int i=1;i<=Bc+1;i=i+1) mulVal[i]<=1'b0;
+            for(int i=1;i<=Bc+1;i=i+1) mulVal[i]=1'b0;
+        end
+        
+        if(pvFlg==2)begin
+            for(int i=10;i<10+Bc*2;i=i+1) mulVal[i]=1'b1;
+            
+            if(mulReady[10])begin
+                for(int i=FINAL_ADDS;i<FINAL_ADDS+PV_ADDS;i=i+1) addVal[i]=1'b1;
+            end
+            else begin
+                for(int i=FINAL_ADDS;i<FINAL_ADDS+PV_ADDS;i=i+1) addVal[i]=1'b0;
+            end               
+        end
+        else begin
+            for(int i=10;i<10+Bc*2;i=i+1) mulVal[i]=1'b0;            
+            for(int i=FINAL_ADDS;i<FINAL_ADDS+PV_ADDS;i=i+1) addVal[i]=1'b0;
         end
         
         if(poProdFlg)begin
