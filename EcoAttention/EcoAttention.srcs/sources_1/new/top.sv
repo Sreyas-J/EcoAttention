@@ -32,7 +32,7 @@ module top#(
     logic [DATA_WIDTH-1:0] addA[0:FINAL_ADDS+PV_ADDS-1],addB[0:FINAL_ADDS+PV_ADDS-1],sum[0:FINAL_ADDS+PV_ADDS-1],mulA[0:MULS-1],mulB[0:MULS-1],prod[0:MULS-1],great[0:COMPS-1],less[0:COMPS-1],e[0:EXPS-1],x[0:EXPS-1],eBuff[0:Bc-1],L[0:Br-1];
     logic [DATA_WIDTH*D-1:0] Qdouta,Qdoutb,Kdouta,Kdoutb,Odin,Odout;
     logic [DATA_WIDTH*Bc-1:0] O_dina,O_douta,O_doutb,Vdouta,Vdoutb;
-    logic [$clog2(Br)-1:0] Qaddra,Qaddrb;
+    logic [$clog2(Br)-1:0] Qaddra,Qaddrb,lAddr;
     logic [$clog2(Bc)-1:0] Kaddra,Kaddrb;
     logic [$clog2(Bc)-1:0] O_addra,O_addrb,Caddra,Caddrb;
     logic [$clog2(Br*D):0] addaAddr,diffQaddrb;
@@ -49,7 +49,7 @@ module top#(
 //    logic [$clog2((D/ADDS))-1:0] I;
 //    logic [$clog2(Bc)-1:0] J;
     
-    logic we,loadFlg,SscaleFlg,maxFlg,SshiftFlg;
+    logic we,loadFlg,SscaleFlg,maxFlg,SshiftFlg,lUpdateFlg;
     logic [$clog2(Bc):0] PsumFlg,poProdFlg;
     logic [1:0] diffFlg,pvFlg;
     logic [2:0] eMulFlg;
@@ -221,6 +221,7 @@ module top#(
             pvFlg<=1'b0;
             PsumFlg<=0;
             poProdFlg<=0;
+            lUpdateFlg<=1'b0;
             
             done<=1'b0;
             Kaddra<=0;
@@ -236,6 +237,7 @@ module top#(
             interCaddra<=0;
             Caddrb<=0;
             O_addrb<=0;
+            lAddr<=0;
             
             for(int i=0;i<Br;i=i+1)begin
                 m[i]<=$shortrealtobits(-1.0/0.0);
@@ -336,8 +338,10 @@ module top#(
                 end
                 
                 if(mulReady[1] && PsumFlg==0)begin
-                    if(diffFlg==0) PsumFlg<=1;
-                    
+                    if(diffFlg==0)begin
+                        PsumFlg<=1;
+                        lUpdateFlg<=1'b1;
+                    end                    
                     poProdFlg<=1;
                 end
             end
@@ -376,7 +380,7 @@ module top#(
 //                else pvFlg<=1'b0;   
                if(eMulFlg==1 && pvFlg==1) pvFlg<=2;
                             
-                if(eMulFlg==1 && PsumFlg!=0) PsumFlg<=PsumFlg+1;             
+                if(eMulFlg==1 && PsumFlg!=0) PsumFlg<=PsumFlg+1;           
             end
             
             if(pvFlg!=0)begin
@@ -423,7 +427,20 @@ module top#(
                     addB[Br/2+i*2]<=sum[i*2+1];
                 end
                 
-                if(PsumFlg==Bc) PsumFlg<=0;
+                if(PsumFlg==Bc)begin
+                    PsumFlg<=0;
+                end
+            end
+
+            //update from PsumFlg            
+            if(lUpdateFlg && eMulFlg==3)begin
+                if(lAddr==Br-1)begin
+                    SscaleFlg<=0;
+                    PsumFlg<=0;
+                    lUpdateFlg<=0;
+                end
+                lAddr<=lAddr+1;
+                l[lAddr]<=sum[0];
             end
             
             if(poProdFlg)begin
@@ -437,20 +454,20 @@ module top#(
 //                    mulB[Bc+2]<=O_douta;
                     for(int i=0;i<Bc;i=i+1)begin
                         mulB[i+Bc+2]<=O_doutb[i*DATA_WIDTH+:DATA_WIDTH];
-                        mulA[i+Bc+2]<=prod[Bc+1];
+                        mulA[i+Bc+2]<=prod[i+1];
                     end
                 end
                 
-                if(mulReady[Bc+2])begin
-                    for(int i=0;i<Bc;i=i+1)begin
-                        O_dina[i*DATA_WIDTH+:DATA_WIDTH]<=prod[i+Bc+2];
-                    end
+//                if(mulReady[Bc+2])begin
+//                    for(int i=0;i<Bc;i=i+1)begin
+//                        O_dina[i*DATA_WIDTH+:DATA_WIDTH]<=prod[i+Bc+2];
+//                    end
                     
-                    if(poProdFlg%2)begin
-                        O_addra<=O_addra+1;
-                        l[(poProdFlg-3)/2]<=prod[Bc+2];
-                    end
-                end
+//                    if(poProdFlg%2)begin
+//                        O_addra<=O_addra+1;
+//                        l[(poProdFlg-3)/2]<=prod[Bc+2];
+//                    end
+//                end
 //                for(int i=0;i<Bc;i=i+1)begin
 //                    mulA[i+Bc+2]<=prod[Bc+1];
 //                end
@@ -552,8 +569,8 @@ module top#(
         
         if(poProdFlg)begin
             for(int i=Bc+1;i<=Bc*2+1;i=i+1) mulVal[i]<=1'b1;
-            if(mulReady[Bc+2]) O_wea=1'b1;
-            else O_wea=1'b0;
+//            if(mulReady[Bc+2]) O_wea=1'b1;
+//            else O_wea=1'b0;
         end
         else begin
             for(int i=Bc+1;i<=Bc*2+1;i=i+1) mulVal[i]<=1'b0;
