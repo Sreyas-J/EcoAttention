@@ -1,0 +1,2 @@
+MAC.v,verilog,xil_defaultlib,../../../../EXP.gen/sources_1/ip/MAC/sim/MAC.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v
