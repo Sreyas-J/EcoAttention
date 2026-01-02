@@ -99,6 +99,16 @@ module top#(
               .m_axis_result_tready(eVal[i]),  // input wire m_axis_result_tready
               .m_axis_result_tdata(e[i])    // output wire [31 : 0] m_axis_result_tdata
             );
+            
+//            exp_fixed exp (
+//              .aclk(clk),                                  // input wire aclk
+//              .s_axis_a_tvalid(eVal[i]),            // input wire s_axis_a_tvalid
+//              .s_axis_a_tready(s_axis_a_tready),            // output wire s_axis_a_tready
+//              .s_axis_a_tdata(x[i]),              // input wire [31 : 0] s_axis_a_tdata
+//              .m_axis_result_tvalid(eReady[i]),  // output wire m_axis_result_tvalid
+//              .m_axis_result_tready(eVal[i]),  // input wire m_axis_result_tready
+//              .m_axis_result_tdata(e[i])    // output wire [31 : 0] m_axis_result_tdata
+//            );
         end
     endgenerate
     

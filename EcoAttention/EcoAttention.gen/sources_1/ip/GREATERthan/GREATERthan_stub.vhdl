@@ -2,10 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
--- Date        : Mon Oct 27 14:13:25 2025
+-- Date        : Mon Oct 27 14:13:24 2025
 -- Host        : sk-Standard-PC-Q35-ICH9-2009 running 64-bit Ubuntu 22.04.5 LTS
--- Command     : write_vhdl -force -mode synth_stub
---               /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/GREATERthan/GREATERthan_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top GREATERthan -prefix
+--               GREATERthan_ GREATERthan_stub.vhdl
 -- Design      : GREATERthan
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35tcpg236-1

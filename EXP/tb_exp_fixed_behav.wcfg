@@ -12,12 +12,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="185.001 ns"></ZoomEndTime>
-      <Cursor1Time time="65.000 ns"></Cursor1Time>
+      <ZoomEndTime time="130.680 ns"></ZoomEndTime>
+      <Cursor1Time time="55.100 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="150"></NameColumnWidth>
-      <ValueColumnWidth column_width="133"></ValueColumnWidth>
+      <ValueColumnWidth column_width="129"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="8" />
    <wvobject type="logic" fp_name="/tb_exp_fixed/uut/aclk">
@@ -45,7 +45,7 @@
       <wvobject type="array" fp_name="/tb_exp_fixed/uut/macC[0]">
          <obj_property name="ElementShortName">[0][15:0]</obj_property>
          <obj_property name="ObjectShortName">[0][15:0]</obj_property>
-         <obj_property name="Radix">BINARYRADIX</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tb_exp_fixed/uut/macC[1]">
          <obj_property name="ElementShortName">[1][15:0]</obj_property>
@@ -61,6 +61,22 @@
          <obj_property name="ElementShortName">[3][15:0]</obj_property>
          <obj_property name="ObjectShortName">[3][15:0]</obj_property>
          <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_exp_fixed/uut/macC[0]">
+         <obj_property name="ElementShortName">[0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_exp_fixed/uut/macC[1]">
+         <obj_property name="ElementShortName">[1][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_exp_fixed/uut/macC[2]">
+         <obj_property name="ElementShortName">[2][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/tb_exp_fixed/uut/macC[3]">
+         <obj_property name="ElementShortName">[3][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][15:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject type="array" fp_name="/tb_exp_fixed/uut/res">
