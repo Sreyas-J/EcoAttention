@@ -2,13 +2,13 @@
 // Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
-// Date        : Tue Aug 26 19:16:01 2025
+// Date        : Wed Jan  7 21:24:02 2026
 // Host        : sk-Standard-PC-Q35-ICH9-2009 running 64-bit Ubuntu 22.04.5 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER_stub.v
 // Design      : ADDER
 // Purpose     : Stub declaration of top-level module interface
-// Device      : xc7a35tcpg236-1
+// Device      : xczu7ev-ffvc1156-2-e
 // --------------------------------------------------------------------------------
 
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.

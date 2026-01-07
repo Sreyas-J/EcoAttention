@@ -24,7 +24,6 @@ module top#(
     localparam int TOTAL_ADDS = ADDS*1.5;
     localparam int FINAL_ADDS = ADDS*(1+ADDS/2*1/2);
     localparam int PV_ADDS=Bc+2;
-//    localparam int MAX_CACHE = Bc*(D/ADDS)-1;
     
     localparam logic [DATA_WIDTH-1:0] MSB_MASK = {1'b1, {(DATA_WIDTH-1){1'b0}}};   
     
@@ -44,10 +43,6 @@ module top#(
     logic [$clog2(Bc)-1:0] intraCaddra;
     logic comp[0:COMPS-1];
     logic [DATA_WIDTH-1:0] buff [0:Bc*D-1];
-
-//    logic [$clog2(MAX_VAL):0] cnt;
-//    logic [$clog2((D/ADDS))-1:0] I;
-//    logic [$clog2(Bc)-1:0] J;
     
     logic we,loadFlg,SscaleFlg,maxFlg,SshiftFlg,lUpdateFlg;
     logic [$clog2(Bc):0] PsumFlg,poProdFlg;
@@ -74,19 +69,6 @@ module top#(
             );        
         end
     endgenerate
-    
-//    DIV div (
-//      .aclk(clk),                                  // input wire aclk
-//      .s_axis_a_tvalid(dividendVal),            // input wire s_axis_a_tvalid
-//      .s_axis_a_tready(dividendReady),            // output wire s_axis_a_tready
-//      .s_axis_a_tdata(dividend),              // input wire [31 : 0] s_axis_a_tdata
-//      .s_axis_b_tvalid(divisorVal),            // input wire s_axis_b_tvalid
-//      .s_axis_b_tready(divisorReady),            // output wire s_axis_b_tready
-//      .s_axis_b_tdata(divisor),              // input wire [31 : 0] s_axis_b_tdata
-//      .m_axis_result_tvalid(qVal),  // output wire m_axis_result_tvalid
-//      .m_axis_result_tready(qReady),  // input wire m_axis_result_tready
-//      .m_axis_result_tdata(q)    // output wire [31 : 0] m_axis_result_tdata
-//    );
 
     generate 
         for(i=0;i<EXPS;i=i+1)begin : gen_exps

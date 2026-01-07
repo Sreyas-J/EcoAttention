@@ -1,5 +1,5 @@
 // (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-// (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
+// (c) Copyright 2022-2026 Advanced Micro Devices, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of AMD and is protected under U.S. and international copyright
@@ -92,8 +92,8 @@ input wire m_axis_result_tready;
 output wire [31 : 0] m_axis_result_tdata;
 
   floating_point_v7_1_16 #(
-    .C_XDEVICEFAMILY("artix7"),
-    .C_PART("xc7a35tcpg236-1"),
+    .C_XDEVICEFAMILY("zynquplus"),
+    .C_PART("xczu7ev-ffvc1156-2-e"),
     .C_HAS_ADD(1),
     .C_HAS_SUBTRACT(0),
     .C_HAS_MULTIPLY(0),
@@ -132,9 +132,9 @@ output wire [31 : 0] m_axis_result_tdata;
     .C_MULT_USAGE(2),
     .C_BRAM_USAGE(0),
     .C_RATE(1),
-    .C_ACCUM_INPUT_MSB(15),
+    .C_ACCUM_INPUT_MSB(32),
     .C_ACCUM_MSB(32),
-    .C_ACCUM_LSB(-24),
+    .C_ACCUM_LSB(-31),
     .C_HAS_UNDERFLOW(0),
     .C_HAS_OVERFLOW(0),
     .C_HAS_INVALID_OP(0),

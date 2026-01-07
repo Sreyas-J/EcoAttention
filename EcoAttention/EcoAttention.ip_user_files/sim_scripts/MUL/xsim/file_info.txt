@@ -1,2 +1,0 @@
-MUL.v,verilog,xil_defaultlib,../../../../EcoAttention.gen/sources_1/ip/MUL/sim/MUL.v,
-glbl.v,Verilog,xil_defaultlib,glbl.v

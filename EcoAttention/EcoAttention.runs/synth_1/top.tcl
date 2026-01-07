@@ -71,7 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 OPTRACE "Creating in-memory project" START { }
-create_project -in_memory -part xc7a35tcpg236-1
+create_project -in_memory -part xc7z020clg484-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -82,6 +82,9 @@ set_property parent.project_path /home/sk/Desktop/EcoAttention/EcoAttention/EcoA
 set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
+set_property board_part xilinx.com:zc702:part0:1.4 [current_project]
+set_property ip_repo_paths /home/sk/Desktop/EcoAttention/EXPip [current_project]
+update_ip_catalog
 set_property ip_output_repo /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
@@ -134,7 +137,7 @@ read_checkpoint -auto_incremental -incremental /home/sk/Desktop/EcoAttention/Eco
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top top -part xc7a35tcpg236-1
+synth_design -top top -part xc7z020clg484-1
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"

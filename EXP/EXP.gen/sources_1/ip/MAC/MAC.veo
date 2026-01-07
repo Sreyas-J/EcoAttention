@@ -1,5 +1,5 @@
 // (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-// (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
+// (c) Copyright 2022-2026 Advanced Micro Devices, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of AMD and is protected under U.S. and international copyright
@@ -58,16 +58,16 @@ MAC your_instance_name (
   .aclk(aclk),                                  // input wire aclk
   .s_axis_a_tvalid(s_axis_a_tvalid),            // input wire s_axis_a_tvalid
   .s_axis_a_tready(s_axis_a_tready),            // output wire s_axis_a_tready
-  .s_axis_a_tdata(s_axis_a_tdata),              // input wire [15 : 0] s_axis_a_tdata
+  .s_axis_a_tdata(s_axis_a_tdata),              // input wire [7 : 0] s_axis_a_tdata
   .s_axis_b_tvalid(s_axis_b_tvalid),            // input wire s_axis_b_tvalid
   .s_axis_b_tready(s_axis_b_tready),            // output wire s_axis_b_tready
-  .s_axis_b_tdata(s_axis_b_tdata),              // input wire [15 : 0] s_axis_b_tdata
+  .s_axis_b_tdata(s_axis_b_tdata),              // input wire [7 : 0] s_axis_b_tdata
   .s_axis_c_tvalid(s_axis_c_tvalid),            // input wire s_axis_c_tvalid
   .s_axis_c_tready(s_axis_c_tready),            // output wire s_axis_c_tready
-  .s_axis_c_tdata(s_axis_c_tdata),              // input wire [15 : 0] s_axis_c_tdata
+  .s_axis_c_tdata(s_axis_c_tdata),              // input wire [7 : 0] s_axis_c_tdata
   .m_axis_result_tvalid(m_axis_result_tvalid),  // output wire m_axis_result_tvalid
   .m_axis_result_tready(m_axis_result_tready),  // input wire m_axis_result_tready
-  .m_axis_result_tdata(m_axis_result_tdata)    // output wire [15 : 0] m_axis_result_tdata
+  .m_axis_result_tdata(m_axis_result_tdata)    // output wire [7 : 0] m_axis_result_tdata
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

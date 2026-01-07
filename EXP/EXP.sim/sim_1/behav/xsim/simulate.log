@@ -1,0 +1,4 @@
+Time resolution is 1 ps
+Starting Simulation...
+Simulation Finished.
+$finish called at time : 335 ns : File "/home/sk/Desktop/EcoAttention/EXP/EXP.srcs/sim_1/new/exp_tb.sv" Line 77

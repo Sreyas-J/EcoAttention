@@ -1,5 +1,5 @@
 -- (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
--- (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
+-- (c) Copyright 2022-2026 Advanced Micro Devices, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of AMD and is protected under U.S. and international copyright
@@ -56,16 +56,16 @@ COMPONENT MAC
     aclk : IN STD_LOGIC;
     s_axis_a_tvalid : IN STD_LOGIC;
     s_axis_a_tready : OUT STD_LOGIC;
-    s_axis_a_tdata : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    s_axis_a_tdata : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     s_axis_b_tvalid : IN STD_LOGIC;
     s_axis_b_tready : OUT STD_LOGIC;
-    s_axis_b_tdata : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    s_axis_b_tdata : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     s_axis_c_tvalid : IN STD_LOGIC;
     s_axis_c_tready : OUT STD_LOGIC;
-    s_axis_c_tdata : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    s_axis_c_tdata : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     m_axis_result_tvalid : OUT STD_LOGIC;
     m_axis_result_tready : IN STD_LOGIC;
-    m_axis_result_tdata : OUT STD_LOGIC_VECTOR(15 DOWNTO 0) 
+    m_axis_result_tdata : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) 
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------

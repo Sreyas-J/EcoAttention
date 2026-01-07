@@ -1,5 +1,5 @@
 // (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-// (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
+// (c) Copyright 2022-2026 Advanced Micro Devices, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of AMD and is protected under U.S. and international copyright
@@ -87,8 +87,8 @@ input wire [1 : 0] addrb;
 output wire [127 : 0] doutb;
 
   blk_mem_gen_v8_4_7 #(
-    .C_FAMILY("artix7"),
-    .C_XDEVICEFAMILY("artix7"),
+    .C_FAMILY("zynquplus"),
+    .C_XDEVICEFAMILY("zynquplus"),
     .C_ELABORATION_DIR("./"),
     .C_INTERFACE_TYPE(0),
     .C_AXI_TYPE(1),
@@ -161,7 +161,7 @@ output wire [127 : 0] doutb;
     .C_DISABLE_WARN_BHV_RANGE(0),
     .C_COUNT_36K_BRAM("2"),
     .C_COUNT_18K_BRAM("0"),
-    .C_EST_POWER_SUMMARY("Estimated Power for IP     :     13.9322 mW")
+    .C_EST_POWER_SUMMARY("Estimated Power for IP     :     4.654222 mW")
   ) inst (
     .clka(clka),
     .rsta(1'D0),

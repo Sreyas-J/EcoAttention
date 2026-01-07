@@ -1,5 +1,6 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
+"../../../../EXP.gen/sources_1/ip/MUL/sim/MUL.v" \
 "../../../../EXP.gen/sources_1/ip/MAC/sim/MAC.v" \
 
 sv xil_defaultlib  \

@@ -11,95 +11,87 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,000.001 ns"></ZoomEndTime>
-      <Cursor1Time time="255.000 ns"></Cursor1Time>
+      <ZoomStartTime time="3.300 ns"></ZoomStartTime>
+      <ZoomEndTime time="167.492 ns"></ZoomEndTime>
+      <Cursor1Time time="14.002 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="163"></NameColumnWidth>
-      <ValueColumnWidth column_width="136"></ValueColumnWidth>
+      <ValueColumnWidth column_width="132"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="12" />
+   <WVObjectSize size="17" />
    <wvobject type="logic" fp_name="/tb_top/dut/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_top/dut/pvFlg">
-      <obj_property name="ElementShortName">pvFlg[1:0]</obj_property>
-      <obj_property name="ObjectShortName">pvFlg[1:0]</obj_property>
+   <wvobject type="logic" fp_name="/tb_top/dut/loadFlg">
+      <obj_property name="ElementShortName">loadFlg</obj_property>
+      <obj_property name="ObjectShortName">loadFlg</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_top/dut/poProdFlg">
-      <obj_property name="ElementShortName">poProdFlg[2:0]</obj_property>
-      <obj_property name="ObjectShortName">poProdFlg[2:0]</obj_property>
+   <wvobject type="array" fp_name="/tb_top/dut/Qaddra">
+      <obj_property name="ElementShortName">Qaddra[1:0]</obj_property>
+      <obj_property name="ObjectShortName">Qaddra[1:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_top/dut/O_addra">
-      <obj_property name="ElementShortName">O_addra[1:0]</obj_property>
-      <obj_property name="ObjectShortName">O_addra[1:0]</obj_property>
+   <wvobject type="array" fp_name="/tb_top/dut/Qaddrb">
+      <obj_property name="ElementShortName">Qaddrb[1:0]</obj_property>
+      <obj_property name="ObjectShortName">Qaddrb[1:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_top/dut/eMulFlg">
-      <obj_property name="ElementShortName">eMulFlg[2:0]</obj_property>
-      <obj_property name="ObjectShortName">eMulFlg[2:0]</obj_property>
+   <wvobject type="array" fp_name="/tb_top/dut/Qdina">
+      <obj_property name="ElementShortName">Qdina[511:0]</obj_property>
+      <obj_property name="ObjectShortName">Qdina[511:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_top/dut/PsumFlg">
-      <obj_property name="ElementShortName">PsumFlg[2:0]</obj_property>
-      <obj_property name="ObjectShortName">PsumFlg[2:0]</obj_property>
+   <wvobject type="array" fp_name="/tb_top/dut/Qdinb">
+      <obj_property name="ElementShortName">Qdinb[511:0]</obj_property>
+      <obj_property name="ObjectShortName">Qdinb[511:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_top/dut/lUpdateFlg">
-      <obj_property name="ElementShortName">lUpdateFlg</obj_property>
-      <obj_property name="ObjectShortName">lUpdateFlg</obj_property>
+   <wvobject type="array" fp_name="/tb_top/dut/BRAMq/inst/\native_mem_module.blk_mem_gen_v8_4_7_inst /memory">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">memory[0:3][511:0]</obj_property>
+      <obj_property name="ObjectShortName">memory[0:3][511:0]</obj_property>
+      <obj_property name="label">Q[0:3][511:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_top/dut/lAddr">
-      <obj_property name="ElementShortName">lAddr[1:0]</obj_property>
-      <obj_property name="ObjectShortName">lAddr[1:0]</obj_property>
+   <wvobject type="array" fp_name="/tb_top/dut/Kaddra">
+      <obj_property name="ElementShortName">Kaddra[1:0]</obj_property>
+      <obj_property name="ObjectShortName">Kaddra[1:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_top/dut/l">
-      <obj_property name="ElementShortName">l[0:3][31:0]</obj_property>
-      <obj_property name="ObjectShortName">l[0:3][31:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-      <wvobject type="array" fp_name="/tb_top/dut/l[0]">
-         <obj_property name="ElementShortName">[0][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/l[1]">
-         <obj_property name="ElementShortName">[1][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/l[2]">
-         <obj_property name="ElementShortName">[2][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[2][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_top/dut/l[3]">
-         <obj_property name="ElementShortName">[3][31:0]</obj_property>
-         <obj_property name="ObjectShortName">[3][31:0]</obj_property>
-         <obj_property name="Radix">REALRADIX</obj_property>
-         <obj_property name="radix_realType">FLOATINGPOINTRADIX</obj_property>
-         <obj_property name="radix_fractionWidth">24</obj_property>
-         <obj_property name="radix_otherWidth">8</obj_property>
-      </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/Kaddrb">
+      <obj_property name="ElementShortName">Kaddrb[1:0]</obj_property>
+      <obj_property name="ObjectShortName">Kaddrb[1:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_top/dut/addA">
-      <obj_property name="ElementShortName">addA[0:29][31:0]</obj_property>
-      <obj_property name="ObjectShortName">addA[0:29][31:0]</obj_property>
+   <wvobject type="array" fp_name="/tb_top/dut/Kdina">
+      <obj_property name="ElementShortName">Kdina[511:0]</obj_property>
+      <obj_property name="ObjectShortName">Kdina[511:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_top/dut/addB">
-      <obj_property name="ElementShortName">addB[0:29][31:0]</obj_property>
-      <obj_property name="ObjectShortName">addB[0:29][31:0]</obj_property>
+   <wvobject type="array" fp_name="/tb_top/dut/Kdinb">
+      <obj_property name="ElementShortName">Kdinb[511:0]</obj_property>
+      <obj_property name="ObjectShortName">Kdinb[511:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_top/dut/sum">
-      <obj_property name="ElementShortName">sum[0:29][31:0]</obj_property>
-      <obj_property name="ObjectShortName">sum[0:29][31:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
+   <wvobject type="array" fp_name="/tb_top/dut/BRAMk/inst/\native_mem_module.blk_mem_gen_v8_4_7_inst /memory">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">memory[0:3][511:0]</obj_property>
+      <obj_property name="ObjectShortName">memory[0:3][511:0]</obj_property>
+      <obj_property name="label">K[0:3][511:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/Vaddra">
+      <obj_property name="ElementShortName">Vaddra[3:0]</obj_property>
+      <obj_property name="ObjectShortName">Vaddra[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/Vaddrb">
+      <obj_property name="ElementShortName">Vaddrb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">Vaddrb[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/Vdina">
+      <obj_property name="ElementShortName">Vdina[127:0]</obj_property>
+      <obj_property name="ObjectShortName">Vdina[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/Vdinb">
+      <obj_property name="ElementShortName">Vdinb[127:0]</obj_property>
+      <obj_property name="ObjectShortName">Vdinb[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/BRAMv/inst/\native_mem_module.blk_mem_gen_v8_4_7_inst /memory">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">memory[0:15][127:0]</obj_property>
+      <obj_property name="ObjectShortName">memory[0:15][127:0]</obj_property>
+      <obj_property name="label">V[0:15][127:0]</obj_property>
    </wvobject>
 </wave_config>

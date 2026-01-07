@@ -1,5 +1,5 @@
 // (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-// (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
+// (c) Copyright 2022-2026 Advanced Micro Devices, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of AMD and is protected under U.S. and international copyright
@@ -96,8 +96,8 @@ input wire [127 : 0] dinb;
 output wire [127 : 0] doutb;
 
   blk_mem_gen_v8_4_7 #(
-    .C_FAMILY("artix7"),
-    .C_XDEVICEFAMILY("artix7"),
+    .C_FAMILY("zynquplus"),
+    .C_XDEVICEFAMILY("zynquplus"),
     .C_ELABORATION_DIR("./"),
     .C_INTERFACE_TYPE(0),
     .C_AXI_TYPE(1),
@@ -124,7 +124,7 @@ output wire [127 : 0] doutb;
     .C_HAS_REGCEA(0),
     .C_USE_BYTE_WEA(0),
     .C_WEA_WIDTH(1),
-    .C_WRITE_MODE_A("NO_CHANGE"),
+    .C_WRITE_MODE_A("WRITE_FIRST"),
     .C_WRITE_WIDTH_A(128),
     .C_READ_WIDTH_A(128),
     .C_WRITE_DEPTH_A(16),
@@ -138,7 +138,7 @@ output wire [127 : 0] doutb;
     .C_HAS_REGCEB(0),
     .C_USE_BYTE_WEB(0),
     .C_WEB_WIDTH(1),
-    .C_WRITE_MODE_B("READ_FIRST"),
+    .C_WRITE_MODE_B("WRITE_FIRST"),
     .C_WRITE_WIDTH_B(128),
     .C_READ_WIDTH_B(128),
     .C_WRITE_DEPTH_B(16),
@@ -158,7 +158,7 @@ output wire [127 : 0] doutb;
     .C_READ_LATENCY_B(1),
     .C_HAS_INJECTERR(0),
     .C_SIM_COLLISION_CHECK("ALL"),
-    .C_COMMON_CLK(1),
+    .C_COMMON_CLK(0),
     .C_DISABLE_WARN_BHV_COLL(0),
     .C_EN_SLEEP_PIN(0),
     .C_USE_URAM(0),
@@ -170,7 +170,7 @@ output wire [127 : 0] doutb;
     .C_DISABLE_WARN_BHV_RANGE(0),
     .C_COUNT_36K_BRAM("4"),
     .C_COUNT_18K_BRAM("0"),
-    .C_EST_POWER_SUMMARY("Estimated Power for IP     :     23.054502 mW")
+    .C_EST_POWER_SUMMARY("Estimated Power for IP     :     16.952608 mW")
   ) inst (
     .clka(clka),
     .rsta(1'D0),

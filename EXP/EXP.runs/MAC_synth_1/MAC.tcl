@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/sk/EXP/EXP.runs/MAC_synth_1/MAC.tcl"
+  variable script "/home/sk/Desktop/EcoAttention/EXP/EXP.runs/MAC_synth_1/MAC.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "MAC_synth_1" START { ROLLUP_AUTO }
+set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -79,16 +80,18 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/sk/EXP/EXP.cache/wt [current_project]
-set_property parent.project_path /home/sk/EXP/EXP.xpr [current_project]
+set_property webtalk.parent_dir /home/sk/Desktop/EcoAttention/EXP/EXP.cache/wt [current_project]
+set_property parent.project_path /home/sk/Desktop/EcoAttention/EXP/EXP.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo /home/sk/EXP/EXP.cache/ip [current_project]
+set_property ip_repo_paths /home/sk/Desktop/EcoAttention/EXPip [current_project]
+update_ip_catalog
+set_property ip_output_repo /home/sk/Desktop/EcoAttention/EXP/EXP.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet /home/sk/EXP/EXP.srcs/sources_1/ip/MAC/MAC.xci
-set_property used_in_implementation false [get_files -all /home/sk/EXP/EXP.gen/sources_1/ip/MAC/MAC_ooc.xdc]
+read_ip -quiet /home/sk/Desktop/EcoAttention/EXP/EXP.srcs/sources_1/ip/MAC/MAC.xci
+set_property used_in_implementation false [get_files -all /home/sk/Desktop/EcoAttention/EXP/EXP.gen/sources_1/ip/MAC/MAC_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -104,7 +107,7 @@ set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 OPTRACE "Configure IP Cache" START { }
 
-set cacheID [config_ip_cache -export -no_bom  -dir /home/sk/EXP/EXP.runs/MAC_synth_1 -new_name MAC -ip [get_ips MAC]]
+set cacheID [config_ip_cache -export -no_bom  -dir /home/sk/Desktop/EcoAttention/EXP/EXP.runs/MAC_synth_1 -new_name MAC -ip [get_ips MAC]]
 
 OPTRACE "Configure IP Cache" END { }
 if { $cacheID == "" } {
@@ -159,32 +162,32 @@ create_report "MAC_synth_1_synth_report_utilization_0" "report_utilization -file
 OPTRACE "synth reports" END { }
 
 if { [catch {
-  file copy -force /home/sk/EXP/EXP.runs/MAC_synth_1/MAC.dcp /home/sk/EXP/EXP.gen/sources_1/ip/MAC/MAC.dcp
+  file copy -force /home/sk/Desktop/EcoAttention/EXP/EXP.runs/MAC_synth_1/MAC.dcp /home/sk/Desktop/EcoAttention/EXP/EXP.gen/sources_1/ip/MAC/MAC.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub /home/sk/EXP/EXP.gen/sources_1/ip/MAC/MAC_stub.v
+  write_verilog -force -mode synth_stub /home/sk/Desktop/EcoAttention/EXP/EXP.gen/sources_1/ip/MAC/MAC_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub /home/sk/EXP/EXP.gen/sources_1/ip/MAC/MAC_stub.vhdl
+  write_vhdl -force -mode synth_stub /home/sk/Desktop/EcoAttention/EXP/EXP.gen/sources_1/ip/MAC/MAC_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim /home/sk/EXP/EXP.gen/sources_1/ip/MAC/MAC_sim_netlist.v
+  write_verilog -force -mode funcsim /home/sk/Desktop/EcoAttention/EXP/EXP.gen/sources_1/ip/MAC/MAC_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim /home/sk/EXP/EXP.gen/sources_1/ip/MAC/MAC_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim /home/sk/Desktop/EcoAttention/EXP/EXP.gen/sources_1/ip/MAC/MAC_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -194,32 +197,32 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force /home/sk/EXP/EXP.runs/MAC_synth_1/MAC.dcp /home/sk/EXP/EXP.gen/sources_1/ip/MAC/MAC.dcp
+  file copy -force /home/sk/Desktop/EcoAttention/EXP/EXP.runs/MAC_synth_1/MAC.dcp /home/sk/Desktop/EcoAttention/EXP/EXP.gen/sources_1/ip/MAC/MAC.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force /home/sk/EXP/EXP.runs/MAC_synth_1/MAC_stub.v /home/sk/EXP/EXP.gen/sources_1/ip/MAC/MAC_stub.v
+  file rename -force /home/sk/Desktop/EcoAttention/EXP/EXP.runs/MAC_synth_1/MAC_stub.v /home/sk/Desktop/EcoAttention/EXP/EXP.gen/sources_1/ip/MAC/MAC_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/sk/EXP/EXP.runs/MAC_synth_1/MAC_stub.vhdl /home/sk/EXP/EXP.gen/sources_1/ip/MAC/MAC_stub.vhdl
+  file rename -force /home/sk/Desktop/EcoAttention/EXP/EXP.runs/MAC_synth_1/MAC_stub.vhdl /home/sk/Desktop/EcoAttention/EXP/EXP.gen/sources_1/ip/MAC/MAC_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/sk/EXP/EXP.runs/MAC_synth_1/MAC_sim_netlist.v /home/sk/EXP/EXP.gen/sources_1/ip/MAC/MAC_sim_netlist.v
+  file rename -force /home/sk/Desktop/EcoAttention/EXP/EXP.runs/MAC_synth_1/MAC_sim_netlist.v /home/sk/Desktop/EcoAttention/EXP/EXP.gen/sources_1/ip/MAC/MAC_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/sk/EXP/EXP.runs/MAC_synth_1/MAC_sim_netlist.vhdl /home/sk/EXP/EXP.gen/sources_1/ip/MAC/MAC_sim_netlist.vhdl
+  file rename -force /home/sk/Desktop/EcoAttention/EXP/EXP.runs/MAC_synth_1/MAC_sim_netlist.vhdl /home/sk/Desktop/EcoAttention/EXP/EXP.gen/sources_1/ip/MAC/MAC_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -227,15 +230,15 @@ if { [catch {
 close [open .end.used_ip_cache.rst w]
 }; # end if cacheID 
 
-if {[file isdir /home/sk/EXP/EXP.ip_user_files/ip/MAC]} {
+if {[file isdir /home/sk/Desktop/EcoAttention/EXP/EXP.ip_user_files/ip/MAC]} {
   catch { 
-    file copy -force /home/sk/EXP/EXP.gen/sources_1/ip/MAC/MAC_stub.v /home/sk/EXP/EXP.ip_user_files/ip/MAC
+    file copy -force /home/sk/Desktop/EcoAttention/EXP/EXP.gen/sources_1/ip/MAC/MAC_stub.v /home/sk/Desktop/EcoAttention/EXP/EXP.ip_user_files/ip/MAC
   }
 }
 
-if {[file isdir /home/sk/EXP/EXP.ip_user_files/ip/MAC]} {
+if {[file isdir /home/sk/Desktop/EcoAttention/EXP/EXP.ip_user_files/ip/MAC]} {
   catch { 
-    file copy -force /home/sk/EXP/EXP.gen/sources_1/ip/MAC/MAC_stub.vhdl /home/sk/EXP/EXP.ip_user_files/ip/MAC
+    file copy -force /home/sk/Desktop/EcoAttention/EXP/EXP.gen/sources_1/ip/MAC/MAC_stub.vhdl /home/sk/Desktop/EcoAttention/EXP/EXP.ip_user_files/ip/MAC
   }
 }
 file delete __synthesis_is_running__

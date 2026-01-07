@@ -70,10 +70,14 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "ADDER_synth_1" START { ROLLUP_AUTO }
+set_param checkpoint.writeSynthRtdsInDcp 1
+set_param synth.incrementalSynthesisCache ./.Xil/Vivado-1022087-sk-Standard-PC-Q35-ICH9-2009/incrSyn
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
-create_project -in_memory -part xc7a35tcpg236-1
+create_project -in_memory -part xczu7ev-ffvc1156-2-e
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -84,6 +88,9 @@ set_property parent.project_path /home/sk/Desktop/EcoAttention/EcoAttention/EcoA
 set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
+set_property board_part xilinx.com:zcu104:part0:1.1 [current_project]
+set_property ip_repo_paths /home/sk/Desktop/EcoAttention/EXPip [current_project]
+update_ip_catalog
 set_property ip_output_repo /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
@@ -112,7 +119,7 @@ if { $cacheID == "" } {
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top ADDER -part xc7a35tcpg236-1 -incremental_mode off -mode out_of_context
+synth_design -top ADDER -part xczu7ev-ffvc1156-2-e -incremental_mode off -mode out_of_context
 OPTRACE "synth_design" END { }
 OPTRACE "Write IP Cache" START { }
 

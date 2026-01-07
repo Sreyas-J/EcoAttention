@@ -2,9 +2,10 @@
 -- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
--- Date        : Mon Dec 29 19:42:32 2025
+-- Date        : Sun Jan  4 11:39:23 2026
 -- Host        : sk-Standard-PC-Q35-ICH9-2009 running 64-bit Ubuntu 22.04.5 LTS
--- Command     : write_vhdl -force -mode synth_stub /home/sk/EXP/EXP.gen/sources_1/ip/MAC/MAC_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub
+--               /home/sk/Desktop/EcoAttention/EXP/EXP.gen/sources_1/ip/MAC/MAC_stub.vhdl
 -- Design      : MAC
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a15tcpg236-1
@@ -17,16 +18,16 @@ entity MAC is
     aclk : in STD_LOGIC;
     s_axis_a_tvalid : in STD_LOGIC;
     s_axis_a_tready : out STD_LOGIC;
-    s_axis_a_tdata : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    s_axis_a_tdata : in STD_LOGIC_VECTOR ( 7 downto 0 );
     s_axis_b_tvalid : in STD_LOGIC;
     s_axis_b_tready : out STD_LOGIC;
-    s_axis_b_tdata : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    s_axis_b_tdata : in STD_LOGIC_VECTOR ( 7 downto 0 );
     s_axis_c_tvalid : in STD_LOGIC;
     s_axis_c_tready : out STD_LOGIC;
-    s_axis_c_tdata : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    s_axis_c_tdata : in STD_LOGIC_VECTOR ( 7 downto 0 );
     m_axis_result_tvalid : out STD_LOGIC;
     m_axis_result_tready : in STD_LOGIC;
-    m_axis_result_tdata : out STD_LOGIC_VECTOR ( 15 downto 0 )
+    m_axis_result_tdata : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
 
 end MAC;
@@ -35,7 +36,7 @@ architecture stub of MAC is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "aclk,s_axis_a_tvalid,s_axis_a_tready,s_axis_a_tdata[15:0],s_axis_b_tvalid,s_axis_b_tready,s_axis_b_tdata[15:0],s_axis_c_tvalid,s_axis_c_tready,s_axis_c_tdata[15:0],m_axis_result_tvalid,m_axis_result_tready,m_axis_result_tdata[15:0]";
+attribute black_box_pad_pin of stub : architecture is "aclk,s_axis_a_tvalid,s_axis_a_tready,s_axis_a_tdata[7:0],s_axis_b_tvalid,s_axis_b_tready,s_axis_b_tdata[7:0],s_axis_c_tvalid,s_axis_c_tready,s_axis_c_tdata[7:0],m_axis_result_tvalid,m_axis_result_tready,m_axis_result_tdata[7:0]";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "floating_point_v7_1_16,Vivado 2023.2";
 begin

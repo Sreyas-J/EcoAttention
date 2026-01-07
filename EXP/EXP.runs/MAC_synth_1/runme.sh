@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/sk/EXP/EXP.runs/MAC_synth_1'
+HD_PWD='/home/sk/Desktop/EcoAttention/EXP/EXP.runs/MAC_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
