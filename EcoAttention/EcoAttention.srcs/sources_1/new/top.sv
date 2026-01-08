@@ -239,8 +239,9 @@ module top#(
 //                if(Vaddra<D) Vdina[vIntra*DATA_WIDTH+:DATA_WIDTH]<=va;
                 
                 L[Qaddra]<=0;
-                if(Qaddra>=Br && Kaddra>=Bc && Vaddra>=D)begin
+                if(inter>=Br*D-1 && inter>=Bc*D-1)begin
                     loadFlg<=1'b0;
+                    diffFlg<=1'b1;
 //                    Vaddra<=0;
                 end
                 
