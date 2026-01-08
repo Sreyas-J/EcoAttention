@@ -13,9 +13,8 @@ module tb_top;
     logic reset;
 
     // DUT inputs/outputs
-    // pack D lanes each DATA_WIDTH wide: [ DATA_WIDTH*D-1 : 0 ]
-    logic [DATA_WIDTH*D-1:0] Qdin, Kdin;
-    logic [DATA_WIDTH*Bc-1:0] Vdin;
+    logic [DATA_WIDTH-1:0] Qdin, Kdin;
+    logic [DATA_WIDTH-1:0] Vdin;
     logic [DATA_WIDTH-1:0] scale;
     logic done;
 
@@ -28,9 +27,9 @@ module tb_top;
     ) dut (
         .clk(clk),
         .reset(reset),
-        .Qdina(Qdin),
-        .Kdina(Kdin),
-        .Vdina(Vdin),
+        .qa(Qdin),
+        .ka(Kdin),
+        .va(Vdin),
         .scale(scale),
         .done(done)
     );
@@ -42,81 +41,109 @@ module tb_top;
     shortreal Qmat [0:Br-1][0:D-1];
     shortreal Kmat [0:Bc-1][0:D-1];
     shortreal Vmat [0:Bc-1][0:D-1];
-    int col;
+
+    // Iterators for traversing matrices
+    int q_r, q_c; // Q row/col indices
+    int k_r, k_c; // K row/col indices
+    int v_r, v_c; // V row/col indices
+
+    // Flags to track if traversal is complete
+    bit q_done, k_done, v_done;
 
     initial begin
+        // 1. Initialization
         clk = 0;
         reset = 1;
         Qdin = '0;
         Kdin = '0;
         Vdin = '0;
         scale = $shortrealtobits(0.25);
+        
+        q_r = 0; q_c = 0;
+        k_r = 0; k_c = 0;
+        v_r = 0; v_c = 0;
+        
+        q_done = 0; k_done = 0; v_done = 0;
 
-        // Fill Q/K/V matrices programmatically as before
-        for (int i = 0; i < Br; i = i + 1) begin
-            for (int j = 0; j < D; j = j + 1) begin
+        // 2. Fill Q/K/V matrices programmatically
+        for (int i = 0; i < Br; i++) begin
+            for (int j = 0; j < D; j++) begin
                 Qmat[i][j] = shortreal'( i + j * 0.1 );
             end
         end
 
-        for (int i = 0; i < Bc; i = i + 1) begin
-            for (int j = 0; j < D; j = j + 1) begin
+        for (int i = 0; i < Bc; i++) begin
+            for (int j = 0; j < D; j++) begin
                 Kmat[i][j] = shortreal'( i * 2 + j * 0.2 );
                 Vmat[i][j] = shortreal'( i * 3 + j * 0.3 );
             end
         end
 
-        // Release reset
+        // 3. Reset Sequence
         repeat (2) @(posedge clk);
-        reset = 0;
+        #1 reset = 0; // Release reset slightly after edge
 
-        //
-        // Combined simultaneous drive:
-        // Each cycle (colIdx = 0..D-1) we drive:
-        //   - Qdin := entire Q row q_row = colIdx % Br (D lanes)
-        //   - Kdin := entire K row k_row = q_row (if k_row < Bc), else zeros
-        //   - Vdin := column colIdx packed into Bc lanes (rows 0..Bc-1)
-        //
-        for (int colIdx = 0; colIdx < D; colIdx = colIdx + 1) begin
-            int q_row;
-            q_row = colIdx % Br;
-
-            // default zeros
-            Qdin = '0;
-            Kdin = '0;
-            Vdin = '0;
-
-            // pack Q row (all D lanes)
-            for (int k = 0; k < D; k = k + 1) begin
-                Qdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = $shortrealtobits(Qmat[q_row][k]);
-            end
-
-            // pack K row if it exists (same q_row); otherwise leave K zero
-            if (q_row < Bc) begin
-                for (int k = 0; k < D; k = k + 1) begin
-                    Kdin[(k+1)*DATA_WIDTH-1 -: DATA_WIDTH] = $shortrealtobits(Kmat[q_row][k]);
+        // 4. Drive Data Loop
+        // Run until all matrices have been fully traversed
+        while (!q_done || !k_done || !v_done) begin
+            
+            // --- Drive Q (Row-wise) ---
+            if (!q_done) begin
+                Qdin = $shortrealtobits(Qmat[q_r][q_c]);
+                // Increment Col, then Row
+                if (q_c == D - 1) begin
+                    q_c = 0;
+                    if (q_r == Br - 1) q_done = 1;
+                    else q_r++;
+                end else begin
+                    q_c++;
                 end
             end else begin
-                // Kdin remains zero (already set)
+                Qdin = '0; // Pad with 0 once done
             end
 
-            // pack V column (rows 0..Bc-1 into the Bc lanes)
-            for (int r = 0; r < Bc; r = r + 1) begin
-                Vdin[(r+1)*DATA_WIDTH-1 -: DATA_WIDTH] = $shortrealtobits(Vmat[r][colIdx]);
+            // --- Drive K (Row-wise) ---
+            if (!k_done) begin
+                Kdin = $shortrealtobits(Kmat[k_r][k_c]);
+                // Increment Col, then Row
+                if (k_c == D - 1) begin
+                    k_c = 0;
+                    if (k_r == Bc - 1) k_done = 1;
+                    else k_r++;
+                end else begin
+                    k_c++;
+                end
+            end else begin
+                Kdin = '0;
             end
 
-            // debug prints to confirm what is driven this cycle
-            for (int r = 0; r < Bc; r = r + 1) begin
-                $display("cycle %0d: V row %0d col %0d = %0f", colIdx, r, colIdx, Vmat[r][colIdx]);
+            // --- Drive V (Column-wise) ---
+            // Traverse down rows (v_r), then across columns (v_c)
+            if (!v_done) begin
+                Vdin = $shortrealtobits(Vmat[v_r][v_c]);
+                // Increment Row, then Col
+                if (v_r == Bc - 1) begin
+                    v_r = 0;
+                    if (v_c == D - 1) v_done = 1;
+                    else v_c++;
+                end else begin
+                    v_r++;
+                end
+            end else begin
+                Vdin = '0;
             end
-            $display("cycle %0d: Q row %0d driven", colIdx, q_row);
 
-            // Drive DUT for one clock with all three buses valid
+            // Wait for next clock cycle
             @(posedge clk);
+            #1; // Small hold delay so inputs change after posedge
         end
 
-        // Wait for DUT to signal done
+        // Ensure inputs are cleared after transmission
+        Qdin = '0; Kdin = '0; Vdin = '0;
+
+        // 5. Wait for DUT to signal done
         wait (done);
+        repeat(5) @(posedge clk); // Extract margin
         $stop;
     end
 

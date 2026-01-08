@@ -6,8 +6,8 @@ module top#(
     parameter D = 16
 )(
     input logic clk,reset,
-    input logic [DATA_WIDTH*D-1:0] Qdina,Qdinb,Kdina,Kdinb,
-    input logic [DATA_WIDTH*Bc-1:0] Vdina,Vdinb,
+    input logic [DATA_WIDTH-1:0] qa,ka,va,
+//    input ,
     input logic [DATA_WIDTH-1:0] scale, 
     output logic done
 );
@@ -25,7 +25,10 @@ module top#(
     localparam int FINAL_ADDS = ADDS*(1+ADDS/2*1/2);
     localparam int PV_ADDS=Bc+2;
     
-    localparam logic [DATA_WIDTH-1:0] MSB_MASK = {1'b1, {(DATA_WIDTH-1){1'b0}}};   
+    localparam logic [DATA_WIDTH-1:0] MSB_MASK = {1'b1, {(DATA_WIDTH-1){1'b0}}}; 
+    
+    logic [DATA_WIDTH*D-1:0] Qdina,Qdinb,Kdina,Kdinb;  
+    logic [DATA_WIDTH*Bc-1:0] Vdina,Vdinb;
     
     logic addVal[0:FINAL_ADDS+PV_ADDS-1],addReady[0:FINAL_ADDS+PV_ADDS-1],mulVal[0:MULS-1],mulReady[0:MULS-1],greatVal[0:COMPS-1],greatReady[0:COMPS-1],eVal[0:EXPS-1],eReady[0:EXPS-1],Qena,Qwea,Qenb,Qweb,Kena,Kwea,Kenb,Vena,Vwea,Venb,O_en,O_wea,Oen,Owe;
     logic [DATA_WIDTH-1:0] addA[0:FINAL_ADDS+PV_ADDS-1],addB[0:FINAL_ADDS+PV_ADDS-1],sum[0:FINAL_ADDS+PV_ADDS-1],mulA[0:MULS-1],mulB[0:MULS-1],prod[0:MULS-1],great[0:COMPS-1],less[0:COMPS-1],e[0:EXPS-1],x[0:EXPS-1],eBuff[0:Bc-1],L[0:Br-1];
@@ -38,9 +41,10 @@ module top#(
     logic [DATA_WIDTH-1:0] m [0:Br-1], l[0:Br-1];
     logic [$clog2(Br*Bc*D)-1:0] SsumAddr;
     logic [$clog2(Br*Bc*D):0] addbAddr;
-    logic [$clog2(D)-1:0] interAddaAddr,interAddbAddr,Vaddra,Vaddrb;
+    logic [$clog2(D)-1:0] interAddaAddr,interAddbAddr,Vaddra,Vaddrb,vaddra,intra;
+    logic [$clog2(MAX_VAL)+1:0] inter;
     logic [$clog2(Bc*Br)-1:0] interCaddra;
-    logic [$clog2(Bc)-1:0] intraCaddra;
+    logic [$clog2(Bc)-1:0] intraCaddra,vIntra;
     logic comp[0:COMPS-1];
     logic [DATA_WIDTH-1:0] buff [0:Bc*D-1];
     
@@ -166,19 +170,7 @@ module top#(
       .dinb(Vdinb),    // input wire [127 : 0] dinb
       .doutb(Vdoutb)  // output wire [127 : 0] doutb
     );
-    
-//    V BRAMv (
-//      .clka(clk),    // input wire clka
-//      .ena(Vena),      // input wire ena
-//      .wea(Vwea),      // input wire [0 : 0] wea
-//      .addra(Vaddra),  // input wire [3 : 0] addra
-//      .dina(Vdina),    // input wire [127 : 0] dina
-//      .clkb(clk),    // input wire clkb
-//      .enb(Venb),      // input wire enb
-//      .addrb(Vaddrb),  // input wire [3 : 0] addrb
-//      .doutb(Vdoutb)  // output wire [127 : 0] doutb
-//    );
-    
+
     CACHE O_tilde (
       .clka(clk),    // input wire clka
       .ena(O_en),      // input wire ena
@@ -203,6 +195,8 @@ module top#(
     
     always_ff@(posedge clk)begin
         if(reset)begin
+            inter<=0;
+            
             loadFlg<=1'b1;
             diffFlg<=0;
             SsumFlg<=0;
@@ -216,9 +210,9 @@ module top#(
             lUpdateFlg<=1'b0;
             
             done<=1'b0;
-            Kaddra<=0;
-            Qaddra<=0;
-            Vaddra<=0;
+//            Kaddra<=0;
+//            Qaddra<=0;
+            vaddra<=0;
             Vaddrb<=1;
             O_addra<=0;
         
@@ -239,16 +233,18 @@ module top#(
         else if(~done)begin
 
             if(loadFlg)begin
-                if(Qaddra==2) diffFlg<=1;
-                if(Qaddra<Br-1) Qaddra<=Qaddra+1;
-                if(Kaddra<Bc-1) Kaddra<=Kaddra+1;
-                if(Vaddra<D-1) Vaddra<=Vaddra+1;
+//                if(Qaddra==2) diffFlg<=1;
+//                if(Qaddra<Br) Qdina[intra*DATA_WIDTH+:DATA_WIDTH]<=qa;
+//                if(Kaddra<Bc) Kdina[intra*DATA_WIDTH+:DATA_WIDTH]<=ka;
+//                if(Vaddra<D) Vdina[vIntra*DATA_WIDTH+:DATA_WIDTH]<=va;
                 
                 L[Qaddra]<=0;
-                if(Qaddra>=Br-1 && Kaddra>=Bc-1 && Vaddra>=D-1)begin
+                if(Qaddra>=Br && Kaddra>=Bc && Vaddra>=D)begin
                     loadFlg<=1'b0;
-                    Vaddra<=0;
+//                    Vaddra<=0;
                 end
+                
+                inter<=inter+1;
                 less[0]<=$shortrealtobits(-1.0/0.0);
             end
             
@@ -376,7 +372,7 @@ module top#(
             end
             
             if(pvFlg!=0)begin
-                Vaddra<=Vaddra+2;
+                vaddra<=vaddra+2;
                 Vaddrb<=Vaddrb+2;
             end
             if(pvFlg==2)begin
@@ -443,26 +439,11 @@ module top#(
                     O_addrb<=O_addrb+1;
                 end
                 else begin
-//                    mulB[Bc+2]<=O_douta;
                     for(int i=0;i<Bc;i=i+1)begin
                         mulB[i+Bc+2]<=O_doutb[i*DATA_WIDTH+:DATA_WIDTH];
                         mulA[i+Bc+2]<=prod[i+1];
                     end
                 end
-                
-//                if(mulReady[Bc+2])begin
-//                    for(int i=0;i<Bc;i=i+1)begin
-//                        O_dina[i*DATA_WIDTH+:DATA_WIDTH]<=prod[i+Bc+2];
-//                    end
-                    
-//                    if(poProdFlg%2)begin
-//                        O_addra<=O_addra+1;
-//                        l[(poProdFlg-3)/2]<=prod[Bc+2];
-//                    end
-//                end
-//                for(int i=0;i<Bc;i=i+1)begin
-//                    mulA[i+Bc+2]<=prod[Bc+1];
-//                end
             end
         end
     end
@@ -483,6 +464,34 @@ module top#(
         Qweb=1'b0;
         Kwea=we;
         Vwea=we;
+        
+        if(loadFlg)begin
+            if(Qaddra<Br) Qaddra=inter/D;
+            else Qaddra=Br-1;
+            if(Kaddra<Bc) Kaddra=inter/D;
+            else Kaddra=Bc-1;
+            if(Vaddra<D) Vaddra=inter/Bc;
+            else Vaddra=D;
+            
+            intra=inter%D;
+            vIntra=inter%Bc;
+            
+            if(Qaddra<Br) Qdina[intra*DATA_WIDTH+:DATA_WIDTH]=qa;
+            else Qdina=0;
+            if(Kaddra<Bc) Kdina[intra*DATA_WIDTH+:DATA_WIDTH]=ka;
+            else Kdina=0;
+            if(Vaddra<D) Vdina[vIntra*DATA_WIDTH+:DATA_WIDTH]=va;
+            else Vdina=0;
+        end
+        else begin
+            Qaddra=0;
+            Kaddra=0;
+            Vaddra=vaddra;
+            
+            Qdina=0;
+            Kdina=0;
+            Vdina=0;
+        end
         
         if(diffFlg)begin
             Qaddrb=addaAddr/D;

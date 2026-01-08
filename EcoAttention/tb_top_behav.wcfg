@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="3.300 ns"></ZoomStartTime>
-      <ZoomEndTime time="167.492 ns"></ZoomEndTime>
-      <Cursor1Time time="14.002 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,000.001 ns"></ZoomEndTime>
+      <Cursor1Time time="55.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="163"></NameColumnWidth>
-      <ValueColumnWidth column_width="132"></ValueColumnWidth>
+      <ValueColumnWidth column_width="128"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="17" />
+   <WVObjectSize size="19" />
    <wvobject type="logic" fp_name="/tb_top/dut/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -27,6 +27,14 @@
    <wvobject type="logic" fp_name="/tb_top/dut/loadFlg">
       <obj_property name="ElementShortName">loadFlg</obj_property>
       <obj_property name="ObjectShortName">loadFlg</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/inter">
+      <obj_property name="ElementShortName">inter[7:0]</obj_property>
+      <obj_property name="ObjectShortName">inter[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_top/dut/intra">
+      <obj_property name="ElementShortName">intra[1:0]</obj_property>
+      <obj_property name="ObjectShortName">intra[1:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_top/dut/Qaddra">
       <obj_property name="ElementShortName">Qaddra[1:0]</obj_property>

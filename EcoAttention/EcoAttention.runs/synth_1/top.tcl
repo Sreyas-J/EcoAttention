@@ -70,8 +70,12 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param checkpoint.writeSynthRtdsInDcp 1
+set_param synth.incrementalSynthesisCache ./.Xil/Vivado-1022087-sk-Standard-PC-Q35-ICH9-2009/incrSyn
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
-create_project -in_memory -part xc7z020clg484-1
+create_project -in_memory -part xczu7ev-ffvc1156-2-e
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
@@ -82,7 +86,7 @@ set_property parent.project_path /home/sk/Desktop/EcoAttention/EcoAttention/EcoA
 set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property board_part xilinx.com:zc702:part0:1.4 [current_project]
+set_property board_part xilinx.com:zcu104:part0:1.1 [current_project]
 set_property ip_repo_paths /home/sk/Desktop/EcoAttention/EXPip [current_project]
 update_ip_catalog
 set_property ip_output_repo /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.cache/ip [current_project]
@@ -90,32 +94,32 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv
-read_ip -quiet /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/V/V.xci
-set_property used_in_implementation false [get_files -all /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/V/V_ooc.xdc]
-
-read_ip -quiet /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/Q/Q.xci
-set_property used_in_implementation false [get_files -all /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/Q/Q_ooc.xdc]
-
-read_ip -quiet /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/MUL/MUL.xci
-set_property used_in_implementation false [get_files -all /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL_ooc.xdc]
-
 read_ip -quiet /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER.xci
 set_property used_in_implementation false [get_files -all /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER_ooc.xdc]
-
-read_ip -quiet /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/O/O.xci
-set_property used_in_implementation false [get_files -all /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/O/O_ooc.xdc]
-
-read_ip -quiet /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/K/K.xci
-set_property used_in_implementation false [get_files -all /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/K/K_ooc.xdc]
-
-read_ip -quiet /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/CACHE/CACHE.xci
-set_property used_in_implementation false [get_files -all /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/CACHE/CACHE_ooc.xdc]
 
 read_ip -quiet /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/EXP/EXP.xci
 set_property used_in_implementation false [get_files -all /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/EXP/EXP_ooc.xdc]
 
 read_ip -quiet /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/GREATERthan/GREATERthan.xci
 set_property used_in_implementation false [get_files -all /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/GREATERthan/GREATERthan_ooc.xdc]
+
+read_ip -quiet /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/MUL/MUL.xci
+set_property used_in_implementation false [get_files -all /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL_ooc.xdc]
+
+read_ip -quiet /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/CACHE/CACHE.xci
+set_property used_in_implementation false [get_files -all /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/CACHE/CACHE_ooc.xdc]
+
+read_ip -quiet /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/K/K.xci
+set_property used_in_implementation false [get_files -all /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/K/K_ooc.xdc]
+
+read_ip -quiet /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/O/O.xci
+set_property used_in_implementation false [get_files -all /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/O/O_ooc.xdc]
+
+read_ip -quiet /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/Q/Q.xci
+set_property used_in_implementation false [get_files -all /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/Q/Q_ooc.xdc]
+
+read_ip -quiet /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/V/V.xci
+set_property used_in_implementation false [get_files -all /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/V/V_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -129,15 +133,13 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/constrs_1/new/constraint.xdc
 set_property used_in_implementation false [get_files /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/constrs_1/new/constraint.xdc]
 
-read_xdc dont_touch.xdc
-set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/utils_1/imports/synth_1/top.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top top -part xc7z020clg484-1
+synth_design -top top -part xczu7ev-ffvc1156-2-e
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"

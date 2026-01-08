@@ -11,477 +11,309 @@
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source top.tcl -notrace
-create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1319.289 ; gain = 0.023 ; free physical = 7497 ; free virtual = 55401
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1363.520 ; gain = 31.836 ; free physical = 18134 ; free virtual = 53340
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/sk/Desktop/EcoAttention/EXPip'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2023.2/data/ip'.
 Command: read_checkpoint -auto_incremental -incremental /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/utils_1/imports/synth_1/top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
-Command: synth_design -top top -part xc7z020clg484-1
+Command: synth_design -top top -part xczu7ev-ffvc1156-2-e
 Starting synth_design
-WARNING: [Vivado_Tcl 4-393] The 'Synthesis' target of the following IPs are stale, please generate the output products using the generate_target or synth_ip command before running synth_design.
-/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/V/V.xci
-/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/Q/Q.xci
-/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/MUL/MUL.xci
-/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER.xci
-/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/O/O.xci
-/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/K/K.xci
-/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/CACHE/CACHE.xci
-/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/EXP/EXP.xci
-/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/GREATERthan/GREATERthan.xci
-
-INFO: [IP_Flow 19-2162] IP 'V' is locked:
-* Current project part 'xc7z020clg484-1' and the part 'xc7a35tcpg236-1' used to customize the IP 'V' do not match.
-INFO: [IP_Flow 19-2162] IP 'Q' is locked:
-* Current project part 'xc7z020clg484-1' and the part 'xc7a35tcpg236-1' used to customize the IP 'Q' do not match.
-INFO: [IP_Flow 19-2162] IP 'MUL' is locked:
-* Current project part 'xc7z020clg484-1' and the part 'xc7a35tcpg236-1' used to customize the IP 'MUL' do not match.
-INFO: [IP_Flow 19-2162] IP 'ADDER' is locked:
-* Current project part 'xc7z020clg484-1' and the part 'xc7a35tcpg236-1' used to customize the IP 'ADDER' do not match.
-INFO: [IP_Flow 19-2162] IP 'O' is locked:
-* Current project part 'xc7z020clg484-1' and the part 'xc7a35tcpg236-1' used to customize the IP 'O' do not match.
-INFO: [IP_Flow 19-2162] IP 'K' is locked:
-* Current project part 'xc7z020clg484-1' and the part 'xc7a35tcpg236-1' used to customize the IP 'K' do not match.
-INFO: [IP_Flow 19-2162] IP 'CACHE' is locked:
-* Current project part 'xc7z020clg484-1' and the part 'xc7a35tcpg236-1' used to customize the IP 'CACHE' do not match.
-INFO: [IP_Flow 19-2162] IP 'EXP' is locked:
-* Current project part 'xc7z020clg484-1' and the part 'xc7a35tcpg236-1' used to customize the IP 'EXP' do not match.
-INFO: [IP_Flow 19-2162] IP 'GREATERthan' is locked:
-* Current project part 'xc7z020clg484-1' and the part 'xc7a35tcpg236-1' used to customize the IP 'GREATERthan' do not match.
-Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
 INFO: [Vivado_Tcl 4-1810] synth_design options have changed between reference and incremental; A full resynthesis will be run
-INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 1877807
+INFO: [Synth 8-7075] Helper process launched with PID 1328319
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2076.473 ; gain = 403.715 ; free physical = 6409 ; free virtual = 54338
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2760.703 ; gain = 291.777 ; free physical = 16397 ; free virtual = 51595
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-11241] undeclared symbol 's_axis_a_tready', assumed default net type 'wire' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-11241] undeclared symbol 's_axis_b_tready', assumed default net type 'wire' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-11241] undeclared symbol 's_axis_a_tready', assumed default net type 'wire' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:96]
-INFO: [Synth 8-11241] undeclared symbol 's_axis_a_tready', assumed default net type 'wire' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:120]
-INFO: [Synth 8-11241] undeclared symbol 's_axis_b_tready', assumed default net type 'wire' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
-INFO: [Synth 8-11241] undeclared symbol 's_axis_a_tready', assumed default net type 'wire' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:137]
-INFO: [Synth 8-11241] undeclared symbol 'Vweb', assumed default net type 'wire' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:182]
-INFO: [Synth 8-11241] undeclared symbol 'Oaddr', assumed default net type 'wire' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:216]
+INFO: [Synth 8-11241] undeclared symbol 's_axis_a_tready', assumed default net type 'wire' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-11241] undeclared symbol 's_axis_b_tready', assumed default net type 'wire' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-11241] undeclared symbol 's_axis_a_tready', assumed default net type 'wire' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:82]
+INFO: [Synth 8-11241] undeclared symbol 's_axis_a_tready', assumed default net type 'wire' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:106]
+INFO: [Synth 8-11241] undeclared symbol 's_axis_b_tready', assumed default net type 'wire' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:109]
+INFO: [Synth 8-11241] undeclared symbol 's_axis_a_tready', assumed default net type 'wire' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
+INFO: [Synth 8-11241] undeclared symbol 'Vweb', assumed default net type 'wire' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:168]
+INFO: [Synth 8-11241] undeclared symbol 'Oaddr', assumed default net type 'wire' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:190]
 INFO: [Synth 8-6157] synthesizing module 'top' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:2]
-INFO: [Synth 8-6157] synthesizing module 'ADDER' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1877374-sk-Standard-PC-Q35-ICH9-2009/realtime/ADDER_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ADDER' (0#1) [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1877374-sk-Standard-PC-Q35-ICH9-2009/realtime/ADDER_stub.v:6]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:96]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-6157] synthesizing module 'EXP' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1877374-sk-Standard-PC-Q35-ICH9-2009/realtime/EXP_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'EXP' (0#1) [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1877374-sk-Standard-PC-Q35-ICH9-2009/realtime/EXP_stub.v:6]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:96]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:120]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-INFO: [Synth 8-6157] synthesizing module 'GREATERthan' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1877374-sk-Standard-PC-Q35-ICH9-2009/realtime/GREATERthan_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'GREATERthan' (0#1) [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1877374-sk-Standard-PC-Q35-ICH9-2009/realtime/GREATERthan_stub.v:6]
-WARNING: [Synth 8-689] width (1) of port connection 'm_axis_result_tdata' does not match port width (8) of module 'GREATERthan' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:127]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:120]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-689] width (1) of port connection 'm_axis_result_tdata' does not match port width (8) of module 'GREATERthan' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:127]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:120]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-689] width (1) of port connection 'm_axis_result_tdata' does not match port width (8) of module 'GREATERthan' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:127]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:120]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-689] width (1) of port connection 'm_axis_result_tdata' does not match port width (8) of module 'GREATERthan' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:127]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:120]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-689] width (1) of port connection 'm_axis_result_tdata' does not match port width (8) of module 'GREATERthan' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:127]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:120]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-689] width (1) of port connection 'm_axis_result_tdata' does not match port width (8) of module 'GREATERthan' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:127]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:120]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-689] width (1) of port connection 'm_axis_result_tdata' does not match port width (8) of module 'GREATERthan' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:127]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:120]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
-INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:69]
-WARNING: [Synth 8-689] width (1) of port connection 'm_axis_result_tdata' does not match port width (8) of module 'GREATERthan' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:127]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:137]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-6157] synthesizing module 'MUL' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1877374-sk-Standard-PC-Q35-ICH9-2009/realtime/MUL_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'MUL' (0#1) [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1877374-sk-Standard-PC-Q35-ICH9-2009/realtime/MUL_stub.v:6]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:137]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:137]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:137]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:137]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:137]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:137]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:137]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:137]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:137]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:137]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:137]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:137]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:137]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:137]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:137]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:137]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:137]
-INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:66]
-INFO: [Synth 8-6157] synthesizing module 'Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1877374-sk-Standard-PC-Q35-ICH9-2009/realtime/Q_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'Q' (0#1) [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1877374-sk-Standard-PC-Q35-ICH9-2009/realtime/Q_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'K' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1877374-sk-Standard-PC-Q35-ICH9-2009/realtime/K_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'K' (0#1) [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1877374-sk-Standard-PC-Q35-ICH9-2009/realtime/K_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'V' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1877374-sk-Standard-PC-Q35-ICH9-2009/realtime/V_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'V' (0#1) [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1877374-sk-Standard-PC-Q35-ICH9-2009/realtime/V_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'CACHE' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1877374-sk-Standard-PC-Q35-ICH9-2009/realtime/CACHE_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'CACHE' (0#1) [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1877374-sk-Standard-PC-Q35-ICH9-2009/realtime/CACHE_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'O' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1877374-sk-Standard-PC-Q35-ICH9-2009/realtime/O_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'O' (0#1) [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1877374-sk-Standard-PC-Q35-ICH9-2009/realtime/O_stub.v:6]
-WARNING: [Synth 8-689] width (512) of port connection 'dina' does not match port width (32) of module 'O' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:217]
-WARNING: [Synth 8-689] width (512) of port connection 'douta' does not match port width (32) of module 'O' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:218]
-WARNING: [Synth 8-6090] variable 'mulVal' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:581]
-WARNING: [Synth 8-6090] variable 'mulVal' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:586]
+INFO: [Synth 8-6157] synthesizing module 'ADDER' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1327793-sk-Standard-PC-Q35-ICH9-2009/realtime/ADDER_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ADDER' (0#1) [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1327793-sk-Standard-PC-Q35-ICH9-2009/realtime/ADDER_stub.v:6]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:82]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-6157] synthesizing module 'EXP' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1327793-sk-Standard-PC-Q35-ICH9-2009/realtime/EXP_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'EXP' (0#1) [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1327793-sk-Standard-PC-Q35-ICH9-2009/realtime/EXP_stub.v:6]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:82]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:106]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:109]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+INFO: [Synth 8-6157] synthesizing module 'GREATERthan' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1327793-sk-Standard-PC-Q35-ICH9-2009/realtime/GREATERthan_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'GREATERthan' (0#1) [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1327793-sk-Standard-PC-Q35-ICH9-2009/realtime/GREATERthan_stub.v:6]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axis_result_tdata' does not match port width (8) of module 'GREATERthan' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:113]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:106]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:109]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axis_result_tdata' does not match port width (8) of module 'GREATERthan' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:113]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:106]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:109]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axis_result_tdata' does not match port width (8) of module 'GREATERthan' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:113]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:106]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:109]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axis_result_tdata' does not match port width (8) of module 'GREATERthan' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:113]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:106]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:109]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axis_result_tdata' does not match port width (8) of module 'GREATERthan' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:113]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:106]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:109]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axis_result_tdata' does not match port width (8) of module 'GREATERthan' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:113]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:106]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:109]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axis_result_tdata' does not match port width (8) of module 'GREATERthan' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:113]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:106]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:109]
+INFO: [Synth 8-556] previous implicit net 's_axis_b_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:68]
+WARNING: [Synth 8-689] width (1) of port connection 'm_axis_result_tdata' does not match port width (8) of module 'GREATERthan' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:113]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-6157] synthesizing module 'MUL' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1327793-sk-Standard-PC-Q35-ICH9-2009/realtime/MUL_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'MUL' (0#1) [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1327793-sk-Standard-PC-Q35-ICH9-2009/realtime/MUL_stub.v:6]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+WARNING: [Synth 8-605] same-named implicit nets 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:123]
+INFO: [Synth 8-556] previous implicit net 's_axis_a_tready' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:65]
+INFO: [Synth 8-6157] synthesizing module 'Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1327793-sk-Standard-PC-Q35-ICH9-2009/realtime/Q_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'Q' (0#1) [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1327793-sk-Standard-PC-Q35-ICH9-2009/realtime/Q_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'K' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1327793-sk-Standard-PC-Q35-ICH9-2009/realtime/K_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'K' (0#1) [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1327793-sk-Standard-PC-Q35-ICH9-2009/realtime/K_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'V' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1327793-sk-Standard-PC-Q35-ICH9-2009/realtime/V_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'V' (0#1) [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1327793-sk-Standard-PC-Q35-ICH9-2009/realtime/V_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'CACHE' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1327793-sk-Standard-PC-Q35-ICH9-2009/realtime/CACHE_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'CACHE' (0#1) [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1327793-sk-Standard-PC-Q35-ICH9-2009/realtime/CACHE_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'O' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1327793-sk-Standard-PC-Q35-ICH9-2009/realtime/O_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'O' (0#1) [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/.Xil/Vivado-1327793-sk-Standard-PC-Q35-ICH9-2009/realtime/O_stub.v:6]
+WARNING: [Synth 8-689] width (512) of port connection 'dina' does not match port width (32) of module 'O' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:191]
+WARNING: [Synth 8-689] width (512) of port connection 'douta' does not match port width (32) of module 'O' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:192]
+WARNING: [Synth 8-6090] variable 'mulVal' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:560]
+WARNING: [Synth 8-6090] variable 'mulVal' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:565]
 INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:2]
-WARNING: [Synth 8-6014] Unused sequential element SsumAddr_reg was removed.  [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:246]
-WARNING: [Synth 8-6014] Unused sequential element Caddrb_reg was removed.  [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:248]
+WARNING: [Synth 8-6014] Unused sequential element SsumAddr_reg was removed.  [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:222]
+WARNING: [Synth 8-6014] Unused sequential element Caddrb_reg was removed.  [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:224]
 WARNING: [Synth 8-6014] Unused sequential element L_reg was removed. 
-WARNING: [Synth 8-87] always_comb on 'O_wea_reg' did not result in combinational logic [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:203]
-WARNING: [Synth 8-3848] Net Vweb in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:182]
-WARNING: [Synth 8-3848] Net Oaddr in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:216]
-WARNING: [Synth 8-3848] Net addVal[12] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:31]
-WARNING: [Synth 8-3848] Net addVal[13] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:31]
-WARNING: [Synth 8-3848] Net addVal[14] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:31]
-WARNING: [Synth 8-3848] Net addVal[15] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:31]
-WARNING: [Synth 8-3848] Net addVal[16] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:31]
-WARNING: [Synth 8-3848] Net addVal[17] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:31]
-WARNING: [Synth 8-3848] Net addVal[18] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:31]
-WARNING: [Synth 8-3848] Net addVal[19] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:31]
-WARNING: [Synth 8-3848] Net addVal[20] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:31]
-WARNING: [Synth 8-3848] Net addVal[21] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:31]
-WARNING: [Synth 8-3848] Net addVal[22] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:31]
-WARNING: [Synth 8-3848] Net addVal[23] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:31]
-WARNING: [Synth 8-3848] Net Owe in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:31]
-WARNING: [Synth 8-3848] Net great[1] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:32]
-WARNING: [Synth 8-3848] Net great[2] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:32]
-WARNING: [Synth 8-3848] Net great[3] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:32]
-WARNING: [Synth 8-3848] Net great[4] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:32]
-WARNING: [Synth 8-3848] Net great[5] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:32]
-WARNING: [Synth 8-3848] Net great[6] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:32]
-WARNING: [Synth 8-3848] Net great[7] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:32]
-WARNING: [Synth 8-3848] Net less[1] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:32]
-WARNING: [Synth 8-3848] Net less[2] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:32]
-WARNING: [Synth 8-3848] Net less[3] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:32]
-WARNING: [Synth 8-3848] Net less[4] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:32]
-WARNING: [Synth 8-3848] Net less[5] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:32]
-WARNING: [Synth 8-3848] Net less[6] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:32]
-WARNING: [Synth 8-3848] Net less[7] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:32]
-WARNING: [Synth 8-3848] Net Odin in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:33]
-WARNING: [Synth 8-3848] Net O_dina in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:34]
-WARNING: [Synth 8-7129] Port Qdinb[511] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[510] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[509] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[508] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[507] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[506] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[505] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[504] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[503] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[502] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[501] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[500] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[499] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[498] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[497] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[496] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[495] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[494] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[493] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[492] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[491] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[490] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[489] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[488] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[487] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[486] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[485] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[484] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[483] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[482] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[481] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[480] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[479] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[478] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[477] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[476] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[475] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[474] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[473] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[472] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[471] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[470] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[469] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[468] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[467] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[466] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[465] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[464] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[463] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[462] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[461] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[460] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[459] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[458] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[457] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[456] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[455] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[454] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[453] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[452] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[451] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[450] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[449] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[448] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[447] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[446] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[445] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[444] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[443] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[442] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[441] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[440] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[439] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[438] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[437] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[436] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[435] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[434] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[433] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[432] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[431] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[430] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[429] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[428] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[427] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[426] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[425] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[424] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[423] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[422] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[421] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[420] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[419] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[418] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[417] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[416] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[415] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[414] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[413] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port Qdinb[412] in module top is either unconnected or has no load
-INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-87] always_comb on 'intra_reg' did not result in combinational logic [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:476]
+WARNING: [Synth 8-87] always_comb on 'O_wea_reg' did not result in combinational logic [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:177]
+WARNING: [Synth 8-3848] Net Vweb in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:168]
+WARNING: [Synth 8-3848] Net Oaddr in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:190]
+WARNING: [Synth 8-3848] Net Vdinb in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:31]
+WARNING: [Synth 8-3848] Net addVal[12] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:33]
+WARNING: [Synth 8-3848] Net addVal[13] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:33]
+WARNING: [Synth 8-3848] Net addVal[14] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:33]
+WARNING: [Synth 8-3848] Net addVal[15] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:33]
+WARNING: [Synth 8-3848] Net addVal[16] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:33]
+WARNING: [Synth 8-3848] Net addVal[17] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:33]
+WARNING: [Synth 8-3848] Net addVal[18] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:33]
+WARNING: [Synth 8-3848] Net addVal[19] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:33]
+WARNING: [Synth 8-3848] Net addVal[20] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:33]
+WARNING: [Synth 8-3848] Net addVal[21] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:33]
+WARNING: [Synth 8-3848] Net addVal[22] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:33]
+WARNING: [Synth 8-3848] Net addVal[23] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:33]
+WARNING: [Synth 8-3848] Net Owe in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:33]
+WARNING: [Synth 8-3848] Net great[1] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:34]
+WARNING: [Synth 8-3848] Net great[2] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:34]
+WARNING: [Synth 8-3848] Net great[3] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:34]
+WARNING: [Synth 8-3848] Net great[4] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:34]
+WARNING: [Synth 8-3848] Net great[5] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:34]
+WARNING: [Synth 8-3848] Net great[6] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:34]
+WARNING: [Synth 8-3848] Net great[7] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:34]
+WARNING: [Synth 8-3848] Net less[1] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:34]
+WARNING: [Synth 8-3848] Net less[2] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:34]
+WARNING: [Synth 8-3848] Net less[3] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:34]
+WARNING: [Synth 8-3848] Net less[4] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:34]
+WARNING: [Synth 8-3848] Net less[5] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:34]
+WARNING: [Synth 8-3848] Net less[6] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:34]
+WARNING: [Synth 8-3848] Net less[7] in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:34]
+WARNING: [Synth 8-3848] Net Odin in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:35]
+WARNING: [Synth 8-3848] Net O_dina in module/entity top does not have driver. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:36]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2183.410 ; gain = 510.652 ; free physical = 6282 ; free virtual = 54212
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2863.672 ; gain = 394.746 ; free physical = 16271 ; free virtual = 51471
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2201.223 ; gain = 528.465 ; free physical = 6282 ; free virtual = 54212
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2872.578 ; gain = 403.652 ; free physical = 16272 ; free virtual = 51471
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2201.223 ; gain = 528.465 ; free physical = 6282 ; free virtual = 54212
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2872.578 ; gain = 403.652 ; free physical = 16272 ; free virtual = 51471
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2201.223 ; gain = 0.000 ; free physical = 6282 ; free virtual = 54212
+Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2872.578 ; gain = 0.000 ; free physical = 16272 ; free virtual = 51472
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/V/V/V_in_context.xdc] for cell 'BRAMv'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/V/V/V_in_context.xdc] for cell 'BRAMv'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/Q/Q/K_in_context.xdc] for cell 'BRAMq'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/Q/Q/K_in_context.xdc] for cell 'BRAMq'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[0].mul'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[0].mul'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[1].mul'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[1].mul'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[2].mul'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[2].mul'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[3].mul'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[3].mul'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[4].mul'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[4].mul'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[5].mul'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[5].mul'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[6].mul'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[6].mul'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[7].mul'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[7].mul'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[8].mul'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[8].mul'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[9].mul'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[9].mul'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[10].mul'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[10].mul'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[11].mul'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[11].mul'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[12].mul'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[12].mul'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[13].mul'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[13].mul'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[14].mul'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[14].mul'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[15].mul'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[15].mul'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[16].mul'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[16].mul'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[17].mul'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[17].mul'
 Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER/ADDER_in_context.xdc] for cell 'gen_adders[0].add_inst'
 Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER/ADDER_in_context.xdc] for cell 'gen_adders[0].add_inst'
 Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER/ADDER_in_context.xdc] for cell 'gen_adders[1].add_inst'
@@ -542,12 +374,6 @@ Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/so
 Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER/ADDER_in_context.xdc] for cell 'gen_adders[28].add_inst'
 Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER/ADDER_in_context.xdc] for cell 'gen_adders[29].add_inst'
 Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER/ADDER_in_context.xdc] for cell 'gen_adders[29].add_inst'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/O/O/O_in_context.xdc] for cell 'BRAMo'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/O/O/O_in_context.xdc] for cell 'BRAMo'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/K/K/K_in_context.xdc] for cell 'BRAMk'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/K/K/K_in_context.xdc] for cell 'BRAMk'
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/CACHE/CACHE/CACHE_in_context.xdc] for cell 'O_tilde'
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/CACHE/CACHE/CACHE_in_context.xdc] for cell 'O_tilde'
 Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/EXP/EXP/EXP_in_context.xdc] for cell 'gen_exps[0].exp'
 Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/EXP/EXP/EXP_in_context.xdc] for cell 'gen_exps[0].exp'
 Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/EXP/EXP/EXP_in_context.xdc] for cell 'gen_exps[1].exp'
@@ -568,18 +394,62 @@ Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/so
 Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/GREATERthan/GREATERthan/GREATERthan_in_context.xdc] for cell 'gen_comps[6].greater'
 Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/GREATERthan/GREATERthan/GREATERthan_in_context.xdc] for cell 'gen_comps[7].greater'
 Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/GREATERthan/GREATERthan/GREATERthan_in_context.xdc] for cell 'gen_comps[7].greater'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[0].mul'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[0].mul'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[1].mul'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[1].mul'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[2].mul'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[2].mul'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[3].mul'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[3].mul'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[4].mul'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[4].mul'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[5].mul'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[5].mul'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[6].mul'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[6].mul'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[7].mul'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[7].mul'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[8].mul'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[8].mul'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[9].mul'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[9].mul'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[10].mul'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[10].mul'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[11].mul'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[11].mul'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[12].mul'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[12].mul'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[13].mul'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[13].mul'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[14].mul'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[14].mul'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[15].mul'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[15].mul'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[16].mul'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[16].mul'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[17].mul'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/MUL/MUL/MUL_in_context.xdc] for cell 'gen_muls[17].mul'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/CACHE/CACHE/CACHE_in_context.xdc] for cell 'O_tilde'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/CACHE/CACHE/CACHE_in_context.xdc] for cell 'O_tilde'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/K/K/K_in_context.xdc] for cell 'BRAMk'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/K/K/K_in_context.xdc] for cell 'BRAMk'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/O/O/O_in_context.xdc] for cell 'BRAMo'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/O/O/O_in_context.xdc] for cell 'BRAMo'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/Q/Q/Q_in_context.xdc] for cell 'BRAMq'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/Q/Q/Q_in_context.xdc] for cell 'BRAMq'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/V/V/V_in_context.xdc] for cell 'BRAMv'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/V/V/V_in_context.xdc] for cell 'BRAMv'
 Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/constrs_1/new/constraint.xdc]
 INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/constrs_1/new/constraint.xdc:1]
 Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/constrs_1/new/constraint.xdc]
-Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2339.973 ; gain = 0.000 ; free physical = 6266 ; free virtual = 54206
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3013.328 ; gain = 0.000 ; free physical = 16264 ; free virtual = 51463
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2340.008 ; gain = 0.000 ; free physical = 6266 ; free virtual = 54206
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3013.363 ; gain = 0.000 ; free physical = 16264 ; free virtual = 51463
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'BRAMk' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'BRAMo' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'BRAMq' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
@@ -646,38 +516,19 @@ WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context 
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2340.008 ; gain = 667.250 ; free physical = 6277 ; free virtual = 54209
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 3013.363 ; gain = 544.438 ; free physical = 16252 ; free virtual = 51457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
-Loading part: xc7z020clg484-1
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2340.008 ; gain = 667.250 ; free physical = 6277 ; free virtual = 54209
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 3013.363 ; gain = 544.438 ; free physical = 16252 ; free virtual = 51457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property KEEP_HIERARCHY = SOFT for BRAMv. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for BRAMq. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[0].mul . (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[10].mul . (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[11].mul . (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[12].mul . (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[13].mul . (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[14].mul . (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[15].mul . (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[16].mul . (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[17].mul . (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[1].mul . (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[2].mul . (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[3].mul . (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[4].mul . (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[5].mul . (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[6].mul . (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[7].mul . (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[8].mul . (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[9].mul . (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for \gen_adders[0].add_inst . (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for \gen_adders[10].add_inst . (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for \gen_adders[11].add_inst . (constraint file  auto generated constraint).
@@ -708,9 +559,6 @@ Applied set_property KEEP_HIERARCHY = SOFT for \gen_adders[6].add_inst . (constr
 Applied set_property KEEP_HIERARCHY = SOFT for \gen_adders[7].add_inst . (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for \gen_adders[8].add_inst . (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for \gen_adders[9].add_inst . (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for BRAMo. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for BRAMk. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for O_tilde. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for \gen_exps[0].exp . (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for \gen_exps[1].exp . (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for \gen_comps[0].greater . (constraint file  auto generated constraint).
@@ -721,12 +569,36 @@ Applied set_property KEEP_HIERARCHY = SOFT for \gen_comps[4].greater . (constrai
 Applied set_property KEEP_HIERARCHY = SOFT for \gen_comps[5].greater . (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for \gen_comps[6].greater . (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for \gen_comps[7].greater . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[0].mul . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[10].mul . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[11].mul . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[12].mul . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[13].mul . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[14].mul . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[15].mul . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[16].mul . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[17].mul . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[1].mul . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[2].mul . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[3].mul . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[4].mul . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[5].mul . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[6].mul . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[7].mul . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[8].mul . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for \gen_muls[9].mul . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for O_tilde. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for BRAMk. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for BRAMo. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for BRAMq. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for BRAMv. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2340.008 ; gain = 667.250 ; free physical = 6262 ; free virtual = 54203
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 3013.363 ; gain = 544.438 ; free physical = 16252 ; free virtual = 51456
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'O_wea_reg' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:203]
+WARNING: [Synth 8-327] inferring latch for variable 'intra_reg' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:476]
+WARNING: [Synth 8-327] inferring latch for variable 'O_wea_reg' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:177]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2340.008 ; gain = 667.250 ; free physical = 6263 ; free virtual = 54204
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 3013.363 ; gain = 544.438 ; free physical = 16255 ; free virtual = 51457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -735,17 +607,21 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input   32 Bit       Adders := 3     
 	   2 Input    9 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 1     
 	   2 Input    7 Bit       Adders := 2     
 	   2 Input    6 Bit       Adders := 1     
 	   2 Input    5 Bit       Adders := 14    
 	   2 Input    4 Bit       Adders := 3     
 	   2 Input    3 Bit       Adders := 2     
-	   2 Input    2 Bit       Adders := 6     
+	   2 Input    2 Bit       Adders := 4     
 +---XORs : 
 	   2 Input     32 Bit         XORs := 10    
 +---Registers : 
+	              512 Bit    Registers := 2     
+	              128 Bit    Registers := 1     
 	               32 Bit    Registers := 101   
 	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
 	                7 Bit    Registers := 2     
 	                6 Bit    Registers := 1     
 	                4 Bit    Registers := 3     
@@ -753,25 +629,27 @@ Detailed RTL Component Info :
 	                2 Bit    Registers := 7     
 	                1 Bit    Registers := 5     
 +---Muxes : 
+	   2 Input  512 Bit        Muxes := 3     
+	   2 Input  128 Bit        Muxes := 3     
 	   4 Input   32 Bit        Muxes := 14    
 	   2 Input   32 Bit        Muxes := 35    
-	   8 Input   32 Bit        Muxes := 1     
 	   5 Input   32 Bit        Muxes := 1     
+	   8 Input   32 Bit        Muxes := 1     
 	   2 Input    7 Bit        Muxes := 2     
 	   5 Input    6 Bit        Muxes := 1     
-	   6 Input    6 Bit        Muxes := 1     
 	   2 Input    6 Bit        Muxes := 1     
-	   2 Input    4 Bit        Muxes := 7     
-	   8 Input    3 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 11    
-	   5 Input    3 Bit        Muxes := 2     
+	   6 Input    6 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 9     
 	   6 Input    3 Bit        Muxes := 1     
-	   2 Input    2 Bit        Muxes := 9     
-	   4 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 128   
-	   6 Input    1 Bit        Muxes := 5     
+	   5 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 11    
+	   8 Input    3 Bit        Muxes := 1     
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 17    
 	   4 Input    1 Bit        Muxes := 5     
+	   2 Input    1 Bit        Muxes := 122   
 	   5 Input    1 Bit        Muxes := 6     
+	   6 Input    1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -779,78 +657,159 @@ Finished RTL Component Statistics
 Start Part Resource Summary
 ---------------------------------------------------------------------------------
 Part Resources:
-DSPs: 220 (col length:60)
-BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (addaAddr0_inferred/\diffQaddrb_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (addaAddr0_inferred/\diffQaddrb_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (addaAddr0_inferred/\diffQaddrb_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (addaAddr0_inferred/\diffQaddrb_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (addbAddr0_inferred/\addbAddr_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (addbAddr0_inferred/\addbAddr_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (addbAddr0_inferred/\addbAddr_reg[0] )
-INFO: [Synth 8-3886] merging instance 'O_addra_reg[0]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'O_addra_reg[1]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][0]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][1]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][2]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][3]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][4]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][5]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][6]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][7]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][8]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][9]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][10]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][11]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][12]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][13]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][14]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][15]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][16]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][17]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][18]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][19]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][20]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][21]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][22]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][23]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][24]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][25]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][26]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][27]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][28]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][29]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][30]' (FDRE) to 'done_reg'
-INFO: [Synth 8-3886] merging instance 'm_reg[0][31]' (FDRE) to 'done_reg'
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_7/Qaddra_reg[1]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_7/Qaddra_reg[0]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:139]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:139]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_7/Kaddra_reg[1]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:151]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:151]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:151]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_7/Kaddra_reg[0]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:151]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:151]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:151]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_7/Vaddra_reg[0]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:163]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:163]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:163]
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[128]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[129]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[130]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[131]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[132]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[133]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[134]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[135]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[136]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[137]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[138]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[139]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[140]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[141]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[142]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[143]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[144]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[145]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[146]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[147]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[148]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[149]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[150]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[151]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[152]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[153]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[154]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[155]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[156]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[157]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[158]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[159]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[160]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[161]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[162]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[163]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[164]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[165]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[166]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[167]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[168]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[169]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[170]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[171]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[172]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[173]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[174]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[175]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[176]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[177]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[178]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[179]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[180]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[181]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[182]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[183]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[184]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[185]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[186]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[187]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[188]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[189]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[190]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[191]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[192]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[193]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[194]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[195]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[196]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[197]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[198]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[199]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[200]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[201]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[202]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[203]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[204]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[205]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[206]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[207]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[208]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[209]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[210]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[211]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[212]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[213]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[214]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[215]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[216]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[217]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[218]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[219]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[220]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[221]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[222]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[223]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[224]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[225]' (FDE) to 'Kdina_reg[511]'
+INFO: [Synth 8-3886] merging instance 'Kdina_reg[226]' (FDE) to 'Kdina_reg[511]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Kdina_reg[511] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (done_reg)
+INFO: [Synth 8-3886] merging instance 'O_addra_reg[0]' (FDRE) to 'O_addra_reg[1]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\O_addra_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (O_wea_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\diffFlg_reg[0] )
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Qdina_reg[511] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:51 . Memory (MB): peak = 2340.008 ; gain = 667.250 ; free physical = 1293 ; free virtual = 49288
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:57 . Memory (MB): peak = 3013.363 ; gain = 544.438 ; free physical = 8248 ; free virtual = 43507
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:56 . Memory (MB): peak = 2340.008 ; gain = 667.250 ; free physical = 1303 ; free virtual = 49314
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:01:06 . Memory (MB): peak = 3452.914 ; gain = 983.988 ; free physical = 7845 ; free virtual = 43112
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
-info: optimization accepted worst group hill climbing move (6129.0/ToG.UNL 186.0ps)
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:01:17 . Memory (MB): peak = 2340.008 ; gain = 667.250 ; free physical = 1244 ; free virtual = 49256
+Finished Timing Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:01:19 . Memory (MB): peak = 3572.594 ; gain = 1103.668 ; free physical = 7764 ; free virtual = 43031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:51 ; elapsed = 00:01:18 . Memory (MB): peak = 2340.008 ; gain = 667.250 ; free physical = 1250 ; free virtual = 49265
+Finished Technology Mapping : Time (s): cpu = 00:00:51 ; elapsed = 00:01:20 . Memory (MB): peak = 3588.609 ; gain = 1119.684 ; free physical = 7758 ; free virtual = 43029
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -867,155 +826,161 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin wea[0]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin addra[0]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[31]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[30]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[29]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[28]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[27]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[26]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[25]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[24]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[23]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[22]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[21]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[20]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[19]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[18]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[17]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[16]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[15]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[14]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[13]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[12]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[11]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[10]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[9]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[8]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[7]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[6]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[5]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[4]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[3]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[2]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[1]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMo has unconnected pin dina[0]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[127]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[126]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[125]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[124]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[123]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[122]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[121]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[120]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[119]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[118]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[117]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[116]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[115]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[114]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[113]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[112]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[111]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[110]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[109]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[108]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[107]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[106]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[105]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[104]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[103]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[102]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[101]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[100]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[99]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[98]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[97]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[96]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[95]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[94]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[93]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[92]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[91]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[90]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[89]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[88]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[87]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[86]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[85]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[84]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[83]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[82]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[81]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[80]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[79]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[78]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[77]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[76]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[75]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[74]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[73]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[72]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[71]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[70]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[69]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[68]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[67]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[66]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[65]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[64]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[63]
-CRITICAL WARNING: [Synth 8-4442] BlackBox module O_tilde has unconnected pin dina[62]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin web[0]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[127]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[126]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[125]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[124]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[123]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[122]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[121]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[120]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[119]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[118]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[117]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[116]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[115]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[114]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[113]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[112]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[111]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[110]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[109]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[108]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[107]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[106]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[105]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[104]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[103]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[102]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[101]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[100]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[99]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[98]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[97]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[96]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[95]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[94]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[93]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[92]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[91]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[90]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[89]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[88]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[87]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[86]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[85]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[84]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[83]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[82]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[81]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[80]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[79]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[78]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[77]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[76]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[75]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[74]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[73]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[72]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[71]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[70]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[69]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[68]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[67]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[66]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[65]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[64]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[63]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[62]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[61]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[60]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[59]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[58]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[57]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[56]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[55]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[54]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[53]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[52]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[51]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[50]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[49]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[48]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[47]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[46]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[45]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[44]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[43]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[42]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[41]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[40]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[39]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[38]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[37]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[36]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[35]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[34]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[33]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[32]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[31]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[30]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module BRAMv has unconnected pin dinb[29]
 INFO: [Common 17-14] Message 'Synth 8-4442' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:54 ; elapsed = 00:01:22 . Memory (MB): peak = 2340.008 ; gain = 667.250 ; free physical = 1270 ; free virtual = 49277
+Finished IO Insertion : Time (s): cpu = 00:00:55 ; elapsed = 00:01:24 . Memory (MB): peak = 3588.609 ; gain = 1119.684 ; free physical = 7756 ; free virtual = 43026
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:54 ; elapsed = 00:01:22 . Memory (MB): peak = 2340.008 ; gain = 667.250 ; free physical = 1270 ; free virtual = 49277
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:55 ; elapsed = 00:01:24 . Memory (MB): peak = 3588.609 ; gain = 1119.684 ; free physical = 7756 ; free virtual = 43026
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin greatVal[0] with 1st driver pin 'greatVal_reg[7]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin greatVal[0] with 2nd driver pin 'greatVal_reg[6]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin greatVal[0] with 3rd driver pin 'greatVal_reg[5]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin greatVal[0] with 4th driver pin 'greatVal_reg[4]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin greatVal[0] with 5th driver pin 'greatVal_reg[3]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin greatVal[0] with 6th driver pin 'greatVal_reg[2]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin greatVal[0] with 7th driver pin 'greatVal_reg[1]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin greatVal[0] with 8th driver pin 'greatVal_reg[0]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:119]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin greatVal[0] with 9th driver pin 'SscaleFlg_reg/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:227]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin greatVal[0] with 1st driver pin 'SscaleFlg_reg/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:203]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin greatVal[0] with 2nd driver pin 'greatVal_reg[7]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:105]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin greatVal[0] with 3rd driver pin 'greatVal_reg[6]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:105]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin greatVal[0] with 4th driver pin 'greatVal_reg[5]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:105]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin greatVal[0] with 5th driver pin 'greatVal_reg[4]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:105]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin greatVal[0] with 6th driver pin 'greatVal_reg[3]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:105]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin greatVal[0] with 7th driver pin 'greatVal_reg[2]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:105]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin greatVal[0] with 8th driver pin 'greatVal_reg[1]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:105]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin greatVal[0] with 9th driver pin 'greatVal_reg[0]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:105]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Vaddra[3] with 1st driver pin 'inter_reg[5]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:198]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Vaddra[3] with 2nd driver pin 'Vaddra_reg[3]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:163]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Vaddra[2] with 1st driver pin 'inter_reg[4]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:198]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Vaddra[2] with 2nd driver pin 'Vaddra_reg[2]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:163]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Vaddra[1] with 1st driver pin 'inter_reg[3]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:198]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Vaddra[1] with 2nd driver pin 'Vaddra_reg[1]/Q' [/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/new/top.sv:163]
 
 Report Check Netlist: 
 +------+------------------+-------+---------+-------+------------------+
 |      |Item              |Errors |Warnings |Status |Description       |
 +------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        1|Failed |Multi driven nets |
+|1     |multi_driven_nets |      0|        4|Failed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:54 ; elapsed = 00:01:22 . Memory (MB): peak = 2340.008 ; gain = 667.250 ; free physical = 1268 ; free virtual = 49276
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:55 ; elapsed = 00:01:24 . Memory (MB): peak = 3588.609 ; gain = 1119.684 ; free physical = 7760 ; free virtual = 43031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:54 ; elapsed = 00:01:22 . Memory (MB): peak = 2340.008 ; gain = 667.250 ; free physical = 1268 ; free virtual = 49276
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:55 ; elapsed = 00:01:24 . Memory (MB): peak = 3588.609 ; gain = 1119.684 ; free physical = 7760 ; free virtual = 43031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:55 ; elapsed = 00:01:22 . Memory (MB): peak = 2340.008 ; gain = 667.250 ; free physical = 1270 ; free virtual = 49277
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:55 ; elapsed = 00:01:24 . Memory (MB): peak = 3588.609 ; gain = 1119.684 ; free physical = 7760 ; free virtual = 43031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:55 ; elapsed = 00:01:22 . Memory (MB): peak = 2340.008 ; gain = 667.250 ; free physical = 1270 ; free virtual = 49277
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:55 ; elapsed = 00:01:24 . Memory (MB): peak = 3588.609 ; gain = 1119.684 ; free physical = 7760 ; free virtual = 43031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1025,15 +990,15 @@ Report BlackBoxes:
 +------+--------------+----------+
 |      |BlackBox name |Instances |
 +------+--------------+----------+
-|1     |Q             |         1|
-|2     |K             |         1|
-|3     |ADDER         |        30|
-|4     |O             |         1|
+|1     |ADDER         |        30|
+|2     |MUL           |        18|
+|3     |K             |         1|
+|4     |V             |         1|
 |5     |CACHE         |         1|
-|6     |V             |         1|
-|7     |MUL           |        18|
-|8     |GREATERthan   |         8|
-|9     |EXP           |         2|
+|6     |GREATERthan   |         8|
+|7     |EXP           |         2|
+|8     |Q             |         1|
+|9     |O             |         1|
 +------+--------------+----------+
 
 Report Cell Usage: 
@@ -1050,44 +1015,45 @@ Report Cell Usage:
 |62    |Q           |     1|
 |63    |V           |     1|
 |64    |BUFG        |     1|
-|65    |LUT1        |     2|
-|66    |LUT2        |    52|
-|67    |LUT3        |   568|
-|68    |LUT4        |    83|
-|69    |LUT5        |   323|
-|70    |LUT6        |   356|
+|65    |LUT1        |    10|
+|66    |LUT2        |    29|
+|67    |LUT3        |   435|
+|68    |LUT4        |    44|
+|69    |LUT5        |    17|
+|70    |LUT6        |   286|
 |71    |MUXF7       |    32|
-|72    |FDRE        |  3214|
-|73    |FDSE        |     1|
-|74    |IBUF        |  1314|
-|75    |OBUF        |     1|
+|72    |FDRE        |  3264|
+|73    |IBUF        |   130|
+|74    |OBUF        |     1|
 +------+------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:55 ; elapsed = 00:01:22 . Memory (MB): peak = 2340.008 ; gain = 667.250 ; free physical = 1270 ; free virtual = 49277
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:55 ; elapsed = 00:01:24 . Memory (MB): peak = 3588.609 ; gain = 1119.684 ; free physical = 7760 ; free virtual = 43031
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 620 critical warnings and 1026 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:55 ; elapsed = 00:01:23 . Memory (MB): peak = 2340.008 ; gain = 528.465 ; free physical = 6456 ; free virtual = 54470
-Synthesis Optimization Complete : Time (s): cpu = 00:00:57 ; elapsed = 00:01:25 . Memory (MB): peak = 2340.008 ; gain = 667.250 ; free physical = 6461 ; free virtual = 54469
+Synthesis finished with 0 errors, 769 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:51 ; elapsed = 00:01:19 . Memory (MB): peak = 3592.520 ; gain = 982.809 ; free physical = 15944 ; free virtual = 51215
+Synthesis Optimization Complete : Time (s): cpu = 00:00:58 ; elapsed = 00:01:25 . Memory (MB): peak = 3592.520 ; gain = 1123.594 ; free physical = 15951 ; free virtual = 51216
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2340.008 ; gain = 0.000 ; free physical = 6465 ; free virtual = 54473
-INFO: [Netlist 29-17] Analyzing 32 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3592.520 ; gain = 0.000 ; free physical = 15955 ; free virtual = 51220
+INFO: [Netlist 29-17] Analyzing 163 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'top' is not ideal for floorplanning, since the cellview 'top' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2355.980 ; gain = 0.000 ; free physical = 6464 ; free virtual = 54472
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3639.602 ; gain = 0.000 ; free physical = 15956 ; free virtual = 51220
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 131 instances were transformed.
+  BUFG => BUFGCE: 1 instance 
+  IBUF => IBUF (IBUFCTRL, INBUF): 130 instances
 
-Synth Design complete | Checksum: de94671a
+Synth Design complete | Checksum: 21607508
 INFO: [Common 17-83] Releasing license: Synthesis
-200 Infos, 308 Warnings, 109 Critical Warnings and 0 Errors encountered.
+258 Infos, 210 Warnings, 130 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:02 ; elapsed = 00:01:30 . Memory (MB): peak = 2356.016 ; gain = 1033.758 ; free physical = 6463 ; free virtual = 54471
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 6962.495; main = 1630.967; forked = 5493.169
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 11853.664; main = 2355.984; forked = 9545.703
+synth_design: Time (s): cpu = 00:01:03 ; elapsed = 00:01:31 . Memory (MB): peak = 3639.637 ; gain = 2227.578 ; free physical = 15958 ; free virtual = 51223
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 11156.705; main = 2829.795; forked = 8483.334
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 16124.844; main = 3639.605; forked = 12536.230
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2379.992 ; gain = 0.000 ; free physical = 6462 ; free virtual = 54471
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3663.613 ; gain = 0.000 ; free physical = 15958 ; free virtual = 51222
 INFO: [Common 17-1381] The checkpoint '/home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Jan  5 12:12:02 2026...
+INFO: [Common 17-206] Exiting Vivado at Wed Jan  7 22:39:27 2026...
