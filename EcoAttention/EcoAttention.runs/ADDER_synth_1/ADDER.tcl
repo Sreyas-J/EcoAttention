@@ -70,10 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "ADDER_synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache ./.Xil/Vivado-1022087-sk-Standard-PC-Q35-ICH9-2009/incrSyn
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 OPTRACE "Creating in-memory project" START { }
@@ -96,7 +93,7 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_ip -quiet /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER.xci
-set_property used_in_implementation false [get_files -all /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -167,32 +164,32 @@ create_report "ADDER_synth_1_synth_report_utilization_0" "report_utilization -fi
 OPTRACE "synth reports" END { }
 
 if { [catch {
-  file copy -force /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/ADDER_synth_1/ADDER.dcp /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER.dcp
+  file copy -force /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/ADDER_synth_1/ADDER.dcp /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER_stub.v
+  write_verilog -force -mode synth_stub /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER_stub.vhdl
+  write_vhdl -force -mode synth_stub /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER_sim_netlist.v
+  write_verilog -force -mode funcsim /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -202,32 +199,32 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/ADDER_synth_1/ADDER.dcp /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER.dcp
+  file copy -force /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/ADDER_synth_1/ADDER.dcp /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 status "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/ADDER_synth_1/ADDER_stub.v /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER_stub.v
+  file rename -force /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/ADDER_synth_1/ADDER_stub.v /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/ADDER_synth_1/ADDER_stub.vhdl /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER_stub.vhdl
+  file rename -force /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/ADDER_synth_1/ADDER_stub.vhdl /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/ADDER_synth_1/ADDER_sim_netlist.v /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER_sim_netlist.v
+  file rename -force /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/ADDER_synth_1/ADDER_sim_netlist.v /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/ADDER_synth_1/ADDER_sim_netlist.vhdl /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER_sim_netlist.vhdl
+  file rename -force /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/ADDER_synth_1/ADDER_sim_netlist.vhdl /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -237,13 +234,13 @@ close [open .end.used_ip_cache.rst w]
 
 if {[file isdir /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.ip_user_files/ip/ADDER]} {
   catch { 
-    file copy -force /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER_stub.v /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.ip_user_files/ip/ADDER
+    file copy -force /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER_stub.v /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.ip_user_files/ip/ADDER
   }
 }
 
 if {[file isdir /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.ip_user_files/ip/ADDER]} {
   catch { 
-    file copy -force /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER_stub.vhdl /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.ip_user_files/ip/ADDER
+    file copy -force /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER_stub.vhdl /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.ip_user_files/ip/ADDER
   }
 }
 file delete __synthesis_is_running__

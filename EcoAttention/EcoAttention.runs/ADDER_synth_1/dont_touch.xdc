@@ -4,13 +4,13 @@
 # IP: /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER.xci
 # IP: The module: 'ADDER' is the root of the design. Do not add the DONT_TOUCH constraint.
 
-# XDC: /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER_ooc.xdc
+# XDC: /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER_ooc.xdc
 # XDC: The top module name and the constraint reference have the same name: 'ADDER'. Do not add the DONT_TOUCH constraint.
 set_property KEEP_HIERARCHY SOFT [get_cells inst -quiet] -quiet
 
 # IP: /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER.xci
 # IP: The module: 'ADDER' is the root of the design. Do not add the DONT_TOUCH constraint.
 
-# XDC: /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.gen/sources_1/ip/ADDER/ADDER_ooc.xdc
+# XDC: /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.srcs/sources_1/ip/ADDER/ADDER_ooc.xdc
 # XDC: The top module name and the constraint reference have the same name: 'ADDER'. Do not add the DONT_TOUCH constraint.
 #dup# set_property KEEP_HIERARCHY SOFT [get_cells inst -quiet] -quiet

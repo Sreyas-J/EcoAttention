@@ -1,0 +1,290 @@
+
+*** Running vivado
+    with args -log ManhattanAttention_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ManhattanAttention_wrapper.tcl
+
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source ManhattanAttention_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1362.715 ; gain = 42.836 ; free physical = 22010 ; free virtual = 52133
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/sk/Desktop/EcoAttention/EXPip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2023.2/data/ip'.
+Command: synth_design -top ManhattanAttention_wrapper -part xczu7ev-ffvc1156-2-e
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu7ev'
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 1181453
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2791.227 ; gain = 288.777 ; free physical = 20260 ; free virtual = 50383
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'ManhattanAttention_wrapper' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/hdl/ManhattanAttention_wrapper.v:13]
+INFO: [Synth 8-6157] synthesizing module 'ManhattanAttention' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:13]
+INFO: [Synth 8-6157] synthesizing module 'ManhattanAttention_axi_dma_0_0' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/synth_1/.Xil/Vivado-1180893-sk-Standard-PC-Q35-ICH9-2009/realtime/ManhattanAttention_axi_dma_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ManhattanAttention_axi_dma_0_0' (0#1) [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/synth_1/.Xil/Vivado-1180893-sk-Standard-PC-Q35-ICH9-2009/realtime/ManhattanAttention_axi_dma_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mm2s_prmry_reset_out_n' of module 'ManhattanAttention_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:144]
+WARNING: [Synth 8-7071] port 'm_axis_mm2s_tkeep' of module 'ManhattanAttention_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:144]
+WARNING: [Synth 8-7071] port 's2mm_prmry_reset_out_n' of module 'ManhattanAttention_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:144]
+WARNING: [Synth 8-7071] port 'mm2s_introut' of module 'ManhattanAttention_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:144]
+WARNING: [Synth 8-7071] port 's2mm_introut' of module 'ManhattanAttention_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:144]
+WARNING: [Synth 8-7071] port 'axi_dma_tstvec' of module 'ManhattanAttention_axi_dma_0_0' is unconnected for instance 'axi_dma_0' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:144]
+WARNING: [Synth 8-7023] instance 'axi_dma_0' of module 'ManhattanAttention_axi_dma_0_0' has 64 connections declared, but only 58 given [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:144]
+INFO: [Synth 8-6157] synthesizing module 'ManhattanAttention_axi_smc_0' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/synth_1/.Xil/Vivado-1180893-sk-Standard-PC-Q35-ICH9-2009/realtime/ManhattanAttention_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ManhattanAttention_axi_smc_0' (0#1) [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/synth_1/.Xil/Vivado-1180893-sk-Standard-PC-Q35-ICH9-2009/realtime/ManhattanAttention_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ManhattanAttention_axis_wrapper_0_0' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/synth_1/.Xil/Vivado-1180893-sk-Standard-PC-Q35-ICH9-2009/realtime/ManhattanAttention_axis_wrapper_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ManhattanAttention_axis_wrapper_0_0' (0#1) [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/synth_1/.Xil/Vivado-1180893-sk-Standard-PC-Q35-ICH9-2009/realtime/ManhattanAttention_axis_wrapper_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ManhattanAttention_ps8_0_axi_periph_0' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:432]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_5YJB18' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:727]
+INFO: [Synth 8-6157] synthesizing module 'ManhattanAttention_auto_ds_0' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/synth_1/.Xil/Vivado-1180893-sk-Standard-PC-Q35-ICH9-2009/realtime/ManhattanAttention_auto_ds_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ManhattanAttention_auto_ds_0' (0#1) [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/synth_1/.Xil/Vivado-1180893-sk-Standard-PC-Q35-ICH9-2009/realtime/ManhattanAttention_auto_ds_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ManhattanAttention_auto_pc_0' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/synth_1/.Xil/Vivado-1180893-sk-Standard-PC-Q35-ICH9-2009/realtime/ManhattanAttention_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ManhattanAttention_auto_pc_0' (0#1) [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/synth_1/.Xil/Vivado-1180893-sk-Standard-PC-Q35-ICH9-2009/realtime/ManhattanAttention_auto_pc_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'ManhattanAttention_auto_pc_0' is unconnected for instance 'auto_pc' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:1066]
+WARNING: [Synth 8-7071] port 'm_axi_wstrb' of module 'ManhattanAttention_auto_pc_0' is unconnected for instance 'auto_pc' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:1066]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'ManhattanAttention_auto_pc_0' is unconnected for instance 'auto_pc' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:1066]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'ManhattanAttention_auto_pc_0' has 56 connections declared, but only 53 given [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:1066]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_5YJB18' (0#1) [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:727]
+INFO: [Synth 8-6155] done synthesizing module 'ManhattanAttention_ps8_0_axi_periph_0' (0#1) [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:432]
+INFO: [Synth 8-6157] synthesizing module 'ManhattanAttention_rst_ps8_0_100M_0' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/synth_1/.Xil/Vivado-1180893-sk-Standard-PC-Q35-ICH9-2009/realtime/ManhattanAttention_rst_ps8_0_100M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ManhattanAttention_rst_ps8_0_100M_0' (0#1) [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/synth_1/.Xil/Vivado-1180893-sk-Standard-PC-Q35-ICH9-2009/realtime/ManhattanAttention_rst_ps8_0_100M_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'ManhattanAttention_rst_ps8_0_100M_0' is unconnected for instance 'rst_ps8_0_100M' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:343]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'ManhattanAttention_rst_ps8_0_100M_0' is unconnected for instance 'rst_ps8_0_100M' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:343]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'ManhattanAttention_rst_ps8_0_100M_0' is unconnected for instance 'rst_ps8_0_100M' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:343]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'ManhattanAttention_rst_ps8_0_100M_0' is unconnected for instance 'rst_ps8_0_100M' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:343]
+WARNING: [Synth 8-7023] instance 'rst_ps8_0_100M' of module 'ManhattanAttention_rst_ps8_0_100M_0' has 10 connections declared, but only 6 given [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:343]
+INFO: [Synth 8-6157] synthesizing module 'ManhattanAttention_zynq_ultra_ps_e_0_0' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/synth_1/.Xil/Vivado-1180893-sk-Standard-PC-Q35-ICH9-2009/realtime/ManhattanAttention_zynq_ultra_ps_e_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ManhattanAttention_zynq_ultra_ps_e_0_0' (0#1) [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/synth_1/.Xil/Vivado-1180893-sk-Standard-PC-Q35-ICH9-2009/realtime/ManhattanAttention_zynq_ultra_ps_e_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'maxigp0_awuser' of module 'ManhattanAttention_zynq_ultra_ps_e_0_0' is unconnected for instance 'zynq_ultra_ps_e_0' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:350]
+WARNING: [Synth 8-7071] port 'maxigp0_aruser' of module 'ManhattanAttention_zynq_ultra_ps_e_0_0' is unconnected for instance 'zynq_ultra_ps_e_0' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:350]
+WARNING: [Synth 8-7071] port 'saxigp0_bid' of module 'ManhattanAttention_zynq_ultra_ps_e_0_0' is unconnected for instance 'zynq_ultra_ps_e_0' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:350]
+WARNING: [Synth 8-7071] port 'saxigp0_rid' of module 'ManhattanAttention_zynq_ultra_ps_e_0_0' is unconnected for instance 'zynq_ultra_ps_e_0' [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:350]
+WARNING: [Synth 8-7023] instance 'zynq_ultra_ps_e_0' of module 'ManhattanAttention_zynq_ultra_ps_e_0_0' has 83 connections declared, but only 79 given [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:350]
+INFO: [Synth 8-6155] done synthesizing module 'ManhattanAttention' (0#1) [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/synth/ManhattanAttention.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'ManhattanAttention_wrapper' (0#1) [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/hdl/ManhattanAttention_wrapper.v:13]
+WARNING: [Synth 8-7129] Port M_ACLK in module s00_couplers_imp_5YJB18 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_ARESETN in module s00_couplers_imp_5YJB18 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLK in module ManhattanAttention_ps8_0_axi_periph_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ARESETN in module ManhattanAttention_ps8_0_axi_periph_0 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2874.195 ; gain = 371.746 ; free physical = 20161 ; free virtual = 50278
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2880.133 ; gain = 377.684 ; free physical = 20161 ; free virtual = 50278
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2880.133 ; gain = 377.684 ; free physical = 20161 ; free virtual = 50278
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2880.133 ; gain = 0.000 ; free physical = 20161 ; free virtual = 50278
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_zynq_ultra_ps_e_0_0/ManhattanAttention_zynq_ultra_ps_e_0_0/ManhattanAttention_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'ManhattanAttention_i/zynq_ultra_ps_e_0'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_zynq_ultra_ps_e_0_0/ManhattanAttention_zynq_ultra_ps_e_0_0/ManhattanAttention_zynq_ultra_ps_e_0_0_in_context.xdc] for cell 'ManhattanAttention_i/zynq_ultra_ps_e_0'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axis_wrapper_0_0/ManhattanAttention_axis_wrapper_0_0/ManhattanAttention_axis_wrapper_0_0_in_context.xdc] for cell 'ManhattanAttention_i/axis_wrapper_0'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axis_wrapper_0_0/ManhattanAttention_axis_wrapper_0_0/ManhattanAttention_axis_wrapper_0_0_in_context.xdc] for cell 'ManhattanAttention_i/axis_wrapper_0'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_dma_0_0/ManhattanAttention_axi_dma_0_0/ManhattanAttention_axi_dma_0_0_in_context.xdc] for cell 'ManhattanAttention_i/axi_dma_0'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_dma_0_0/ManhattanAttention_axi_dma_0_0/ManhattanAttention_axi_dma_0_0_in_context.xdc] for cell 'ManhattanAttention_i/axi_dma_0'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_auto_ds_0/ManhattanAttention_auto_ds_0/ManhattanAttention_auto_ds_0_in_context.xdc] for cell 'ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_auto_ds_0/ManhattanAttention_auto_ds_0/ManhattanAttention_auto_ds_0_in_context.xdc] for cell 'ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_auto_pc_0/ManhattanAttention_auto_pc_0/ManhattanAttention_auto_pc_0_in_context.xdc] for cell 'ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_auto_pc_0/ManhattanAttention_auto_pc_0/ManhattanAttention_auto_pc_0_in_context.xdc] for cell 'ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_rst_ps8_0_100M_0/ManhattanAttention_rst_ps8_0_100M_0/ManhattanAttention_rst_ps8_0_100M_0_in_context.xdc] for cell 'ManhattanAttention_i/rst_ps8_0_100M'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_rst_ps8_0_100M_0/ManhattanAttention_rst_ps8_0_100M_0/ManhattanAttention_rst_ps8_0_100M_0_in_context.xdc] for cell 'ManhattanAttention_i/rst_ps8_0_100M'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/ManhattanAttention_axi_smc_0/ManhattanAttention_axi_smc_0_in_context.xdc] for cell 'ManhattanAttention_i/axi_smc'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/ManhattanAttention_axi_smc_0/ManhattanAttention_axi_smc_0_in_context.xdc] for cell 'ManhattanAttention_i/axi_smc'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2956.039 ; gain = 0.000 ; free physical = 20155 ; free virtual = 50272
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2956.074 ; gain = 0.000 ; free physical = 20155 ; free virtual = 50272
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2956.074 ; gain = 453.625 ; free physical = 20155 ; free virtual = 50271
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu7ev-ffvc1156-2-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2956.074 ; gain = 453.625 ; free physical = 20155 ; free virtual = 50271
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for ManhattanAttention_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for ManhattanAttention_i/zynq_ultra_ps_e_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for ManhattanAttention_i/axis_wrapper_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for ManhattanAttention_i/axi_dma_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for ManhattanAttention_i/ps8_0_axi_periph. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for ManhattanAttention_i/rst_ps8_0_100M. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for ManhattanAttention_i/axi_smc. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2956.074 ; gain = 453.625 ; free physical = 20155 ; free virtual = 50271
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2956.074 ; gain = 453.625 ; free physical = 20150 ; free virtual = 50268
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1728 (col length:144)
+BRAMs: 624 (col length: RAMB18 144 RAMB36 72)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port ACLK in module ManhattanAttention_ps8_0_axi_periph_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ARESETN in module ManhattanAttention_ps8_0_axi_periph_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_ACLK in module ManhattanAttention_ps8_0_axi_periph_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M00_ARESETN in module ManhattanAttention_ps8_0_axi_periph_0 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2956.074 ; gain = 453.625 ; free physical = 20151 ; free virtual = 50273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 3445.711 ; gain = 943.262 ; free physical = 19695 ; free virtual = 49817
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 3445.711 ; gain = 943.262 ; free physical = 19695 ; free virtual = 49817
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 3456.727 ; gain = 954.277 ; free physical = 19687 ; free virtual = 49809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 3470.602 ; gain = 968.152 ; free physical = 19693 ; free virtual = 49815
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 3470.602 ; gain = 968.152 ; free physical = 19693 ; free virtual = 49815
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 3470.602 ; gain = 968.152 ; free physical = 19693 ; free virtual = 49815
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 3470.602 ; gain = 968.152 ; free physical = 19693 ; free virtual = 49815
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 3470.602 ; gain = 968.152 ; free physical = 19693 ; free virtual = 49815
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 3470.602 ; gain = 968.152 ; free physical = 19693 ; free virtual = 49815
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+---------------------------------------+----------+
+|      |BlackBox name                          |Instances |
++------+---------------------------------------+----------+
+|1     |ManhattanAttention_auto_ds_0           |         1|
+|2     |ManhattanAttention_auto_pc_0           |         1|
+|3     |ManhattanAttention_axi_dma_0_0         |         1|
+|4     |ManhattanAttention_axi_smc_0           |         1|
+|5     |ManhattanAttention_axis_wrapper_0_0    |         1|
+|6     |ManhattanAttention_rst_ps8_0_100M_0    |         1|
+|7     |ManhattanAttention_zynq_ultra_ps_e_0_0 |         1|
++------+---------------------------------------+----------+
+
+Report Cell Usage: 
++------+-------------------------------------+------+
+|      |Cell                                 |Count |
++------+-------------------------------------+------+
+|1     |ManhattanAttention_auto_ds           |     1|
+|2     |ManhattanAttention_auto_pc           |     1|
+|3     |ManhattanAttention_axi_dma_0         |     1|
+|4     |ManhattanAttention_axi_smc           |     1|
+|5     |ManhattanAttention_axis_wrapper_0    |     1|
+|6     |ManhattanAttention_rst_ps8_0_100M    |     1|
+|7     |ManhattanAttention_zynq_ultra_ps_e_0 |     1|
++------+-------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 3470.602 ; gain = 968.152 ; free physical = 19693 ; free virtual = 49815
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 3470.602 ; gain = 892.211 ; free physical = 19693 ; free virtual = 49814
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 3470.609 ; gain = 968.152 ; free physical = 19693 ; free virtual = 49814
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3470.609 ; gain = 0.000 ; free physical = 19972 ; free virtual = 50094
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3512.258 ; gain = 0.000 ; free physical = 19992 ; free virtual = 50114
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 994db12e
+INFO: [Common 17-83] Releasing license: Synthesis
+38 Infos, 30 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:33 . Memory (MB): peak = 3526.230 ; gain = 2102.727 ; free physical = 19984 ; free virtual = 50106
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2689.759; main = 2689.759; forked = 402.771
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4063.469; main = 3526.199; forked = 1021.316
+INFO: [Common 17-1381] The checkpoint '/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/synth_1/ManhattanAttention_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file ManhattanAttention_wrapper_utilization_synth.rpt -pb ManhattanAttention_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Jan 10 18:24:53 2026...

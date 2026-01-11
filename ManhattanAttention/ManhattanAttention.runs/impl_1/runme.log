@@ -1,0 +1,1090 @@
+
+*** Running vivado
+    with args -log ManhattanAttention_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source ManhattanAttention_wrapper.tcl -notrace
+
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source ManhattanAttention_wrapper.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1362.746 ; gain = 45.836 ; free physical = 22005 ; free virtual = 52121
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/sk/Desktop/EcoAttention/EXPip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2023.2/data/ip'.
+Command: link_design -top ManhattanAttention_wrapper -part xczu7ev-ffvc1156-2-e
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xczu7ev-ffvc1156-2-e
+INFO: [Project 1-454] Reading design checkpoint '/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_dma_0_0/ManhattanAttention_axi_dma_0_0.dcp' for cell 'ManhattanAttention_i/axi_dma_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/ManhattanAttention_axi_smc_0.dcp' for cell 'ManhattanAttention_i/axi_smc'
+INFO: [Project 1-454] Reading design checkpoint '/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axis_wrapper_0_0/ManhattanAttention_axis_wrapper_0_0.dcp' for cell 'ManhattanAttention_i/axis_wrapper_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_rst_ps8_0_100M_0/ManhattanAttention_rst_ps8_0_100M_0.dcp' for cell 'ManhattanAttention_i/rst_ps8_0_100M'
+INFO: [Project 1-454] Reading design checkpoint '/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_zynq_ultra_ps_e_0_0/ManhattanAttention_zynq_ultra_ps_e_0_0.dcp' for cell 'ManhattanAttention_i/zynq_ultra_ps_e_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_auto_ds_0/ManhattanAttention_auto_ds_0.dcp' for cell 'ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds'
+INFO: [Project 1-454] Reading design checkpoint '/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_auto_pc_0/ManhattanAttention_auto_pc_0.dcp' for cell 'ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc'
+Netlist sorting complete. Time (s): cpu = 00:00:00.68 ; elapsed = 00:00:00.69 . Memory (MB): peak = 2508.449 ; gain = 0.000 ; free physical = 20843 ; free virtual = 50959
+INFO: [Netlist 29-17] Analyzing 883 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2023.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/s01_nodes/s01_aw_node/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:49]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:52]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:55]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:59]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:63]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:66]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:70]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:73]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:76]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:79]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:82]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:85]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:88]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:91]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:94]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:97]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:100]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:104]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:107]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:110]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:113]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:116]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:119]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-13' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:122]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:125]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:128]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-13' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:131]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:134]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:137]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:140]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:143]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:146]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:149]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:152]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:155]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:161]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:164]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:167]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:171]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:174]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc:178]
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_17/bd_94b4_sawn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/s01_nodes/s01_aw_node/inst'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/smartconnect.xdc] for cell 'ManhattanAttention_i/axi_smc/inst'
+WARNING: [Vivado_Tcl 4-919] Waiver ID 'CDC-1' -from list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/smartconnect.xdc:1]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/smartconnect.xdc:2]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/smartconnect.xdc:3]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/smartconnect.xdc:4]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/smartconnect.xdc:5]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/smartconnect.xdc:6]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/smartconnect.xdc:7]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/smartconnect.xdc:8]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/smartconnect.xdc:9]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/smartconnect.xdc:10]
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/smartconnect.xdc] for cell 'ManhattanAttention_i/axi_smc/inst'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_b_node/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:49]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:52]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:55]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:59]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:63]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:66]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:70]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:73]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:76]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:79]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:85]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:88]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:91]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:94]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:97]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:100]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:104]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:107]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:110]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:113]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:116]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:119]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-13' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:122]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:125]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:128]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-13' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:131]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:134]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:137]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:140]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:143]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:146]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-2' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:149]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:152]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:155]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:161]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:164]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:167]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:171]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-4' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:174]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc:178]
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_25/bd_94b4_m00bn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_b_node/inst'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_24/bd_94b4_m00wn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_w_node/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_24/bd_94b4_m00wn_0_clocks.xdc:49]
+INFO: [Common 17-14] Message 'Vivado 12-180' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_24/bd_94b4_m00wn_0_clocks.xdc:52]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_24/bd_94b4_m00wn_0_clocks.xdc:52]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_24/bd_94b4_m00wn_0_clocks.xdc:55]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_24/bd_94b4_m00wn_0_clocks.xdc:59]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_24/bd_94b4_m00wn_0_clocks.xdc:63]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_24/bd_94b4_m00wn_0_clocks.xdc:66]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_24/bd_94b4_m00wn_0_clocks.xdc:70]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_24/bd_94b4_m00wn_0_clocks.xdc:73]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_24/bd_94b4_m00wn_0_clocks.xdc:76]
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-1' -to list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_24/bd_94b4_m00wn_0_clocks.xdc:79]
+INFO: [Common 17-14] Message 'Vivado_Tcl 4-921' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_24/bd_94b4_m00wn_0_clocks.xdc:79]
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_24/bd_94b4_m00wn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_w_node/inst'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_23/bd_94b4_m00awn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_aw_node/inst'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_23/bd_94b4_m00awn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_aw_node/inst'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_22/bd_94b4_m00rn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_r_node/inst'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_22/bd_94b4_m00rn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_r_node/inst'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_21/bd_94b4_m00arn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_ar_node/inst'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_21/bd_94b4_m00arn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_ar_node/inst'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_19/bd_94b4_sbn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/s01_nodes/s01_b_node/inst'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_19/bd_94b4_sbn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/s01_nodes/s01_b_node/inst'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_18/bd_94b4_swn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/s01_nodes/s01_w_node/inst'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_18/bd_94b4_swn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/s01_nodes/s01_w_node/inst'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_zynq_ultra_ps_e_0_0/ManhattanAttention_zynq_ultra_ps_e_0_0.xdc] for cell 'ManhattanAttention_i/zynq_ultra_ps_e_0/inst'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_zynq_ultra_ps_e_0_0/ManhattanAttention_zynq_ultra_ps_e_0_0.xdc] for cell 'ManhattanAttention_i/zynq_ultra_ps_e_0/inst'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_12/bd_94b4_srn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/s00_nodes/s00_r_node/inst'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_12/bd_94b4_srn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/s00_nodes/s00_r_node/inst'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_11/bd_94b4_sarn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/s00_nodes/s00_ar_node/inst'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_11/bd_94b4_sarn_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/s00_nodes/s00_ar_node/inst'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_1/bd_94b4_psr_aclk_0.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_1/bd_94b4_psr_aclk_0.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_1/bd_94b4_psr_aclk_0_board.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_smc_0/bd_0/ip/ip_1/bd_94b4_psr_aclk_0_board.xdc] for cell 'ManhattanAttention_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_rst_ps8_0_100M_0/ManhattanAttention_rst_ps8_0_100M_0.xdc] for cell 'ManhattanAttention_i/rst_ps8_0_100M/U0'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_rst_ps8_0_100M_0/ManhattanAttention_rst_ps8_0_100M_0.xdc] for cell 'ManhattanAttention_i/rst_ps8_0_100M/U0'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_rst_ps8_0_100M_0/ManhattanAttention_rst_ps8_0_100M_0_board.xdc] for cell 'ManhattanAttention_i/rst_ps8_0_100M/U0'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_rst_ps8_0_100M_0/ManhattanAttention_rst_ps8_0_100M_0_board.xdc] for cell 'ManhattanAttention_i/rst_ps8_0_100M/U0'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_dma_0_0/ManhattanAttention_axi_dma_0_0.xdc] for cell 'ManhattanAttention_i/axi_dma_0/U0'
+WARNING: [Vivado_Tcl 4-919] Waiver ID 'CDC-1' -from list should not be empty. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_dma_0_0/ManhattanAttention_axi_dma_0_0.xdc:61]
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_dma_0_0/ManhattanAttention_axi_dma_0_0.xdc] for cell 'ManhattanAttention_i/axi_dma_0/U0'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axis_wrapper_0_0/src/constraint.xdc] for cell 'ManhattanAttention_i/axis_wrapper_0/inst'
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axis_wrapper_0_0/src/constraint.xdc:1]
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axis_wrapper_0_0/src/constraint.xdc] for cell 'ManhattanAttention_i/axis_wrapper_0/inst'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_dma_0_0/ManhattanAttention_axi_dma_0_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_dma_0/U0'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axi_dma_0_0/ManhattanAttention_axi_dma_0_0_clocks.xdc] for cell 'ManhattanAttention_i/axi_dma_0/U0'
+Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_auto_ds_0/ManhattanAttention_auto_ds_0_clocks.xdc] for cell 'ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst'
+Finished Parsing XDC File [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_auto_ds_0/ManhattanAttention_auto_ds_0_clocks.xdc] for cell 'ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst'
+INFO: [Project 1-1714] 47 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-1687] 463 scoped IP constraints or related sub-commands were skipped due to synthesis logic optimizations usually triggered by constant connectivity or unconnected output pins. To review the skipped constraints and messages, run the command 'set_param netlist.IPMsgFiltering false' before opening the design.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3383.695 ; gain = 0.000 ; free physical = 20341 ; free virtual = 50458
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 169 instances were transformed.
+  DSP48E1 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 61 instances
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 26 instances
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 3 instances
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 76 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 2 instances
+
+22 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:27 . Memory (MB): peak = 3383.695 ; gain = 1959.160 ; free physical = 20341 ; free virtual = 50457
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 3383.695 ; gain = 0.000 ; free physical = 20345 ; free virtual = 50461
+
+Starting Cache Timing Information Task
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axis_wrapper_0_0/src/constraint.xdc:1]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 1058cc292
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:02 . Memory (MB): peak = 3383.695 ; gain = 0.000 ; free physical = 20337 ; free virtual = 50454
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 1058cc292
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3541.461 ; gain = 0.000 ; free physical = 20069 ; free virtual = 50185
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 1058cc292
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3541.461 ; gain = 0.000 ; free physical = 20069 ; free virtual = 50185
+Phase 1 Initialization | Checksum: 1058cc292
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3541.461 ; gain = 0.000 ; free physical = 20069 ; free virtual = 50185
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: 1058cc292
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:00.9 . Memory (MB): peak = 3541.461 ; gain = 0.000 ; free physical = 20077 ; free virtual = 50194
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: 1058cc292
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:00.99 . Memory (MB): peak = 3541.461 ; gain = 0.000 ; free physical = 20071 ; free virtual = 50187
+Phase 2 Timer Update And Timing Data Collection | Checksum: 1058cc292
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 3541.461 ; gain = 0.000 ; free physical = 20071 ; free virtual = 50187
+
+Phase 3 Retarget
+INFO: [Opt 31-1566] Pulled 20 inverters resulting in an inversion of 94 pins
+INFO: [Opt 31-138] Pushed 84 inverter(s) to 1965 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: e3b77c02
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:03 . Memory (MB): peak = 3541.461 ; gain = 0.000 ; free physical = 20071 ; free virtual = 50188
+Retarget | Checksum: e3b77c02
+INFO: [Opt 31-389] Phase Retarget created 1516 cells and removed 2349 cells
+INFO: [Opt 31-1021] In phase Retarget, 67 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: f09edbf6
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 3541.461 ; gain = 0.000 ; free physical = 20074 ; free virtual = 50190
+Constant propagation | Checksum: f09edbf6
+INFO: [Opt 31-389] Phase Constant propagation created 46 cells and removed 873 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 67 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 Sweep
+Phase 5 Sweep | Checksum: c71fbcec
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 3541.461 ; gain = 0.000 ; free physical = 20072 ; free virtual = 50188
+Sweep | Checksum: c71fbcec
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 29823 cells
+INFO: [Opt 31-1021] In phase Sweep, 148 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 6 BUFG optimization
+INFO: [Opt 31-1077] Phase BUFG optimization inserted 0 global clock buffer(s) for CLOCK_LOW_FANOUT.
+Phase 6 BUFG optimization | Checksum: c71fbcec
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 3541.461 ; gain = 0.000 ; free physical = 20075 ; free virtual = 50191
+BUFG optimization | Checksum: c71fbcec
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][10]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][11]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][12]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][13]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][14]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][15]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][16]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][17]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][18]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][19]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][1]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][20]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][21]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][22]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][23]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][24]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][25]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][26]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][27]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][28]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][29]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][2]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][30]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][31]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][9]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][8]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][3]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][4]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][5]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][6]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/rd_data_fifo_0/memory_reg[31][7]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/RD.r_channel_0/transaction_fifo_0/memory_reg[31][0]_srl32 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][0]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][7]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][6]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][5]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][4]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][3]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][1]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_pc/inst/gen_axilite.gen_b2s_conv.axilite_b2s/WR.b_channel_0/bid_fifo_0/memory_reg[3][2]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/m00_exit_pipeline/m00_exit/inst/exit_inst/gen_r_cmd_fifo.r_cmd_fifo/gen_srls[8].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/m00_exit_pipeline/m00_exit/inst/exit_inst/gen_r_cmd_fifo.r_cmd_fifo/gen_srls[13].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/m00_exit_pipeline/m00_exit/inst/exit_inst/gen_r_cmd_fifo.r_cmd_fifo/gen_srls[14].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/m00_exit_pipeline/m00_exit/inst/exit_inst/gen_r_cmd_fifo.r_cmd_fifo/gen_srls[15].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/m00_exit_pipeline/m00_exit/inst/exit_inst/gen_r_cmd_fifo.r_cmd_fifo/gen_srls[16].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/m00_exit_pipeline/m00_exit/inst/exit_inst/gen_r_cmd_fifo.r_cmd_fifo/gen_srls[1].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/m00_exit_pipeline/m00_exit/inst/exit_inst/gen_w_cmd_fifo.w_cmd_fifo/gen_srls[1].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/m00_exit_pipeline/m00_exit/inst/exit_inst/gen_w_cmd_fifo.w_cmd_fifo/gen_srls[2].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_aw_node/inst/inst_si_handler/gen_m_axis_arb_fifo.inst_axis_arb_fifo/gen_srls[1].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/s01_entry_pipeline/s01_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_srls[0].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/s01_entry_pipeline/s01_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_srls[10].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/s01_entry_pipeline/s01_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_srls[11].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/s01_entry_pipeline/s01_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_srls[12].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/s01_entry_pipeline/s01_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_srls[13].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/s01_entry_pipeline/s01_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_srls[1].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/s01_entry_pipeline/s01_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_srls[2].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/s01_entry_pipeline/s01_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_srls[3].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/s01_entry_pipeline/s01_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_srls[4].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/s01_entry_pipeline/s01_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_srls[5].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/s01_entry_pipeline/s01_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_srls[6].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/s01_entry_pipeline/s01_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_srls[7].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/s01_entry_pipeline/s01_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_srls[8].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_smc/inst/s01_entry_pipeline/s01_si_converter/inst/gen_normal.splitter_inst/gen_no_wsplitter.gen_endpoint_woffset.gen_wbypass_offset_fifo.wbypass_offset_fifo/gen_srls[9].srl_nx1/shift_reg_reg[0]_srl16 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][11]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][12]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][16]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][17]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][18]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][19]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][20]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][21]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][22]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][23]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][24]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][25]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][26]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][27]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][28]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][29]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][30]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][31]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][32]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][33]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][34]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][35]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][36]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][37]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][38]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][39]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][40]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][41]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][42]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][43]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][44]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][45]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][46]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][47]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][48]_srl4 due to none static srl address bits
+WARNING: [Opt 31-1131] Can not pull register out from ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/I_ADDR_CNTL/GEN_ADDR_FIFO.I_ADDR_QUAL_FIFO/USE_SRL_FIFO.I_SYNC_FIFO/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/INFERRED_GEN.data_reg[3][49]_srl4 due to none static srl address bits
+INFO: [Common 17-14] Message 'Opt 31-1131' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: c71fbcec
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 3541.461 ; gain = 0.000 ; free physical = 20075 ; free virtual = 50191
+Shift Register Optimization | Checksum: c71fbcec
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 109f720cc
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 3541.461 ; gain = 0.000 ; free physical = 20075 ; free virtual = 50191
+Post Processing Netlist | Checksum: 109f720cc
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 73 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: e802be71
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 3541.461 ; gain = 0.000 ; free physical = 20075 ; free virtual = 50192
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3541.461 ; gain = 0.000 ; free physical = 20075 ; free virtual = 50192
+Phase 9.2 Verifying Netlist Connectivity | Checksum: e802be71
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 3541.461 ; gain = 0.000 ; free physical = 20075 ; free virtual = 50192
+Phase 9 Finalization | Checksum: e802be71
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 3541.461 ; gain = 0.000 ; free physical = 20075 ; free virtual = 50192
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |            1516  |            2349  |                                             67  |
+|  Constant propagation         |              46  |             873  |                                             67  |
+|  Sweep                        |               0  |           29823  |                                            148  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                             73  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: e802be71
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 3541.461 ; gain = 0.000 ; free physical = 20075 ; free virtual = 50192
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3541.461 ; gain = 0.000 ; free physical = 20075 ; free virtual = 50192
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axis_wrapper_0_0/src/constraint.xdc:1]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 2 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 1 WE to EN ports
+Number of BRAM Ports augmented: 1 newly gated: 1 Total Ports: 4
+Ending PowerOpt Patch Enables Task | Checksum: 1b5a027a6
+
+Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.07 . Memory (MB): peak = 4051.578 ; gain = 0.000 ; free physical = 19724 ; free virtual = 49844
+Ending Power Optimization Task | Checksum: 1b5a027a6
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 4051.578 ; gain = 510.117 ; free physical = 19727 ; free virtual = 49846
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 1b5a027a6
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4051.578 ; gain = 0.000 ; free physical = 19727 ; free virtual = 49846
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4051.578 ; gain = 0.000 ; free physical = 19727 ; free virtual = 49846
+Ending Netlist Obfuscation Task | Checksum: 1e2ba3305
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4051.578 ; gain = 0.000 ; free physical = 19727 ; free virtual = 49846
+INFO: [Common 17-83] Releasing license: Implementation
+54 Infos, 202 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:22 . Memory (MB): peak = 4051.578 ; gain = 667.883 ; free physical = 19727 ; free virtual = 49846
+INFO: [runtcl-4] Executing : report_drc -file ManhattanAttention_wrapper_drc_opted.rpt -pb ManhattanAttention_wrapper_drc_opted.pb -rpx ManhattanAttention_wrapper_drc_opted.rpx
+Command: report_drc -file ManhattanAttention_wrapper_drc_opted.rpt -pb ManhattanAttention_wrapper_drc_opted.pb -rpx ManhattanAttention_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/impl_1/ManhattanAttention_wrapper_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4091.598 ; gain = 0.000 ; free physical = 19682 ; free virtual = 49803
+INFO: [Common 17-1381] The checkpoint '/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/impl_1/ManhattanAttention_wrapper_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4091.598 ; gain = 0.000 ; free physical = 19665 ; free virtual = 49790
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: e433d6b4
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4091.598 ; gain = 0.000 ; free physical = 19665 ; free virtual = 49790
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 4091.598 ; gain = 0.000 ; free physical = 19665 ; free virtual = 49790
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axis_wrapper_0_0/src/constraint.xdc:1]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 9dd6686b
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:14 . Memory (MB): peak = 4638.715 ; gain = 547.117 ; free physical = 19115 ; free virtual = 49240
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 16d0d0556
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 4670.730 ; gain = 579.133 ; free physical = 19118 ; free virtual = 49243
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 16d0d0556
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 4670.730 ; gain = 579.133 ; free physical = 19118 ; free virtual = 49243
+Phase 1 Placer Initialization | Checksum: 16d0d0556
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 4670.730 ; gain = 579.133 ; free physical = 19118 ; free virtual = 49243
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+
+Phase 2.1.1 Partition Driven Placement
+
+Phase 2.1.1.1 PBP: Partition Driven Placement
+Phase 2.1.1.1 PBP: Partition Driven Placement | Checksum: ab8d2997
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:18 . Memory (MB): peak = 4670.730 ; gain = 579.133 ; free physical = 19166 ; free virtual = 49291
+
+Phase 2.1.1.2 PBP: Clock Region Placement
+INFO: [Place 30-3162] Check ILP status : ILP-based clock placer completed successfully.
+Phase 2.1.1.2 PBP: Clock Region Placement | Checksum: ab8d2997
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:19 . Memory (MB): peak = 4670.730 ; gain = 579.133 ; free physical = 19162 ; free virtual = 49287
+
+Phase 2.1.1.3 PBP: Compute Congestion
+Phase 2.1.1.3 PBP: Compute Congestion | Checksum: ab8d2997
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:23 . Memory (MB): peak = 5093.715 ; gain = 1002.117 ; free physical = 18172 ; free virtual = 48724
+
+Phase 2.1.1.4 PBP: UpdateTiming
+Phase 2.1.1.4 PBP: UpdateTiming | Checksum: c7ece8af
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:23 . Memory (MB): peak = 5125.730 ; gain = 1034.133 ; free physical = 18174 ; free virtual = 48726
+
+Phase 2.1.1.5 PBP: Add part constraints
+Phase 2.1.1.5 PBP: Add part constraints | Checksum: c7ece8af
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:23 . Memory (MB): peak = 5125.730 ; gain = 1034.133 ; free physical = 18174 ; free virtual = 48726
+Phase 2.1.1 Partition Driven Placement | Checksum: c7ece8af
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:23 . Memory (MB): peak = 5125.730 ; gain = 1034.133 ; free physical = 18174 ; free virtual = 48726
+Phase 2.1 Floorplanning | Checksum: 177c7326b
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:23 . Memory (MB): peak = 5125.730 ; gain = 1034.133 ; free physical = 18174 ; free virtual = 48726
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 177c7326b
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:23 . Memory (MB): peak = 5125.730 ; gain = 1034.133 ; free physical = 18174 ; free virtual = 48726
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 177c7326b
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:23 . Memory (MB): peak = 5125.730 ; gain = 1034.133 ; free physical = 18174 ; free virtual = 48726
+
+Phase 2.4 Global Placement Core
+
+Phase 2.4.1 UpdateTiming Before Physical Synthesis
+Phase 2.4.1 UpdateTiming Before Physical Synthesis | Checksum: 1345baf5f
+
+Time (s): cpu = 00:01:23 ; elapsed = 00:00:35 . Memory (MB): peak = 5209.730 ; gain = 1118.133 ; free physical = 18108 ; free virtual = 48660
+
+Phase 2.4.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 370 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 131 nets or LUTs. Breaked 0 LUT, combined 131 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-69] No nets found for rewiring optimization.
+INFO: [Physopt 32-661] Optimized 0 net.  Re-placed 0 instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-670] No setup violation found.  DSP Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register to Pipeline Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5209.730 ; gain = 0.000 ; free physical = 18105 ; free virtual = 48657
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |            131  |                   131  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Equivalent Driver Rewiring                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            0  |            131  |                   131  |           0  |           5  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.4.2 Physical Synthesis In Placer | Checksum: fbaa0ef8
+
+Time (s): cpu = 00:01:24 ; elapsed = 00:00:37 . Memory (MB): peak = 5209.730 ; gain = 1118.133 ; free physical = 18105 ; free virtual = 48657
+Phase 2.4 Global Placement Core | Checksum: 16b95ef8a
+
+Time (s): cpu = 00:01:55 ; elapsed = 00:00:45 . Memory (MB): peak = 5209.730 ; gain = 1118.133 ; free physical = 18098 ; free virtual = 48650
+Phase 2 Global Placement | Checksum: 16b95ef8a
+
+Time (s): cpu = 00:01:55 ; elapsed = 00:00:45 . Memory (MB): peak = 5209.730 ; gain = 1118.133 ; free physical = 18098 ; free virtual = 48650
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1e242aa2a
+
+Time (s): cpu = 00:02:09 ; elapsed = 00:00:49 . Memory (MB): peak = 5209.730 ; gain = 1118.133 ; free physical = 18092 ; free virtual = 48644
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1f8e4b8a9
+
+Time (s): cpu = 00:02:11 ; elapsed = 00:00:49 . Memory (MB): peak = 5209.730 ; gain = 1118.133 ; free physical = 18094 ; free virtual = 48646
+
+Phase 3.3 Small Shape DP
+
+Phase 3.3.1 Small Shape Clustering
+Phase 3.3.1 Small Shape Clustering | Checksum: 206f49d6d
+
+Time (s): cpu = 00:02:25 ; elapsed = 00:00:53 . Memory (MB): peak = 5211.730 ; gain = 1120.133 ; free physical = 18090 ; free virtual = 48642
+
+Phase 3.3.2 Slice Area Swap
+
+Phase 3.3.2.1 Slice Area Swap Initial
+Phase 3.3.2.1 Slice Area Swap Initial | Checksum: 263210fa7
+
+Time (s): cpu = 00:02:25 ; elapsed = 00:00:54 . Memory (MB): peak = 5211.730 ; gain = 1120.133 ; free physical = 18088 ; free virtual = 48640
+Phase 3.3.2 Slice Area Swap | Checksum: 263210fa7
+
+Time (s): cpu = 00:02:26 ; elapsed = 00:00:54 . Memory (MB): peak = 5211.730 ; gain = 1120.133 ; free physical = 18088 ; free virtual = 48640
+Phase 3.3 Small Shape DP | Checksum: 150e4491f
+
+Time (s): cpu = 00:02:27 ; elapsed = 00:00:55 . Memory (MB): peak = 5211.730 ; gain = 1120.133 ; free physical = 18090 ; free virtual = 48642
+
+Phase 3.4 Re-assign LUT pins
+Phase 3.4 Re-assign LUT pins | Checksum: 1695f00b5
+
+Time (s): cpu = 00:02:28 ; elapsed = 00:00:55 . Memory (MB): peak = 5211.730 ; gain = 1120.133 ; free physical = 18090 ; free virtual = 48642
+
+Phase 3.5 Pipeline Register Optimization
+Phase 3.5 Pipeline Register Optimization | Checksum: 18a8cd993
+
+Time (s): cpu = 00:02:28 ; elapsed = 00:00:55 . Memory (MB): peak = 5211.730 ; gain = 1120.133 ; free physical = 18090 ; free virtual = 48642
+Phase 3 Detail Placement | Checksum: 18a8cd993
+
+Time (s): cpu = 00:02:28 ; elapsed = 00:00:55 . Memory (MB): peak = 5211.730 ; gain = 1120.133 ; free physical = 18090 ; free virtual = 48642
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axis_wrapper_0_0/src/constraint.xdc:1]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 12ea422c6
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=5.074 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 18ad0a39f
+
+Time (s): cpu = 00:00:00.59 ; elapsed = 00:00:00.21 . Memory (MB): peak = 5211.730 ; gain = 0.000 ; free physical = 18088 ; free virtual = 48640
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 18ad0a39f
+
+Time (s): cpu = 00:00:00.73 ; elapsed = 00:00:00.35 . Memory (MB): peak = 5211.730 ; gain = 0.000 ; free physical = 18087 ; free virtual = 48639
+Phase 4.1.1.1 BUFG Insertion | Checksum: 12ea422c6
+
+Time (s): cpu = 00:02:47 ; elapsed = 00:01:01 . Memory (MB): peak = 5211.730 ; gain = 1120.133 ; free physical = 18087 ; free virtual = 48639
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=5.074. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 1000df0ca
+
+Time (s): cpu = 00:02:47 ; elapsed = 00:01:01 . Memory (MB): peak = 5211.730 ; gain = 1120.133 ; free physical = 18087 ; free virtual = 48639
+
+Time (s): cpu = 00:02:47 ; elapsed = 00:01:01 . Memory (MB): peak = 5211.730 ; gain = 1120.133 ; free physical = 18087 ; free virtual = 48639
+Phase 4.1 Post Commit Optimization | Checksum: 1000df0ca
+
+Time (s): cpu = 00:02:47 ; elapsed = 00:01:01 . Memory (MB): peak = 5211.730 ; gain = 1120.133 ; free physical = 18087 ; free virtual = 48639
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5249.715 ; gain = 0.000 ; free physical = 17999 ; free virtual = 48551
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 13cb98d29
+
+Time (s): cpu = 00:03:07 ; elapsed = 00:01:11 . Memory (MB): peak = 5249.715 ; gain = 1158.117 ; free physical = 18003 ; free virtual = 48555
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ________________________________________________________________________
+|           | Global Congestion | Long Congestion   | Short Congestion  |
+| Direction | Region Size       | Region Size       | Region Size       |
+|___________|___________________|___________________|___________________|
+|      North|                1x1|                8x8|                1x1|
+|___________|___________________|___________________|___________________|
+|      South|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+|       East|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+|       West|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 13cb98d29
+
+Time (s): cpu = 00:03:07 ; elapsed = 00:01:11 . Memory (MB): peak = 5249.715 ; gain = 1158.117 ; free physical = 18002 ; free virtual = 48554
+Phase 4.3 Placer Reporting | Checksum: 13cb98d29
+
+Time (s): cpu = 00:03:07 ; elapsed = 00:01:11 . Memory (MB): peak = 5249.715 ; gain = 1158.117 ; free physical = 18002 ; free virtual = 48554
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5249.715 ; gain = 0.000 ; free physical = 18002 ; free virtual = 48554
+
+Time (s): cpu = 00:03:07 ; elapsed = 00:01:11 . Memory (MB): peak = 5249.715 ; gain = 1158.117 ; free physical = 18002 ; free virtual = 48554
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1e892a63b
+
+Time (s): cpu = 00:03:07 ; elapsed = 00:01:11 . Memory (MB): peak = 5249.715 ; gain = 1158.117 ; free physical = 18002 ; free virtual = 48554
+Ending Placer Task | Checksum: 174cefcbf
+
+Time (s): cpu = 00:03:07 ; elapsed = 00:01:11 . Memory (MB): peak = 5249.715 ; gain = 1158.117 ; free physical = 18004 ; free virtual = 48556
+95 Infos, 202 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:03:10 ; elapsed = 00:01:12 . Memory (MB): peak = 5249.715 ; gain = 1158.117 ; free physical = 18003 ; free virtual = 48555
+INFO: [runtcl-4] Executing : report_io -file ManhattanAttention_wrapper_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.42 . Memory (MB): peak = 5249.715 ; gain = 0.000 ; free physical = 17984 ; free virtual = 48536
+INFO: [runtcl-4] Executing : report_utilization -file ManhattanAttention_wrapper_utilization_placed.rpt -pb ManhattanAttention_wrapper_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file ManhattanAttention_wrapper_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.25 . Memory (MB): peak = 5249.715 ; gain = 0.000 ; free physical = 17957 ; free virtual = 48510
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.19 ; elapsed = 00:00:00.04 . Memory (MB): peak = 5249.715 ; gain = 0.000 ; free physical = 17954 ; free virtual = 48510
+Wrote PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.41 . Memory (MB): peak = 5249.715 ; gain = 0.000 ; free physical = 17952 ; free virtual = 48515
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5249.715 ; gain = 0.000 ; free physical = 17952 ; free virtual = 48515
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.06 . Memory (MB): peak = 5249.715 ; gain = 0.000 ; free physical = 17951 ; free virtual = 48515
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5249.715 ; gain = 0.000 ; free physical = 17951 ; free virtual = 48516
+Wrote Device Cache: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.03 . Memory (MB): peak = 5249.715 ; gain = 0.000 ; free physical = 17945 ; free virtual = 48512
+Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.52 . Memory (MB): peak = 5249.715 ; gain = 0.000 ; free physical = 17945 ; free virtual = 48512
+INFO: [Common 17-1381] The checkpoint '/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/impl_1/ManhattanAttention_wrapper_placed.dcp' has been generated.
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:01 . Memory (MB): peak = 5273.727 ; gain = 0.000 ; free physical = 17951 ; free virtual = 48510
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+104 Infos, 202 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.03 . Memory (MB): peak = 5273.727 ; gain = 0.000 ; free physical = 17950 ; free virtual = 48512
+Wrote PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.41 . Memory (MB): peak = 5273.727 ; gain = 0.000 ; free physical = 17951 ; free virtual = 48521
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5273.727 ; gain = 0.000 ; free physical = 17951 ; free virtual = 48521
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.06 . Memory (MB): peak = 5273.727 ; gain = 0.000 ; free physical = 17950 ; free virtual = 48521
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5273.727 ; gain = 0.000 ; free physical = 17950 ; free virtual = 48522
+Wrote Device Cache: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.02 . Memory (MB): peak = 5273.727 ; gain = 0.000 ; free physical = 17950 ; free virtual = 48524
+Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.52 . Memory (MB): peak = 5273.727 ; gain = 0.000 ; free physical = 17950 ; free virtual = 48524
+INFO: [Common 17-1381] The checkpoint '/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/impl_1/ManhattanAttention_wrapper_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 52dd160d ConstDB: 0 ShapeSum: e5464a53 RouteDB: 3cab9c5f
+Nodegraph reading from file.  Time (s): cpu = 00:00:00.84 ; elapsed = 00:00:00.86 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17944 ; free virtual = 48509
+Post Restoration Checksum: NetGraph: f966612 | NumContArr: b386f493 | Constraints: 7b082bee | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 200ce8130
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17977 ; free virtual = 48542
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 200ce8130
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17977 ; free virtual = 48542
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 200ce8130
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17977 ; free virtual = 48542
+
+Phase 2.3 Global Clock Net Routing
+ Number of Nodes with overlaps = 0
+Phase 2.3 Global Clock Net Routing | Checksum: 2eac506ed
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17978 ; free virtual = 48543
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 249f87918
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:07 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17980 ; free virtual = 48545
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.264  | TNS=0.000  | WHS=-0.090 | THS=-23.509|
+
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 7827
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 6561
+  Number of Partially Routed Nets     = 1266
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 18d88d400
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:09 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17983 ; free virtual = 48549
+
+Phase 3 Initial Routing
+
+Phase 3.1 Global Routing
+Phase 3.1 Global Routing | Checksum: 18d88d400
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:09 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17983 ; free virtual = 48549
+
+Phase 3.2 Initial Net Routing
+Phase 3.2 Initial Net Routing | Checksum: 2b0e7e8c5
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:10 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17984 ; free virtual = 48550
+Phase 3 Initial Routing | Checksum: 301c1be67
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:10 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17985 ; free virtual = 48551
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 1438
+ Number of Nodes with overlaps = 126
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.018  | TNS=0.000  | WHS=-0.015 | THS=-0.015 |
+
+Phase 4.1 Global Iteration 0 | Checksum: 2ed7bb91d
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:14 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17989 ; free virtual = 48555
+
+Phase 4.2 Additional Iteration for Hold
+Phase 4.2 Additional Iteration for Hold | Checksum: 327fe0a21
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:14 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17989 ; free virtual = 48555
+Phase 4 Rip-up And Reroute | Checksum: 327fe0a21
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:14 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17989 ; free virtual = 48555
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 25fba48f8
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:15 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17988 ; free virtual = 48554
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.018  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+
+Phase 5.1.2 Update Timing
+Phase 5.1.2 Update Timing | Checksum: 236c605b2
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:15 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17990 ; free virtual = 48556
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.018  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+Phase 5.1 Delay CleanUp | Checksum: 236c605b2
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:15 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17989 ; free virtual = 48554
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 236c605b2
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:16 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17989 ; free virtual = 48555
+Phase 5 Delay and Skew Optimization | Checksum: 236c605b2
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:16 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17989 ; free virtual = 48555
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 2ee23725b
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:16 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17992 ; free virtual = 48557
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.018  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 256fadcec
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:16 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17991 ; free virtual = 48557
+Phase 6 Post Hold Fix | Checksum: 256fadcec
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:16 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17990 ; free virtual = 48555
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.807195 %
+  Global Horizontal Routing Utilization  = 0.514462 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 256fadcec
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:16 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17992 ; free virtual = 48558
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 256fadcec
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:16 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17992 ; free virtual = 48558
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 256fadcec
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:17 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17990 ; free virtual = 48555
+
+Phase 10 Resolve XTalk
+Phase 10 Resolve XTalk | Checksum: 256fadcec
+
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:17 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17990 ; free virtual = 48555
+
+Phase 11 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=5.018  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 11 Post Router Timing | Checksum: 256fadcec
+
+Time (s): cpu = 00:00:45 ; elapsed = 00:00:17 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17991 ; free virtual = 48557
+INFO: [Route 35-16] Router Completed Successfully
+
+Phase 12 Post-Route Event Processing
+Phase 12 Post-Route Event Processing | Checksum: 181a9790d
+
+Time (s): cpu = 00:00:46 ; elapsed = 00:00:17 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17991 ; free virtual = 48557
+Ending Routing Task | Checksum: 181a9790d
+
+Time (s): cpu = 00:00:46 ; elapsed = 00:00:17 . Memory (MB): peak = 5281.730 ; gain = 0.000 ; free physical = 17989 ; free virtual = 48554
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+120 Infos, 202 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:49 ; elapsed = 00:00:18 . Memory (MB): peak = 5281.730 ; gain = 8.004 ; free physical = 17989 ; free virtual = 48554
+INFO: [runtcl-4] Executing : report_drc -file ManhattanAttention_wrapper_drc_routed.rpt -pb ManhattanAttention_wrapper_drc_routed.pb -rpx ManhattanAttention_wrapper_drc_routed.rpx
+Command: report_drc -file ManhattanAttention_wrapper_drc_routed.rpt -pb ManhattanAttention_wrapper_drc_routed.pb -rpx ManhattanAttention_wrapper_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/impl_1/ManhattanAttention_wrapper_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file ManhattanAttention_wrapper_methodology_drc_routed.rpt -pb ManhattanAttention_wrapper_methodology_drc_routed.pb -rpx ManhattanAttention_wrapper_methodology_drc_routed.rpx
+Command: report_methodology -file ManhattanAttention_wrapper_methodology_drc_routed.rpt -pb ManhattanAttention_wrapper_methodology_drc_routed.pb -rpx ManhattanAttention_wrapper_methodology_drc_routed.rpx
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axis_wrapper_0_0/src/constraint.xdc:1]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/impl_1/ManhattanAttention_wrapper_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file ManhattanAttention_wrapper_power_routed.rpt -pb ManhattanAttention_wrapper_power_summary_routed.pb -rpx ManhattanAttention_wrapper_power_routed.rpx
+Command: report_power -file ManhattanAttention_wrapper_power_routed.rpt -pb ManhattanAttention_wrapper_power_summary_routed.pb -rpx ManhattanAttention_wrapper_power_routed.rpx
+INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.gen/sources_1/bd/ManhattanAttention/ip/ManhattanAttention_axis_wrapper_0_0/src/constraint.xdc:1]
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+132 Infos, 203 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 5337.758 ; gain = 0.000 ; free physical = 17961 ; free virtual = 48533
+INFO: [runtcl-4] Executing : report_route_status -file ManhattanAttention_wrapper_route_status.rpt -pb ManhattanAttention_wrapper_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -report_unconstrained -file ManhattanAttention_wrapper_timing_summary_routed.rpt -pb ManhattanAttention_wrapper_timing_summary_routed.pb -rpx ManhattanAttention_wrapper_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [runtcl-4] Executing : report_incremental_reuse -file ManhattanAttention_wrapper_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file ManhattanAttention_wrapper_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file ManhattanAttention_wrapper_bus_skew_routed.rpt -pb ManhattanAttention_wrapper_bus_skew_routed.pb -rpx ManhattanAttention_wrapper_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.03 . Memory (MB): peak = 5337.758 ; gain = 0.000 ; free physical = 17950 ; free virtual = 48526
+Wrote PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.39 . Memory (MB): peak = 5337.758 ; gain = 0.000 ; free physical = 17951 ; free virtual = 48535
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 5337.758 ; gain = 0.000 ; free physical = 17951 ; free virtual = 48535
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.13 . Memory (MB): peak = 5337.758 ; gain = 0.000 ; free physical = 17951 ; free virtual = 48537
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.01 . Memory (MB): peak = 5337.758 ; gain = 0.000 ; free physical = 17951 ; free virtual = 48538
+Wrote Device Cache: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.03 . Memory (MB): peak = 5337.758 ; gain = 0.000 ; free physical = 17951 ; free virtual = 48541
+Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.56 . Memory (MB): peak = 5337.758 ; gain = 0.000 ; free physical = 17951 ; free virtual = 48541
+INFO: [Common 17-1381] The checkpoint '/home/sk/Desktop/EcoAttention/ManhattanAttention/ManhattanAttention.runs/impl_1/ManhattanAttention_wrapper_routed.dcp' has been generated.
+INFO: [Memdata 28-167] Found XPM memory block ManhattanAttention_i/axi_smc/inst/s01_nodes/s01_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ManhattanAttention_i/axi_smc/inst/s01_nodes/s01_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ManhattanAttention_i/axi_smc/inst/s01_nodes/s01_w_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ManhattanAttention_i/axi_smc/inst/s01_nodes/s01_w_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ManhattanAttention_i/axi_smc/inst/s01_nodes/s01_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ManhattanAttention_i/axi_smc/inst/s01_nodes/s01_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ManhattanAttention_i/axi_smc/inst/s01_nodes/s01_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ManhattanAttention_i/axi_smc/inst/s01_nodes/s01_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ManhattanAttention_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ManhattanAttention_i/axi_smc/inst/s00_nodes/s00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ManhattanAttention_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ManhattanAttention_i/axi_smc/inst/s00_nodes/s00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_w_node/inst/inst_si_handler/gen_si_handler.gen_request_fifos.gen_req_fifo[1].inst_req_fifo/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_w_node/inst/inst_si_handler/gen_si_handler.gen_request_fifos.gen_req_fifo[1].inst_req_fifo/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_w_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.gen_fifo_req.inst_fifo_req/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_aw_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to distributed. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ManhattanAttention_i/axi_smc/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst block.
+INFO: [Memdata 28-167] Found XPM memory block ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/I_XD_FIFO/NON_BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to auto. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/I_XD_FIFO/NON_BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst block.
+INFO: [Memdata 28-208] The XPM instance: <ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <ManhattanAttention_i/axi_dma_0>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
+INFO: [Memdata 28-208] The XPM instance: <ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst> is part of IP: <ManhattanAttention_i/axi_dma_0>. This XPM instance will be excluded from the .mmi because updatemem is prohibited from making changes to an XPM that is part of an IP.
+Command: write_bitstream -force ManhattanAttention_wrapper.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xczu7ev'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xczu7ev'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A1' of cell ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O5=(A5)+((~A5)*(~A3)*A4)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A1' of cell ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O5=(A3)+((~A3)*(~A5)*A4)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC PDCN-1569] LUT equation term check: Used physical LUT pin 'A3' of cell ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1 (pin ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/gpregsm1.user_valid_i_1/I1) is not included in the LUT equation: 'O5=(A5)+((~A5)*(~A2)*A1)'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+WARNING: [DRC REQP-1935] RAMB36E2_nochange_collision_advisory: Synchronous clocking is detected for BRAM (ManhattanAttention_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_S2MM_FULL.I_S2MM_FULL_WRAPPER/GEN_ENABLE_INDET_BTT_SF.I_INDET_BTT/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg) in SDP mode with NO_CHANGE write-mode. This is the preferred mode for best power characteristics. However, NO_CHANGE may exhibit address collisions if the same address appears on both read and write ports resulting in unknown or corrupted read data. It is suggested to confirm via simulation that an address collision never occurs and if so it is suggested to try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. See the FPGA Memory Resources User Guide for additional information.
+WARNING: [DRC RTSTAT-10] No routable loads: 33 net(s) have no routable loads. The problem bus(es) and/or net(s) are ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg[2:0], ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg[2:0], ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb, ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_READ.read_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i, ManhattanAttention_i/ps8_0_axi_periph/s00_couplers/auto_ds/inst/gen_downsizer.gen_simple_downsizer.axi_downsizer_inst/USE_WRITE.write_addr_inst/cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i... and (the first 15 of 21 listed).
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 5 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./ManhattanAttention_wrapper.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT device. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-83] Releasing license: Implementation
+31 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:21 ; elapsed = 00:00:16 . Memory (MB): peak = 5337.758 ; gain = 0.000 ; free physical = 17951 ; free virtual = 48551
+INFO: [Common 17-206] Exiting Vivado at Sat Jan 10 18:28:14 2026...

@@ -3,12 +3,12 @@
 # SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Wed Jan  7 22:37:42 2026
-# Process ID: 1327793
+# Start of session at: Sat Jan 10 17:35:43 2026
+# Process ID: 1097841
 # Current directory: /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1
-# Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/top.vds
+# Command line: vivado -log axis_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source axis_wrapper.tcl
+# Log file: /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/axis_wrapper.vds
 # Journal file: /home/sk/Desktop/EcoAttention/EcoAttention/EcoAttention.runs/synth_1/vivado.jou
 # Running On: sk-Standard-PC-Q35-ICH9-2009, OS: Linux, CPU Frequency: 3792.852 MHz, CPU Physical cores: 24, Host memory: 67417 MB
 #-----------------------------------------------------------
-source top.tcl -notrace
+source axis_wrapper.tcl -notrace
